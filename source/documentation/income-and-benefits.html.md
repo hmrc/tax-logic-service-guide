@@ -22,13 +22,21 @@ Below is the calculation pseudocode for each self-employment income source.
 
 ````
 // Input parameters (parameter names are same as API parameter names)
+
 turnover // The takings, fees, sales or money earned by the business.
+
 other // Any other business income not included in turnover.
 
+&nbsp;
+
 // Other parameter used for calculations  
+
 totalIncome
 
+&nbsp;
+
 // Calculate totalIncome
+
 totalIncome = roundDown(turnover + other, 2) // Round down to nearest penny
 ````
 
@@ -40,29 +48,55 @@ Below is the calculation pseudocode for self-employment expenses.
 
 ````
 // Input parameters  
+
 consolidatedExpenses // Parameter name is same as API parameter name
+
+&nbsp;
+
 costOfGoodsAllowable // API parameter name: costofGoods
+
 paymentsToSubcontractorsAllowable // API parameter name: paymentsToSubcontractors
+
 wagesAndStaffCostsAllowable // API parameter name: wagesAndStaffCosts
+
 carVanTravelExpensesAllowable // API parameter name: carVanTravelExpenses
+
 premisesRunningCostsAllowable // API parameter name: premisesRunningCosts
+
 maintenanceCostsAllowable // API parameter name: maintenanceCosts
+
 adminCostsAllowable // API parameter name: adminCosts
+
 interestOnBankOtherLoansAllowable // API parameter name: interestOnBankOtherLoans
+
 financeChargesAllowable // API parameter name: financeCharges
+
 irrecoverableDebtsAllowable // API parameter name: irrecoverableDebts
+
 professionalFeesAllowable // API parameter name: professionalFees
+
 depreciationAllowable // API parameter name: depcreciation
+
 otherExpensesAllowable // API parameter name: otherExpenses
+
 advertisingCostsAllowable // API parameter name: advertisingCosts
+
 businessEntertainmentCostsAllowable // API parameter name: businessEntertainmentCosts
+
+&nbsp;
 
 // NOTE: Self Employment Business API returns either consolidatedExpenses or the other expenses listed
 
+&nbsp;
+
 // Other parameter used for calculations  
+
 totalExpenses // Total value can be negative  
 
+&nbsp;
+
 // Calculate totalExpenses  
+
 totalExpenses = ceiling(consolidatedExpenses + costOfGoodsAllowable + paymentsToSubcontractorsAllowable + wagesAndStaffCostsAllowable + carVanTravelExpensesAllowable + premisesRunningCostsAllowable + maintenanceCostsAllowable + adminCostsAllowable + interestOnBankOtherLoansAllowable + financeChargesAllowable + irrecoverableDebtsAllowable + professionalFeesAllowable + depreciationAllowable + otherExpensesAllowable + advertisingCostsAllowable + businessEntertainmentCostsAllowable, 2) // Round up to 2 decimal places
 ````
 ### Self-employment additions
@@ -75,35 +109,65 @@ Below is the calculation pseudocode for self-employment additions.
 
 ````
 // Input parameters
-// Disallowable expenses
+
+// Disalllowable expenses
+
 // Parameter names are same as API parameter names
+
 costOfGoodsDisallowable
+
 paymentsToSubcontractorsDisallowable
+
 wagesAndStaffCostsDisallowable
+
 carVanTravelExpensesDisallowable
+
 premisesRunningCostsDisallowable
+
 maintenanceCostsDisallowable
+
 adminCostsDisallowable
+
 interestOnBankOtherLoansDisallowable
+
 financeChargesDisallowable
+
 irrecoverableDebtsDisallowable
+
 professionalFeesDisallowable
+
 depreciationDisallowable
+
 otherExpensesDisallowable
+
 advertisingCostsDisallowable
+
 BusinessEntertainmentCostsDisallowable
 
+&nbsp;
+
 // Adjustments treated as additions
+
 // Parameter names are same as API parameter names
+
 outstandingBusinessIncome
+
 balancingChargeOther
+
 balancingChargeBpra
+
 goodAndServicesOwnUse
 
+&nbsp;
+
 // Other parameter used for calculations
+
 totalAdditions
 
+&nbsp;
+
 // Calculate totalAdditions
+
 totalAdditions = floor(costOfGoodsDisallowable + paymentsToSubcontractorsDisallowable + wagesAndStaffCostsDisallowable + interestOnBankOtherLoansDisallowable + financeChargesDisallowable + irrecoverableDebtsDisallowable + professionalFeesDisallowable + depreciationDisallowable + otherExpensesDisallowable + advertisingCostsDisallowable + businessEntertainmentCostsDisallowable + outstandingBusinessIncome + balancingChargeOther + balancingChargeBpra + goodAndServicesOwnUse, 2) // Round down to 2 decimal places
 ````
 ### Self-employment deductions
@@ -114,28 +178,51 @@ Below is the calculation pseudocode for self-employment deductions.
 
 ````
 // Input parameters
+
 // Deduction allowances
+
 tradingAllowance // API parameter name: tradingIncomeAllowance  
+
 annualInvestmentAllowance // Parameter name is same as API parameter name
+
 capitalAllowanceMainPool // Parameter name is same as API parameter name
+
 capitalAllowanceSpecialRatePool // Parameter name is same as API parameter name
+
 zeroEmmissionGoods // API parameter name: zeroEmissionsGoodsVehicleAllowance
+
 businessPremisesRennovationAllowance // Parameter name is same as API parameter name
+
 enhancedCapitalAllowance // Parameter name is same as API parameter name
+
 allowanceOnSales // Parameter name is same as API parameter name
+
 capitalAllowanceSingleAssetPool // Parameter name is same as API parameter name
+
 electricChargePointAllowance // Parameter name is same as API parameter name
+
 zeroEmissionsCarAllowance // Parameter name is same as API parameter name
+
 structuredBuildingAllowance // Parameter name is same as API parameter name
+
 enhancedStructuredBuildingAllowance // Parameter name is same as API parameter name
 
+&nbsp;
+
 // Adjustments parameter treated as a deduction
+
 includedNonTaxableProfits // Parameter name is same as API parameter name
 
+&nbsp;
+
 // Other parameter used for calculations  
+
 totalDeductions
 
+&nbsp;  
+
 // Calculate totalDeductions
+
 totalDeductions = ceiling(tradingAllowance + annualInvestmentAllowance + capitalAllowanceMainPool + capitalAllowanceSpecialRatePool + zeroEmmissionGoods + businessPremisesRennovationAllowance + enhancedCapitalAllowance + allowanceOnSales + capitalAllowanceSingleAssetPool + includedNonTaxableProfits + electricChargePointAllowance + zeroEmissionsCarAllowance + structuredBuildingAllowance + enhancedStructuredBuildingAllowance, 2) // Round up to 2 decimal places
 ````
 ### Self-employment accounting adjustments
@@ -146,14 +233,23 @@ Below is the calculation pseudocode for self-employment adjustments.
 
 ````
 // Input parameters (parameter names are same as API parameter names)
+
 basisAdjustment
+
 accountingAdjustment
+
 averagingAdjustment
 
+&nbsp;
+
 // Other parameter used for calculations
+
 totalAccountingAdjustments
 
+&nbsp;
+
 // Calculate totalAccountingAdjustments
+
 totalAccountingAdjustments = floor(basisAdjustment + accountingAdjustment + averagingAdjustment, 2) // Round down to 2 decimal places
 ````
 ### Calculate total taxable self-employment profit
@@ -179,16 +275,27 @@ Below is the calculation pseudocode for UK non-FHL property income calculations.
 
 ````
 // Input parameters
+
 totalRentsReceived // Total rents from property, but not ground rents, rent charges and rent-a-room rental income (API parameter name: periodAmount)
+
 premiumsOfLeaseGrant // Premiums received for the grant of a lease and other lump sums to possess a property (parameter name is same as API parameter name)
+
 reversePremiums // Amount paid by a landlord or outgoing tenant to induce a new tenant to enter into a leasehold agreement (parameter name is same as API parameter name)
+
 otherPropertyIncome // Total amount of rent and any income for services provided to tenants (API parameter name: otherIncome)
+
 rarRentReceived // Total rents received from properties (rent-a-room only) (API parameter name: rentARoom.rentsReceived)
 
+&nbsp;
+
 // Other parameter used for calculations
+
 totalIncome
 
+&nbsp;
+
 // Calculate totalIncome
+
 totalIncome = roundDown(totalRentsReceived + premiumsOfLeaseGrant + reversePremiums + otherPropertyIncome + rarRentReceived, 2) // Round down to nearest penny
 ````
 ### Property expenses
@@ -201,22 +308,41 @@ Below is the calculation pseudocode for UK non-FHL property expenses.
 
 ````
 // Input parameters  
+
 // Parameter names are same as API parameter names
+
 consolidatedExpenses
+
+&nbsp;
+
 premisesRunningCosts
+
 repairsAndMaintenance  
+
 financialCosts  
+
 professionalFees
+
 costOfServices  
+
 other  
+
 travelCosts  
+
+&nbsp;
 
 // NOTE: Property Business API returns either consolidatedExpenses or the other expenses listed  
 
+&nbsp;
+
 // Other parameter used for calculations  
+
 totalExpenses // Total value can be negative
 
+&nbsp;  
+
 // Calculate totalExpenses  
+
 totalExpenses = ceiling(consolidatedExpenses + premisesRunningCosts + repairsAndMaintenance + financialCosts + professionalFees + costOfServices + other + travelCosts, 2) // Round up to 2 decimal places
 ````
 ### Property additions
@@ -229,14 +355,23 @@ Below is the calculation pseudocode for UK non-FHL property additions.
 
 ````
 // Input parameters  
+
 privateUseAdjustment // Parameter name is same as API parameter name
+
 balancingCharge // Parameter name is same as API parameter name
+
 bpraBalancingCharge // API parameter name: businessPremisesRenovationAllowanceBalancingCharges
 
+&nbsp;
+
 // Other parameter used for calculations  
+
 totalAdditions
 
+&nbsp;
+
 // Calculate totalAdditions
+
 totalAdditions = floor(privateUseAdjustment + balancingCharge + bpraBalancingCharge, 2) // Round down to 2 decimal places
 ````
 ### Property deductions
@@ -249,35 +384,57 @@ Below is the calculation pseudocode for UK non-FHL property deductions.
 
 ````
 // Input parameters  
+
 zeroEmissionsGoodsVehicleAllowance // Parameter name is same as API parameter name
+
 annualInvestmentAllowance // Parameter name is same as API parameter name  
+
 costOfReplacingDomesticItems // Parameter name is same as API parameter name
+
 businessPremisesRenovationAllowance // Parameter name is same as API parameter name
+
 propertyAllowance // API parameter name: propertyIncomeAllowance  
+
 otherCapitalAllowance // Parameter name is same as API parameter name  
+
 electricChargePointAllowance // Parameter name is same as API parameter name
+
 zeroEmissionsCarAllowance // Parameter name is same as API parameter name
+
 structuredBuildingAllowance // Parameter name is same as API parameter name
+
 enhancedStructuredBuildingAllowance // Parameter name is same as API parameter name
+
 rarReliefClaimed // Amount of UK non-FHLrent claimed  
+
+&nbsp;
 
 // NOTE: The Property Income Allowance is a £1,000 tax-free allowance available to customers who receive income from property rentals. If claimed, the customer cannot also deduct property expenses for that income.  
 
+&nbsp;
+
 // Other parameter used for calculations
+
 totalDeductions
 
+&nbsp;
+
 // Calculate totalDeductions
+
 if propertyAllowance > 0 then  
 
-    totalDeductions = propertyAllowance  
+&nbsp;    totalDeductions = propertyAllowance  
 
 else  
 
-    totalDeductions = zeroEmissionsGoodsVehicleAllowance + annualInvestmentAllowance + costOfReplacingDomesticItems + businessPremisesRenovationAllowance + otherCapitalAllowance + electricChargePointAllowance + zeroEmissionsCarAllowance + structuredBuildingAllowance + enhancedStructuredBuildingAllowance + rarReliefClaimed
+&nbsp;    totalDeductions = zeroEmissionsGoodsVehicleAllowance + annualInvestmentAllowance + costOfReplacingDomesticItems + businessPremisesRenovationAllowance + otherCapitalAllowance + electricChargePointAllowance + zeroEmissionsCarAllowance + structuredBuildingAllowance + enhancedStructuredBuildingAllowance + rarReliefClaimed
 
 end if  
 
+&nbsp;  
+
 // Apply rounding
+
 totalDeductions = ceiling(totalDeductions, 2) // Round up to 2 decimal places
 ````
 ### Calculate total taxable property profit
@@ -297,70 +454,109 @@ Below is the calculation pseudocode for state benefits.
 
 ````
 // Input parameters
+
 // Parameter names are same as API parameter names
+
 bereavementAllowance
+
 employmentSupportAllowance
+
 incapacityBenefit
+
 jobSeekersAllowance
+
 otherStateBenefits
+
 statePension
+
 statePensionLumpSum
 
 // Each input parameter can have up to 2 decimal places
+
 // Other parameter used for calculations
+
 totalStateBenefitsIncomeExcludingStatePensionLumpSumBenefit
 
 // Calculate totalStateBenefitsIncomeExcludingStatePensionLumpSumBenefit
+
 totalStateBenefitsIncomeExcludingStatePensionLumpSumBenefit = bereavementAllowance + employmentSupportAllowance + incapacityBenefit + jobSeekersAllowance + otherStateBenefits + statePension // No rounding
-````
 
 ## Income summary totals
 
 Customers with income from multiple sources will have source level calculations handled in the individual sections, while the aggregation happens in this section.  
 <br/>The scenario only covers self-employment, property and state benefits.
 
-````
 // Input parameters
+
 totalUntaxedInterest
+
 totalGrossUkInterest
+
 foreignSavingsInterest
+
 totalGrossSecurities
+
 untaxedUKGainsIncome
+
 untaxedForeignGainsIncome
+
 totalOccupationalPensionIncome
+
 totalEmploymentIncomePlusBenefitsInKindMinusExpenses
+
 totalProfitFromSelfEmployment
+
 taxableProfitFromShareSchemes
+
 totalStateBenefits
+
 totalOverseasIncomeAndGains
+
 otherIncomesWhileAbroad
+
 foreignPensionIncome
+
 chargeableForeignBenefitsAndGifts
+
 postCessationTradeReceipts
+
 totalDividendIncomeForUkOtherAndForeign
+
 totalProfitFromTaxedUkGains
+
 totalProfitFromTaxedForeignGains
+
 totalEmploymentLumpSumsNotLiableForPP
 
 // Other parameters used for calculations
+
 totalSavingsIncome
+
 totalProfitFromProperty
+
 totalEmploymentIncome
+
 totalProfitFromPayPensionsProfit
+
 totalIncomeFromAllSources
 
 // Calculate totalSavingsIncome
+
 totalSavingsIncome = totalUntaxedInterest + totalGrossUkInterest + foreignSavingsInterest + totalGrossSecurities + untaxedUKGainsIncome + untaxedForeignGainsIncome
 
 // Calculate totalProfitFromProperty
+
 totalProfitFromProperty = taxableProfitFromUkPropertyOther + taxableProfitFromUkPropertyFhl + taxableProfitFromForeignPropertyOther + taxableProfitFromEeaPropertyFhl
 
 // Calculate totalEmploymentIncome
+
 totalEmploymentIncome = totalOccupationalPensionIncome + totalEmploymentIncomePlusBenefitsInKindMinusExpenses
 
 // Calculate totalProfitFromPayPensionsProfit
+
 totalProfitFromPayPensionsProfit = totalProfitFromProperty + totalProfitFromSelfEmployment + taxableProfitFromShareSchemes + totalStateBenefits + totalEmploymentIncome + totalOverseasIncomeAndGains + otherIncomesWhileAbroad + foreignPensionIncome + chargeableForeignBenefitsAndGifts + postCessationTradeReceipts
 
 // Calculate totalIncomeFromAllSources
+
 totalIncomeFromAllSources = totalDividendIncomeForUkOtherAndForeign + totalSavingsIncome + totalProfitFromPayPensionsProfit + totalProfitFromTaxedUkGains + totalProfitFromTaxedForeignGains + totalEmploymentLumpSumsNotLiableForPPP
 ````

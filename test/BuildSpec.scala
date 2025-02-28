@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2025 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ class BuildSpec extends AnyWordSpecLike with Matchers {
       val result: Int = "bundle install" #&& Process(
         "bundle exec middleman build --verbose --build-dir=public/ --clean",
         None,
-        "BASE_PATH" -> "/guides/income-tax-mtd-end-to-end-service-guide/"
+        "BASE_PATH" -> "/guides/tax-logic-service-guide/"
       ) !
 
       result shouldBe 0
@@ -56,14 +56,14 @@ class BuildSpec extends AnyWordSpecLike with Matchers {
 
       updateFileContent(
         filePath,
-        originalContent.replace("url(\"", "url(\"/guides/income-tax-mtd-end-to-end-service-guide")
+        originalContent.replace("url(\"", "url(\"/guides/tax-logic-service-guide")
       )
 
       val updatedContent: String = readFileContent(filePath)
 
       updatedContent should not be originalContent
 
-      updatedContent should include("url(\"/guides/income-tax-mtd-end-to-end-service-guide")
+      updatedContent should include("url(\"/guides/tax-logic-service-guide")
     }
   }
 }

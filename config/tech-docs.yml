@@ -1,0 +1,44 @@
+# Host to use for canonical URL generation (without trailing slash)
+host: developer.service.hmrc.gov.uk
+
+# Header-related options
+show_govuk_logo: true
+service_name: Tax Logic service guide
+service_link: /guides/tax-logic-service-guide/
+
+# Links to show on right-hand-side of header
+header_links:
+  Developer Hub: https://developer.service.hmrc.gov.uk/api-documentation
+  Roadmap: https://developer.service.hmrc.gov.uk/roadmaps/mtd-itsa-vendors-roadmap/
+  API Changelog: https://github.com/hmrc/income-tax-mtd-changelog
+  API Documentation: https://developer.service.hmrc.gov.uk/api-documentation/docs/api?filter=income-tax-mtd
+  Applications: https://developer.service.hmrc.gov.uk/developer/applications
+  Support: https://developer.service.hmrc.gov.uk/developer/support
+
+# Enables search functionality. This indexes pages only and is not recommended for single-page sites.
+enable_search: true
+
+# Tracking ID from Google Analytics (e.g. UA-XXXX-Y)
+ga_tracking_id: UA-43414424-1
+
+# Enables the tracking consent banner
+tracking_consent_frontend:
+  url: /tracking-consent/tracking.js
+  gtm_container: b
+
+# Enable multipage navigation in the sidebar
+multipage_nav: true
+
+# Enable collapsible navigation in the sidebar
+collapsible_nav: true
+
+# Table of contents depth – how many levels to include in the table of contents.
+# If your ToC is too long, reduce this number and we'll only show higher-level
+# headings.
+max_toc_heading_level: 3
+
+# Prevent robots from indexing (e.g. whilst in development)
+prevent_indexing: false
+
+show_contribution_banner: false
+github_repo: hmrc/tax-logic-service-guide.git

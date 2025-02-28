@@ -1,0 +1,4 @@
+->      /                                                  health.Routes
+GET     /guides/tax-logic-service-guide           controllers.Default.redirect(to = "/guides/tax-logic-service-guide/")
+GET     /guides/tax-logic-service-guide/          controllers.Assets.at(path="/public", file="index.html")
+GET     /guides/tax-logic-service-guide/*file     controllers.Assets.at(path="/public", file)

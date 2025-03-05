@@ -14,112 +14,118 @@ Adjusted net income is total taxable income before any Personal Allowances and l
 
 Below is calculation pseudocode for adjusted net income.
 
-````
-// Input parameters
-totalIncomeFromAllSources // Refer to Income summary totals
-giftOfInvestmentsAndPropertyToCharity
-grossGiftAidPayments
-lossesAppliedToGeneralIncome
-grossAnnuityPayments
-qualifyingLoanInterestFromInvestments
-postCessationTradeReliefs
-totalPensionContributionsAllowance
-totalPensionContributionsRelief
+<pre>
+   <code>
+    // Input parameters
+    totalIncomeFromAllSources // Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a>
+    giftOfInvestmentsAndPropertyToCharity
+    grossGiftAidPayments
+    lossesAppliedToGeneralIncome
+    grossAnnuityPayments
+    qualifyingLoanInterestFromInvestments
+    postCessationTradeReliefs
+    totalPensionContributionsAllowance
+    totalPensionContributionsRelief
 
-// Other parameters used for calculations
-totalDeductionsForAdjustedNetIncome
-adjustedNetIncome
+    // Other parameters used for calculations
+    totalDeductionsForAdjustedNetIncome
+    adjustedNetIncome
 
-// Calculate totalIncomeFromAllSources (Reference Income Summary Totals)
-totalIncomeFromAllSources = totalDividendIncomeForUkOtherAndForeign + totalSavingsIncome + totalProfitFromPayPensionsProfit + totalProfitFromTaxedUkGains + totalProfitFromTaxedForeignGains + totalEmploymentLumpSumsNotLiableForPPP
+    // Calculate totalIncomeFromAllSources (Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a>)
+    totalIncomeFromAllSources = totalDividendIncomeForUkOtherAndForeign + totalSavingsIncome + totalProfitFromPayPensionsProfit + totalProfitFromTaxedUkGains + totalProfitFromTaxedForeignGains + totalEmploymentLumpSumsNotLiableForPPP
 
-// Calculate totalDeductionsForAdjustedNetIncome
-totalDeductionsForAdjustedNetIncome = giftOfInvestmentsAndPropertyToCharity + grossGiftAidPayments + lossesAppliedToGeneralIncome + grossAnnuityPayments + qualifyingLoanInterestFromInvestments + postCessationTradeReliefs + totalPensionContributionsAllowance + totalPensionContributionsRelief
+    // Calculate totalDeductionsForAdjustedNetIncome
+    totalDeductionsForAdjustedNetIncome = giftOfInvestmentsAndPropertyToCharity + grossGiftAidPayments + lossesAppliedToGeneralIncome + grossAnnuityPayments + qualifyingLoanInterestFromInvestments + postCessationTradeReliefs + totalPensionContributionsAllowance + totalPensionContributionsRelief
 
-// Calculate adjustedNetIncome
-adjustedNetIncome = totalIncomeFromAllSources – totalDeductionsForAdjustedNetIncome
-````
+    // Calculate adjustedNetIncome
+    adjustedNetIncome = totalIncomeFromAllSources – totalDeductionsForAdjustedNetIncome
+   </code>
+</pre>
+
 ## Income Tax liability – Only Pay pensions Profit
 
 Income Tax liability is calculated based on taxable income and the applicable tax rates for different income bands.
 
 > **Note:** This section is based on Default Ordering.
 
-````
-// Initialise Pay Pensions Profit (PPP) Bands
-pppBasicRateName = "BRT" // Basic rate band for PPP income
-pppBasicRate = 20% // Tax rate for the basic rate band
-pppBasicRateThreshold = 37700
-pppBasicRateLimit = pppBasicRateThreshold + Basic rate extension // Upper limit of the basic rate band
-PppBasicRateAllocatedIncome // Income allocated to this band
-PppBasicRateTax // Tax calculated for this band
+<pre>
+   <code>
+   // Initialise Pay Pensions Profit (PPP) Bands
+   pppBasicRateName = "BRT" // Basic rate band for PPP income
+   pppBasicRate = 20% // Tax rate for the basic rate band
+   pppBasicRateThreshold = 37700
+   pppBasicRateLimit = pppBasicRateThreshold + Basic rate extension // Upper limit of the basic rate band
+   PppBasicRateAllocatedIncome // Income allocated to this band
+   PppBasicRateTax // Tax calculated for this band
 
-pppHigherRateName = "HRT" // Higher rate band for PPP income
-pppHigherRate = 40% // Tax rate for the higher rate band
-pppHigherRateLimit = 125140 // Upper limit of the higher rate band
-pppHigherRateAllocatedIncome // Income allocated to this band
-pppHigherRateTax // Tax calculated for this band
+   pppHigherRateName = "HRT" // Higher rate band for PPP income
+   pppHigherRate = 40% // Tax rate for the higher rate band
+   pppHigherRateLimit = 125140 // Upper limit of the higher rate band
+   pppHigherRateAllocatedIncome // Income allocated to this band
+   pppHigherRateTax // Tax calculated for this band
 
-pppAdditionalRateName = "ART" // Additional rate band for PPP income
-pppAdditionalRate = 45% // Tax rate for the additional rate band
-pppAdditionalRateLimit // No upper limit for the additional rate band
-pppAdditionalRateAllocatedIncome // Income allocated to this band
-pppAdditionalRateTax // Tax calculated for this band
+   pppAdditionalRateName = "ART" // Additional rate band for PPP income
+   pppAdditionalRate = 45% // Tax rate for the additional rate band
+   pppAdditionalRateLimit // No upper limit for the additional rate band
+   pppAdditionalRateAllocatedIncome // Income allocated to this band
+   pppAdditionalRateTax // Tax calculated for this band
 
-// Personal Allowance for 2024/25
-personalAllowance = 12570 // £12,570 (in this scenario; it can be reduced allowance in some cases)
-personalAllowanceReduction // Reduced amount in Personal Allowance
+   // Personal Allowance for 2024/25
+   personalAllowance = 12570 // £12,570 (in this scenario; it can be reduced allowance in some cases)
+   personalAllowanceReduction // Reduced amount in Personal Allowance
 
-// This snippet includes allowances relevant to the example scenario presented. There are other allowances and deductions that will be applicable in an ideal scenario.
+   // This snippet includes allowances relevant to the example scenario presented. There are other allowances and deductions that will be applicable in an ideal scenario.
 
-// Income Sources
-totalProfitFromPayPensionsProfit// (See Income Summary Totals section)
+   // Income Sources
+   totalProfitFromPayPensionsProfit// Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a>
 
-// Other parameters used for calculations
-totalPayPensionsProfitTaxableIncome // Taxable income from employment, pensions, self-employment profits, and property rental income after applying any deductions or allowances
-totalTaxPPP // Total tax on pay, pensions, and profits
+   // Other parameters used for calculations
+   totalPayPensionsProfitTaxableIncome // Taxable income from employment, pensions, self-employment profits, and property rental income after applying any deductions or allowances
+   totalTaxPPP // Total tax on pay, pensions, and profits
 
-// Step 1: Allocate Personal Allowance
-// Deduct Personal Allowance from non-savings income first
+   // Step 1: Allocate Personal Allowance
+   // Deduct Personal Allowance from non-savings income first
 
-if totalProfitFromPayPensionsProfit <= personalAllowance then
-    totalPayPensionsProfitTaxableIncome = 0
-else
-   totalPayPensionsProfitTaxableIncome = totalProfitFromPayPensionsProfit – Personal Allowance
-   remainingAllowance = 0
-end if
+    if totalProfitFromPayPensionsProfit <= personalAllowance then
+       totalPayPensionsProfitTaxableIncome = 0
+    else
+       totalPayPensionsProfitTaxableIncome = totalProfitFromPayPensionsProfit – Personal Allowance
+       remainingAllowance = 0
+    end if
 
-// Step 2: Allocate non-savings income across bands
-// Basic rate band calculations
+    // Step 2: Allocate non-savings income across bands
+    // Basic rate band calculations
 
-if totalPayPensionsProfitTaxableIncome <= pppBasicRateLimit then
-   pppBasicRateAllocatedIncome = totalPayPensionsProfitTaxableIncome
-   pppBasicRateTax = floor(pppBasicRateAllocatedIncome \* pppBasicRate, 2) // Round down to 2 decimal places
-   pppHigherRateAllocatedIncome = 0
-   pppAdditionalRateAllocatedIncome = 0
-   remainingBasicRateBand = pppBasicRateLimit - pppBasicRateAllocatedIncome
-else if totalPayPensionsProfitTaxableIncome <= pppHigherRateLimit then
-   pppBasicRateAllocatedIncome = pppBasicRateLimit
-   pppBasicRateTax = floor(pppBasicRateAllocatedIncome \* pppBasicRate, 2) // Round down to 2 decimal places
-   pppHigherRateAllocatedIncome = totalPayPensionsProfitTaxableIncome - pppBasicRateLimit
-   pppHigherRateTax = floor(pppHigherRateAllocatedIncome \* pppHigherRate, 2) // Round down to 2 decimal places
-   pppAdditionalRateAllocatedIncome = 0
-   remainingBasicRateBand = 0
-   remainingHigherRateBand = pppHigherRateLimit – pppBasicRateThreshold - pppHigherRateAllocatedIncome
-else
-   pppBasicRateAllocatedIncome = pppBasicRateLimit
-   pppBasicRateTax = floor(pppBasicRateAllocatedIncome \* pppBasicRate, 2) // Round down to 2 decimal places
-   pppHigherRateAllocatedIncome = pppHigherRateLimit - pppBasicRateThreshold
-   pppHigherRateTax = floor(pppHigherRateAllocatedIncome \* pppHigherRate, 2) // Round down to 2 decimal places
-   pppAdditionalRateAllocatedIncome = totalPayPensionsProfitTaxableIncome - (pppBasicRateLimit + pppHigherRateLimit)
-   pppAdditionalRateTax = floor(pppAdditionalRateAllocatedIncome \* pppAdditionalRate, 2) // Round down to 2 decimal places
-   remainingHigherRateBand = 0
-end if
+    if totalPayPensionsProfitTaxableIncome <= pppBasicRateLimit then
+       pppBasicRateAllocatedIncome = totalPayPensionsProfitTaxableIncome
+       pppBasicRateTax = floor(pppBasicRateAllocatedIncome \* pppBasicRate, 2) // Round down to 2 decimal places
+       pppHigherRateAllocatedIncome = 0
+       pppAdditionalRateAllocatedIncome = 0
+       remainingBasicRateBand = pppBasicRateLimit - pppBasicRateAllocatedIncome
+    else if totalPayPensionsProfitTaxableIncome <= pppHigherRateLimit then
+       pppBasicRateAllocatedIncome = pppBasicRateLimit
+       pppBasicRateTax = floor(pppBasicRateAllocatedIncome \* pppBasicRate, 2) // Round down to 2 decimal places
+       pppHigherRateAllocatedIncome = totalPayPensionsProfitTaxableIncome - pppBasicRateLimit
+       pppHigherRateTax = floor(pppHigherRateAllocatedIncome \* pppHigherRate, 2) // Round down to 2 decimal places
+       pppAdditionalRateAllocatedIncome = 0
+       remainingBasicRateBand = 0
+       remainingHigherRateBand = pppHigherRateLimit – pppBasicRateThreshold - pppHigherRateAllocatedIncome
+    else
+       pppBasicRateAllocatedIncome = pppBasicRateLimit
+       pppBasicRateTax = floor(pppBasicRateAllocatedIncome \* pppBasicRate, 2) // Round down to 2 decimal places
+       pppHigherRateAllocatedIncome = pppHigherRateLimit - pppBasicRateThreshold
+       pppHigherRateTax = floor(pppHigherRateAllocatedIncome \* pppHigherRate, 2) // Round down to 2 decimal places
+       pppAdditionalRateAllocatedIncome = totalPayPensionsProfitTaxableIncome - (pppBasicRateLimit + pppHigherRateLimit)
+       pppAdditionalRateTax = floor(pppAdditionalRateAllocatedIncome \* pppAdditionalRate, 2) // Round down to 2 decimal places
+       remainingHigherRateBand = 0
+    end if
 
-// Calculate total PPP tax
-totalTaxPPP = pppBasicRateTax + pppHigherRateTax + pppAdditionalRateTax
-totalTaxPPP = floor(totalTaxPPP, 2) // Rounding down to nearest penny
-````
+    // Calculate total PPP tax
+    totalTaxPPP = pppBasicRateTax + pppHigherRateTax + pppAdditionalRateTax
+    totalTaxPPP = floor(totalTaxPPP, 2) // Rounding down to nearest penny
+   </code>
+</pre>
+
 ## National Insurance
 
 For general information about National Insurance, refer to [National Insurance: introduction (GOV.UK)](https://www.gov.uk/national-insurance). For information about National Insurance rates and thresholds for self-employed customers during tax year 2024-25, refer to [Rates and allowances: National Insurance contributions (GOV.UK)](https://www.gov.uk/government/publications/rates-and-allowances-national-insurance-contributions/rates-and-allowances-national-insurance-contributions).

@@ -12,7 +12,7 @@ Income tax calculations cover a range of income sources, including employment ea
 
 All parameters used as inputs for self-employment calculations are in the [Self Employment Business API](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/self-employment-business-api/). However, some parameter names in the pseudocode differ slightly from those in the API and are noted in pseudocode comments.
 
-> **Note:** For calculation purposes, self-employment data is processed for each income source. Customers with multiple self-employments will have source-level calculations handled separately, with totals across all sources calculated elsewhere in this document, such as [Income summary totals](#_Income_summary_totals).
+> **Note:** For calculation purposes, self-employment data is processed for each income source. Customers with multiple self-employments will have source-level calculations handled separately, with totals across all sources calculated elsewhere in this document, such as [Income summary totals](#income-summary-totals).
 
 ### Self-employment income
 

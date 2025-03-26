@@ -16,29 +16,29 @@ Below is calculation pseudocode for adjusted net income.
 
 <pre>
    <code>
-    // Input parameters
-    totalIncomeFromAllSources // Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a>
-    giftOfInvestmentsAndPropertyToCharity
-    grossGiftAidPayments
-    lossesAppliedToGeneralIncome
-    grossAnnuityPayments
-    qualifyingLoanInterestFromInvestments
-    postCessationTradeReliefs
-    totalPensionContributionsAllowance
-    totalPensionContributionsRelief
+<font color="#85994b">// Input parameter</font>
+totalIncomeFromAllSources <font color="#85994b">// Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a></font>
+giftOfInvestmentsAndPropertyToCharity
+grossGiftAidPayments
+lossesAppliedToGeneralIncome
+grossAnnuityPayments
+qualifyingLoanInterestFromInvestments
+postCessationTradeReliefs
+totalPensionContributionsAllowance
+totalPensionContributionsRelief
 
-    // Other parameters used for calculations
-    totalDeductionsForAdjustedNetIncome
-    adjustedNetIncome
+<font color="#85994b">// Other parameters used for calculations</font>
+totalDeductionsForAdjustedNetIncome
+adjustedNetIncome
 
-    // Calculate totalIncomeFromAllSources (Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a>)
-    totalIncomeFromAllSources = totalDividendIncomeForUkOtherAndForeign + totalSavingsIncome + totalProfitFromPayPensionsProfit + totalProfitFromTaxedUkGains + totalProfitFromTaxedForeignGains + totalEmploymentLumpSumsNotLiableForPPP
+<font color="#85994b">// Calculate totalIncomeFromAllSources (Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a>)</font>
+totalIncomeFromAllSources = totalDividendIncomeForUkOtherAndForeign + totalSavingsIncome + totalProfitFromPayPensionsProfit + totalProfitFromTaxedUkGains + totalProfitFromTaxedForeignGains + totalEmploymentLumpSumsNotLiableForPPP
 
-    // Calculate totalDeductionsForAdjustedNetIncome
-    totalDeductionsForAdjustedNetIncome = giftOfInvestmentsAndPropertyToCharity + grossGiftAidPayments + lossesAppliedToGeneralIncome + grossAnnuityPayments + qualifyingLoanInterestFromInvestments + postCessationTradeReliefs + totalPensionContributionsAllowance + totalPensionContributionsRelief
+<font color="#85994b">// Calculate totalDeductionsForAdjustedNetIncome</font>
+totalDeductionsForAdjustedNetIncome = giftOfInvestmentsAndPropertyToCharity + grossGiftAidPayments + lossesAppliedToGeneralIncome + grossAnnuityPayments + qualifyingLoanInterestFromInvestments + postCessationTradeReliefs + totalPensionContributionsAllowance + totalPensionContributionsRelief
 
-    // Calculate adjustedNetIncome
-    adjustedNetIncome = totalIncomeFromAllSources – totalDeductionsForAdjustedNetIncome
+<font color="#85994b">// Calculate adjustedNetIncome</font>
+adjustedNetIncome = totalIncomeFromAllSources – totalDeductionsForAdjustedNetIncome
    </code>
 </pre>
 
@@ -50,79 +50,79 @@ Income Tax liability is calculated based on taxable income and the applicable ta
 
 <pre>
    <code>
-   // Initialise Pay Pensions Profit (PPP) Bands
-   pppBasicRateName = "BRT" // Basic rate band for PPP income
-   pppBasicRate = 20% // Tax rate for the basic rate band
-   pppBasicRateThreshold = 37700
-   pppBasicRateLimit = pppBasicRateThreshold + Basic rate extension // Upper limit of the basic rate band
-   PppBasicRateAllocatedIncome // Income allocated to this band
-   PppBasicRateTax // Tax calculated for this band
+<font color="#85994b">// Initialise Pay Pensions Profit (PPP) Bands</font>
+pppBasicRateName = "BRT" <font color="#85994b">// Basic rate band for PPP income</font>
+pppBasicRate = 20% <font color="#85994b">// Tax rate for the basic rate band</font>
+pppBasicRateThreshold = 37700
+pppBasicRateLimit = pppBasicRateThreshold + Basic rate extension <font color="#85994b">// Upper limit of the basic rate band</font>
+pppBasicRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
+pppBasicRateTax <font color="#85994b">// Tax calculated for this band</font>
 
-   pppHigherRateName = "HRT" // Higher rate band for PPP income
-   pppHigherRate = 40% // Tax rate for the higher rate band
-   pppHigherRateLimit = 125140 // Upper limit of the higher rate band
-   pppHigherRateAllocatedIncome // Income allocated to this band
-   pppHigherRateTax // Tax calculated for this band
+pppHigherRateName = "HRT" <font color="#85994b">// Higher rate band for PPP income</font>
+pppHigherRate = 40% <font color="#85994b">// Tax rate for the higher rate band</font>
+pppHigherRateLimit = 125140 <font color="#85994b">// Upper limit of the higher rate band</font>
+pppHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
+pppHigherRateTax <font color="#85994b">// Tax calculated for this band</font>
 
-   pppAdditionalRateName = "ART" // Additional rate band for PPP income
-   pppAdditionalRate = 45% // Tax rate for the additional rate band
-   pppAdditionalRateLimit // No upper limit for the additional rate band
-   pppAdditionalRateAllocatedIncome // Income allocated to this band
-   pppAdditionalRateTax // Tax calculated for this band
+pppAdditionalRateName = "ART" <font color="#85994b">// Additional rate band for PPP income</font>
+pppAdditionalRate = 45% <font color="#85994b">// Tax rate for the additional rate band</font>
+pppAdditionalRateLimit <font color="#85994b">// No upper limit for the additional rate band</font>
+pppAdditionalRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
+pppAdditionalRateTax <font color="#85994b">// Tax calculated for this band</font>
 
-   // Personal Allowance for 2024/25
-   personalAllowance = 12570 // £12,570 (in this scenario; it can be reduced allowance in some cases)
-   personalAllowanceReduction // Reduced amount in Personal Allowance
+<font color="#85994b">// Personal Allowance for 2024/25</font>
+personalAllowance = 12570 <font color="#85994b">// £12,570 (in this scenario; it can be reduced allowance in some cases)</font>
+personalAllowanceReduction <font color="#85994b">// Reduced amount in Personal Allowance</font>
 
-   // This snippet includes allowances relevant to the example scenario presented. There are other allowances and deductions that will be applicable in an ideal scenario.
+<font color="#85994b">// This snippet includes allowances relevant to the example scenario presented. There are other allowances and deductions that will be applicable in an ideal scenario.</font>
 
-   // Income Sources
-   totalProfitFromPayPensionsProfit// Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a>
+<font color="#85994b">// Income Sources</font>
+totalProfitFromPayPensionsProfit<font color="#85994b">// Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a></font>
 
-   // Other parameters used for calculations
-   totalPayPensionsProfitTaxableIncome // Taxable income from employment, pensions, self-employment profits, and property rental income after applying any deductions or allowances
-   totalTaxPPP // Total tax on pay, pensions, and profits
+<font color="#85994b">// Other parameters used for calculations</font>
+totalPayPensionsProfitTaxableIncome <font color="#85994b">// Taxable income from employment, pensions, self-employment profits, and property rental income after applying any deductions or allowances</font>
+totalTaxPPP <font color="#85994b">// Total tax on pay, pensions, and profits</font>
 
-   // Step 1: Allocate Personal Allowance
-   // Deduct Personal Allowance from non-savings income first
+<font color="#85994b">// Step 1: Allocate Personal Allowance</font>
+<font color="#85994b">// Deduct Personal Allowance from non-savings income first</font>
 
-    if totalProfitFromPayPensionsProfit <= personalAllowance then
-       totalPayPensionsProfitTaxableIncome = 0
-    else
-       totalPayPensionsProfitTaxableIncome = totalProfitFromPayPensionsProfit – Personal Allowance
-       remainingAllowance = 0
-    end if
+<font color="#1d70b8">if</font> totalProfitFromPayPensionsProfit <= personalAllowance <font color="#1d70b8">then</font>
+   totalPayPensionsProfitTaxableIncome = 0
+<font color="#1d70b8">else</font>
+    totalPayPensionsProfitTaxableIncome = totalProfitFromPayPensionsProfit – Personal Allowance
+    remainingAllowance = 0
+<font color="#1d70b8">end if</font>
 
-    // Step 2: Allocate non-savings income across bands
-    // Basic rate band calculations
+<font color="#85994b">// Step 2: Allocate non-savings income across bands</font>
+<font color="#85994b">// Basic rate band calculations</font>
 
-    if totalPayPensionsProfitTaxableIncome <= pppBasicRateLimit then
-       pppBasicRateAllocatedIncome = totalPayPensionsProfitTaxableIncome
-       pppBasicRateTax = floor(pppBasicRateAllocatedIncome \* pppBasicRate, 2) // Round down to 2 decimal places
-       pppHigherRateAllocatedIncome = 0
-       pppAdditionalRateAllocatedIncome = 0
-       remainingBasicRateBand = pppBasicRateLimit - pppBasicRateAllocatedIncome
-    else if totalPayPensionsProfitTaxableIncome <= pppHigherRateLimit then
-       pppBasicRateAllocatedIncome = pppBasicRateLimit
-       pppBasicRateTax = floor(pppBasicRateAllocatedIncome \* pppBasicRate, 2) // Round down to 2 decimal places
-       pppHigherRateAllocatedIncome = totalPayPensionsProfitTaxableIncome - pppBasicRateLimit
-       pppHigherRateTax = floor(pppHigherRateAllocatedIncome \* pppHigherRate, 2) // Round down to 2 decimal places
-       pppAdditionalRateAllocatedIncome = 0
-       remainingBasicRateBand = 0
-       remainingHigherRateBand = pppHigherRateLimit – pppBasicRateThreshold - pppHigherRateAllocatedIncome
-    else
-       pppBasicRateAllocatedIncome = pppBasicRateLimit
-       pppBasicRateTax = floor(pppBasicRateAllocatedIncome \* pppBasicRate, 2) // Round down to 2 decimal places
-       pppHigherRateAllocatedIncome = pppHigherRateLimit - pppBasicRateThreshold
-       pppHigherRateTax = floor(pppHigherRateAllocatedIncome \* pppHigherRate, 2) // Round down to 2 decimal places
-       pppAdditionalRateAllocatedIncome = totalPayPensionsProfitTaxableIncome - (pppBasicRateLimit + pppHigherRateLimit)
-       pppAdditionalRateTax = floor(pppAdditionalRateAllocatedIncome \* pppAdditionalRate, 2) // Round down to 2 decimal places
-       remainingHigherRateBand = 0
-    end if
+<font color="#1d70b8">if</font> totalPayPensionsProfitTaxableIncome <= pppBasicRateLimit <font color="#1d70b8">then</font>
+   pppBasicRateAllocatedIncome = totalPayPensionsProfitTaxableIncome
+   pppBasicRateTax = roundDown(pppBasicRateAllocatedIncome \* pppBasicRate, 2) <font color="#85994b">// Round down to 2 decimal places</font>
+   pppHigherRateAllocatedIncome = 0
+   pppAdditionalRateAllocatedIncome = 0
+   remainingBasicRateBand = pppBasicRateLimit - pppBasicRateAllocatedIncome
+<font color="#1d70b8">else if</font> totalPayPensionsProfitTaxableIncome <= pppHigherRateLimit <font color="#1d70b8">then</font>
+   pppBasicRateAllocatedIncome = pppBasicRateLimit
+   pppBasicRateTax = roundDown(pppBasicRateAllocatedIncome \* pppBasicRate, 2) <font color="#85994b">// Round down to 2 decimal places</font>
+   pppHigherRateAllocatedIncome = totalPayPensionsProfitTaxableIncome - pppBasicRateLimit
+   pppHigherRateTax = roundDown(pppHigherRateAllocatedIncome \* pppHigherRate, 2) <font color="#85994b">// Round down to 2 decimal places</font>
+   pppAdditionalRateAllocatedIncome = 0
+   remainingBasicRateBand = 0
+   remainingHigherRateBand = pppHigherRateLimit – pppBasicRateThreshold - pppHigherRateAllocatedIncome
+<font color="#1d70b8">else</font>
+   pppBasicRateAllocatedIncome = pppBasicRateLimit
+   pppBasicRateTax = roundDown(pppBasicRateAllocatedIncome \* pppBasicRate, 2) <font color="#85994b">// Round down to 2 decimal places</font>
+   pppHigherRateAllocatedIncome = pppHigherRateLimit - pppBasicRateThreshold
+   pppHigherRateTax = roundDown(pppHigherRateAllocatedIncome \* pppHigherRate, 2) <font color="#85994b">// Round down to 2 decimal places</font>
+   pppAdditionalRateAllocatedIncome = totalPayPensionsProfitTaxableIncome - (pppBasicRateLimit + pppHigherRateLimit)
+   pppAdditionalRateTax = roundDown(pppAdditionalRateAllocatedIncome \* pppAdditionalRate, 2) <font color="#85994b">// Round down to 2 decimal places</font>
+   remainingHigherRateBand = 0
+<font color="#1d70b8">end if</font>
 
-    // Calculate total PPP tax
-    totalTaxPPP = pppBasicRateTax + pppHigherRateTax + pppAdditionalRateTax
-    totalTaxPPP = floor(totalTaxPPP, 2) // Rounding down to nearest penny
+<font color="#85994b">// Calculate total PPP tax</font>
+totalTaxPPP = pppBasicRateTax + pppHigherRateTax + pppAdditionalRateTax
+totalTaxPPP = roundDown(totalTaxPPP, 2) <font color="#85994b">// Rounding down to 2 decimal places</font>
    </code>
 </pre>
 
@@ -134,103 +134,100 @@ For general information about National Insurance, refer to [National Insurance: 
 
 Below is the calculation pseudocode for National Insurance.
 
-````
-// Income source
-totalSelfEmploymentTaxableProfit // NICs are calculated on the combined total of profits from all of a customer's self-employment income sources
+<pre>
+   <code>
+<font color="#85994b">// Income source</font>
+totalSelfEmploymentTaxableProfit <font color="#85994b">// NICs are calculated on the combined total of profits from all of a customer's self-employment income sources</font>
 
-// Class 2 National Insurance threshold for tax year 2024-25 (self-employed)
-smallProfitsThreshold = 6725 // Small profits threshold amount per year: £6,725 (SPT)
+<font color="#85994b">// Class 2 National Insurance threshold for tax year 2024-25 (self-employed)</font>
+smallProfitsThreshold = 6725 <font color="#85994b">// Small profits threshold amount per year: £6,725 (SPT)</font>
 
-// Class 4 National Insurance thresholds and rates for tax year 2024-25 (self-employed)
-lowerProfitsLimit = 12570 // Lower Profits Limit: £12,570 per year (LPL)
-upperProfitsLimit = 50270 // Upper Profits Limit: £50,270 per year (UPL)
-aboveUplRate = 2% // Rate above UPL
-lplToUplRate = 6% // Rate between LPL and UPL
+<font color="#85994b">// Class 4 National Insurance thresholds and rates for tax year 2024-25 (self-employed)</font>
+lowerProfitsLimit = 12570 <font color="#85994b">// Lower Profits Limit: £12,570 per year (LPL)</font>
+upperProfitsLimit = 50270 <font color="#85994b">// Upper Profits Limit: £50,270 per year (UPL)</font>
+aboveUplRate = 2% <font color="#85994b">// Rate above UPL</font>
+lplToUplRate = 6% <font color="#85994b">// Rate between LPL and UPL</font>
 
-// Class 4 NICs exemption data
-class4NicsExemptionReason // Self Employment Business API parameter to indicate a reason why a customer is exempt from paying Class 4 NICs, such as age
+<font color="#85994b">// Class 4 NICs exemption data</font>
+class4NicsExemptionReason <font color="#85994b">// Self Employment Business API parameter to indicate a reason why a customer is exempt from paying Class 4 NICs, such as age</font>
 
-// Other parameters used for calculations
-class2Nic // Calculated Class 2 NICs amount
-class2NicAmount // Class 2 NICs amount provided by external HMRC system
-class2NicLiable // Indicates if the customer is liable for Class 2 NICs
-customerIsLiableToPayClass2NicsAndWantsToPayVoluntarily // Indicates if customer is liable for Class 2 NICs and has opted to pay voluntarily for state benefits or State Pension reasons
-totalClass4NIC // Total calculated Class 4 NICs amount
+<font color="#85994b">// Other parameters used for calculations</font>
+class2Nic <font color="#85994b">// Calculated Class 2 NICs amount</font>
+class2NicAmount <font color="#85994b">// Class 2 NICs amount provided by external HMRC system</font>
+class2NicLiable <font color="#85994b">// Indicates if the customer is liable for Class 2 NICs</font>
+customerIsLiableToPayClass2NicsAndWantsToPayVoluntarily <font color="#85994b">// Indicates if customer is liable for Class 2 NICs and has opted to pay voluntarily for state benefits or State Pension reasons</font>
+totalClass4NIC <font color="#85994b">// Total calculated Class 4 NICs amount</font>
 
-// Initialise National Insurance Bands
-niZeroRateName = "ZRT" // Zero-rate band for NI
-niZeroRate = 0 // NIC rate for zero-rate band
-niZeroRateLimit = lowerProfitsLimit // LPL serves as the upper limit for this band (£12,570)
-niZeroRateAllocatedIncome // Income allocated to this band
-niZeroRateNIC // NIC calculated for this band
-niBasicRateName = "BRT" // Basic rate band for NI
-niBasicRate = 6% // NIC rate for the basic rate band
-niBasicRateLimit = upperProfitsLimit // UPL serves as the upper limit for this band (£50,270)
-niBasicRateAllocatedIncome // Income allocated to this band
-niBasicRateNIC // NIC calculated for this band
-niHigherRateName = "HRT" // Higher rate band for NI
-niHigherRate = 2% // NIC rate for the higher rate band
-niHigherRateLimit // No upper limit for this band
-niHigherRateAllocatedIncome // Income allocated to this band
-niHigherRateNIC // NIC calculated for this band
+<font color="#85994b">// Initialise National Insurance Bands</font>
+niZeroRateName = "ZRT" <font color="#85994b">// Zero-rate band for NI</font>
+niZeroRate = 0 <font color="#85994b">// NIC rate for zero-rate band</font>
+niZeroRateLimit = lowerProfitsLimit <font color="#85994b">// LPL serves as the upper limit for this band (£12,570)</font>
+niZeroRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
+niZeroRateNIC <font color="#85994b">// NIC calculated for this band</font>
+niBasicRateName = "BRT" <font color="#85994b">// Basic rate band for NI</font>
+niBasicRate = 6% <font color="#85994b">// NIC rate for the basic rate band</font>
+niBasicRateLimit = upperProfitsLimit <font color="#85994b">// UPL serves as the upper limit for this band (£50,270)</font>
+niBasicRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
+niBasicRateNIC <font color="#85994b">// NIC calculated for this band</font>
+niHigherRateName = "HRT" <font color="#85994b">// Higher rate band for NI</font>
+niHigherRate = 2% <font color="#85994b">// NIC rate for the higher rate band</font>
+niHigherRateLimit <font color="#85994b">// No upper limit for this band</font>
+niHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
+niHigherRateNIC <font color="#85994b">// NIC calculated for this band</font>
 
-// Round down totalSelfEmploymentTaxableProfit to nearest penny
+<font color="#85994b">// Round down totalSelfEmploymentTaxableProfit to 2 decimal places</font>
 totalSelfEmploymentTaxableProfit = roundDown(totalSelfEmploymentTaxableProfit, 2)
 
-// Set up band rates for calculations
-aboveUplRate = floor(2 / 100, 10) // Results in 0.0200000000
-lplToUplRate = floor(6 / 100, 10) // Results in 0.0600000000
+<font color="#85994b">// Set up band rates for calculations</font>
+aboveUplRate = roundDown(2 / 100, 10) <font color="#85994b">// Results in 0.0200000000</font>
+lplToUplRate = roundDown(6 / 100, 10) <font color="#85994b">// Results in 0.0600000000</font>
 
-// Calculate Class 2 NICs using new rules for tax year 2024-25
-if totalSelfEmploymentTaxableProfit <= smallProfitsThreshold then
-    class2NicLiable = false // Customer is not liable for Class 2 NICs because total self-employment profits are below SPT
-    class2Nic = 0 // No NI is due
-else if totalSelfEmploymentTaxableProfit > smallProfitsThreshold and totalSelfEmploymentTaxableProfit <= lowerProfitsLimit
-         class2NicLiable = false // Customer is not liable for Class 2 NICs because total profits are between SPT and LPL
-         class2Nic = 0 // No NI is due because Class 2 NICs are ‘treated as paid’ for self-employment profits above SPT
-else if customerIsLiableToPayClass2NicsAndWantsToPayVoluntarily then
-     if class2NicAmount > 0 then // Verify that Class 2 NICs amount provided by external HMRC system is valid
-        class2Nic = class2NicAmount // Valid amount provided
-     else
-        class2Nic = 0 // No valid amount provided
-     end if
-else
-class2NicLiable = false // Customer is exempt and does not choose to pay voluntarily
-class2Nic = 0 // No NI is due
-end if
+<font color="#85994b">// Calculate Class 2 NICs using new rules for tax year 2024-25</font>
+<font color="#1d70b8">if</font> totalSelfEmploymentTaxableProfit <= smallProfitsThreshold <font color="#1d70b8">then</font>
+    class2Nic = 0 <font color="#85994b">// No NI is due</font>
+    <font color="#1d70b8">if</font>customerIsLiableToPayClass2NicsAndWantsToPayVoluntarily = true <font color="#1d70b8">then</font>
+        <font color="#1d70b8">if</font> class2NicAmount > 0 <font color="#1d70b8">then</font> <font color="#85994b">// Verify that Class 2 NICs amount provided by external HMRC system is valid</font>
+            class2Nic = class2NicAmount <font color="#85994b">// Valid amount provided</font>
+        <font color="#1d70b8">else</font> 
+            class2Nic = 0 <font color="#85994b">// No valid amount provided</font>
+        <font color="#1d70b8">end if</font>
+<font color="#1d70b8">else if</font> totalSelfEmploymentTaxableProfit > smallProfitsThreshold and totalSelfEmploymentTaxableProfit <= lowerProfitsLimit
+    class2Nic = 0 <font color="#85994b">// No NI is due because Class 2 NICs are ‘treated as paid’ for self-employment profits above SPT</font>
+<font color="#1d70b8">end if</font>
 
-// Calculate Class 4 NICs
+<font color="#85994b">// Calculate Class 4 NICs</font>
 
-// Check for Class 4 NICs exemption
-if class4NicsExemptionReason is not null then
-    totalClass4NIC = 0 // Customer is exempt
-    // No further calculations required
-else if totalSelfEmploymentTaxableProfit < lowerProfitsLimit then
-     totalClass4NIC = 0 // No NICs due for income below LPL
-else
-    // Allocate income across NI bands
-    if totalSelfEmploymentTaxableProfit <= niZeroRateLimit then
+<font color="#85994b">// Check for Class 4 NICs exemption</font>
+<font color="#1d70b8">if</font> class4NicsExemptionReason is not null <font color="#1d70b8">then</font>
+    totalClass4NIC = 0 <font color="#85994b">// Customer is exempt</font>
+    <font color="#85994b">// No further calculations required</font>
+<font color="#1d70b8">else if</font> totalSelfEmploymentTaxableProfit < lowerProfitsLimit <font color="#1d70b8">then</font>
+     totalClass4NIC = 0 <font color="#85994b">// No NICs due for income below LPL</font>
+<font color="#1d70b8">else</font>
+    <font color="#85994b">// Allocate income across NI bands</font>
+    if totalSelfEmploymentTaxableProfit <= niZeroRateLimit <font color="#1d70b8">then</font>
     niZeroRateAllocatedIncome = totalSelfEmploymentTaxableProfit
-    niZeroRateNIC = 0 // No NIC for Zero Rate Band
-    remainingIncome = 0 // All income fits within Zero Rate Band
-else if totalSelfEmploymentTaxableProfit > niZeroRateLimit and totalSelfEmploymentTaxableProfit <= niBasicRateLimit then
+    niZeroRateNIC = 0 <font color="#85994b">// No NIC for Zero Rate Band</font>
+    remainingIncome = 0 <font color="#85994b">// All income fits within Zero Rate Band</font>
+<font color="#1d70b8">else if</font> totalSelfEmploymentTaxableProfit > niZeroRateLimit and totalSelfEmploymentTaxableProfit <= niBasicRateLimit <font color="#1d70b8">then</font>
     niZeroRateAllocatedIncome = niZeroRateLimit
-    niZeroRateNIC = 0 // No NIC for Zero Rate Band
-    remainingIncome = totalSelfEmploymentTaxableProfit - niZeroRateLimit // Income exceeding Zero Rate Band
+    niZeroRateNIC = 0 <font color="#85994b">// No NIC for Zero Rate Band</font>
+    remainingIncome = totalSelfEmploymentTaxableProfit - niZeroRateLimit <font color="#85994b">// Income exceeding Zero Rate Band</font>
     niBasicRateAllocatedIncome = remainingIncome
-    niBasicRateNIC = floor(niBasicRateAllocatedIncome \* niBasicRate, 2) // NIC for Basic Rate Band
-else
-    // Income exceeds Basic Rate Band
+    niBasicRateNIC = roundDown(niBasicRateAllocatedIncome \* niBasicRate, 2) <font color="#85994b">// NIC for Basic Rate Band</font>
+<font color="#1d70b8">else</font>
+    <font color="#85994b">// Income exceeds Basic Rate Band</font>
     niZeroRateAllocatedIncome = niZeroRateLimit
-    niZeroRateNIC = 0 // No NIC for Zero Rate Band
+    niZeroRateNIC = 0 <font color="#85994b">// No NIC for Zero Rate Band</font>
     niBasicRateAllocatedIncome = niBasicRateLimit - niZeroRateLimit
-    niBasicRateNIC = floor(niBasicRateAllocatedIncome \* niBasicRate, 2) // NIC for Basic Rate Band
-    remainingIncome = totalSelfEmploymentTaxableProfit - niBasicRateLimit // Income exceeding Basic and Zero Rate Bands
+    niBasicRateNIC = roundDown(niBasicRateAllocatedIncome \* niBasicRate, 2) <font color="#85994b">// NIC for Basic Rate Band</font>
+    remainingIncome = totalSelfEmploymentTaxableProfit - niBasicRateLimit <font color="#85994b">// Income exceeding Basic and Zero Rate Bands</font>
     niHigherRateAllocatedIncome = remainingIncome
-    niHigherRateNIC = floor(niHigherRateAllocatedIncome \* niHigherRate, 2) // NIC for Higher Rate Band
-end if
+    niHigherRateNIC = roundDown(niHigherRateAllocatedIncome \* niHigherRate, 2) <font color="#85994b">// NIC for Higher Rate Band</font>
+<font color="#1d70b8">end if</font>
 
-// Calculate total NICs
+<font color="#85994b">// Calculate total NICs</font>
 totalClass4NIC = niZeroRateNIC + niBasicRateNIC + niHigherRateNIC
-totalClass4NIC = floor(totalClass4NIC, 2) // Round down to nearest penny
-````
+totalClass4NIC = roundDown(totalClass4NIC, 2) <font color="#85994b">// Round down to 2 decimal places</font>
+</code>
+</pre>

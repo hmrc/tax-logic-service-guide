@@ -10,18 +10,13 @@ The document is intended for business analysts, software developers, and softwar
 
 **_Persona_**
 
-In this scenario, consider ‘Steve the Painter’, who is currently living in the UK, is self-employed and has income from UK property (non-FHL). He receives a State Benefit and pays Class 4 National Insurance (NI).
+In this scenario, consider ‘Steve the Painter’, who is currently living in the UK, is self-employed and has income from UK property (non-FHL). He receives state benefits and pays Class 4 National Insurance (NI).
 
 **_Tax calculation_**
 
 <table>
     <tr>
-        <td><b>Income Received (before tax taken off)</b></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td colspan="6">**Income Received (before tax taken off)**</td>
     </tr>
     <tr>
         <td>Profit from self-employment</td>
@@ -48,44 +43,33 @@ In this scenario, consider ‘Steve the Painter’, who is currently living in t
         <td></td>
     </tr>
     <tr>
-        <td><b>Total Income Received</b></td>
+        <td>**Total Income Received**</td>
         <td></td>
-        <td><b>£45,000</b></td>
         <td></td>
+        <td>**£45,000**</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <td>minus Personal Allowance</td>
-        <td></td>
+        <td>minus</td>
+        <td>Personal Allowance</td>
         <td></td>
         <td>£12,570</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <td><b>Total Income on which tax is due</b></td>
-        <td></td>
-        <td></td>
-        <td><b>£32,430</b></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><b>How I have worked out your income tax</b></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td colspan="3">**Total Income on which tax is due**</td>
+        <td>**£32,430**</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
+        <td colspan="6">**How I have worked out your income tax**</td>
+    </tr>
+    <tr>
         <td></td>
-        <td>Pay, Pensions, Profit (UK rate)</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td colspan="5">Pay, Pensions, Profit etc. (UK rate for England and Northern Ireland)</td>
     </tr>
     <tr>
         <td></td>
@@ -96,8 +80,7 @@ In this scenario, consider ‘Steve the Painter’, who is currently living in t
         <td>£6,486.00</td>
     </tr>
     <tr>
-        <td><b>Total income on which tax is being charged</b></td>
-        <td></td>
+        <td colspan="2">**Total income on which tax has charged**</td>
         <td></td>
         <td>£32,430</td>
         <td></td>
@@ -112,35 +95,24 @@ In this scenario, consider ‘Steve the Painter’, who is currently living in t
         <td></td>
     </tr>
     <tr>
-        <td><b>Income tax charged after allowance &amp; relief</b></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td colspan="5">**Income tax charged after allowance and reliefs**</td>
         <td>£6,486.00</td>
     </tr>
     <tr>
-        <td><b>plus Class 4 National Insurance</b></td>
-        <td></td>
-        <td></td>
+        <td>**plus**</td>
+        <td>**Class 4 National Insurance contributions**</td>
         <td>£17,430</td>
         <td>x 6% =</td>
         <td>£1,045.80</td>
+        <td></td>
     </tr>
     <tr>
-        <td><b>Total Class 4 National Insurance Due</b></td>
         <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td colspan="4">**Total Class 4 National Insurance contributions due**</td>
         <td>£1,045.80</td>
     </tr>
     <tr>
-        <td><b>Total Income tax and NI due</b></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td colspan="5">**Total Income tax and NI due**</td>
         <td>£7,531.80</td>
     </tr>
 </table>
@@ -153,13 +125,13 @@ This document is structured to align with the tax calculation process:
 - applying allowances and reliefs
 - detailing the tax calculation process
 
-Each section is further divided into relevant subsections that cover the following:
+Each section is further divided into relevant subsections that include:
 
-- description along with relevant APIs used in the calculation
-- input parameters from the APIs and other sections
-- other parameters utilised in the tax calculation
-- pseudocode outlining how the output is calculated, including rounding procedures
+- description along with the relevant APIs used in the calculation
+- input parameters from the APIs and other related sections
+- other parameters referenced in the pseudocode
+- pseudocode outlining the step-by-step calculation process
 
 ## Getting help and support
 
-If you have specific questions about this document or would like to provide feedback, please email [makingtaxdigital-softwarevendors@hmrc.gov.uk](mailto:makingtaxdigital-softwarevendors@hmrc.gov.uk)
+If you have specific questions about this document or would like to provide feedback, please email [SDSTeam@hmrc.gov.uk](mailto:sdsteam@hmrc.gov.uk)

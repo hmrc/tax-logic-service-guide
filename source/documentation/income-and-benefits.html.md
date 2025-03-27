@@ -22,7 +22,7 @@ Below is the calculation pseudocode for each self-employment income source.
 
 <pre>
     <code>
-    <font color="#85994b">// Input parameters (parameter names are same as API parameter names)</font>
+<font color="#85994b">// Input parameters (parameter names are same as API parameter names)</font>
 turnover <font color="#85994b">// The takings, fees, sales or money earned by the business.</font>
 other <font color="#85994b">// Any other business income not included in turnover.</font>
 
@@ -55,7 +55,7 @@ interestOnBankOtherLoansAllowable <font color="#85994b">// API parameter name: i
 financeChargesAllowable <font color="#85994b">// API parameter name: financeCharges</font>
 irrecoverableDebtsAllowable <font color="#85994b">// API parameter name: irrecoverableDebts</font>
 professionalFeesAllowable <font color="#85994b">// API parameter name: professionalFees</font>
-depreciationAllowable <font color="#85994b">// API parameter name: depcreciation</font>
+depreciationAllowable <font color="#85994b">// API parameter name: depreciation</font>
 otherExpensesAllowable <font color="#85994b">// API parameter name: otherExpenses</font>
 advertisingCostsAllowable <font color="#85994b">// API parameter name: advertisingCosts</font>
 businessEntertainmentCostsAllowable <font color="#85994b">// API parameter name: businessEntertainmentCosts</font>
@@ -211,8 +211,8 @@ adjustedProfitOrLossFromSelfEmployment = netProfitFromSelfEmployment + netLossFr
 <font color="#1d70b8">else</font>
     taxableLossFromSelfEmployment = adjustedProfitOrLossFromSelfEmployment
 <font color="#1d70b8">end if</font>
-</pre>
 </code>
+</pre>
 
 ## Property
 

@@ -10,43 +10,39 @@ The document is intended for business analysts, software developers, and softwar
 
 **_Persona_**
 
-In this scenario, consider ‘Steve the Painter’, who is currently living in the UK, is self-employed and has income from UK property (non-FHL). He receives state benefits and pays Class 4 National Insurance (NI).
+In this scenario consider ‘Steve the Painter’, who is currently living in the UK, is self-employed and has income from UK property (non-FHL). He receives state benefits and pays Class 4 National Insurance (NI).
 
-**_Tax calculation_**
+**_Tax calculation for 2024-25_**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(year ended 5 April 2025)
 
 <table>
     <tr>
-        <td colspan="6">**Income Received (before tax taken off)**</td>
+        <td colspan="6"><b>Income Received (before tax taken off)</b></td>
     </tr>
     <tr>
-        <td>Profit from self-employment</td>
-        <td></td>
+        <td colspan="2">Profit from self-employment</td>
         <td>£30,000</td>
         <td></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <td>Profit from UK land and property</td>
-        <td></td>
+        <td colspan="2">Profit from UK land and property</td>
         <td>£5,000</td>
         <td></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <td>UK Pensions and state benefits</td>
-        <td></td>
+        <td colspan="2">UK Pensions and state benefits</td>
         <td>£10,000</td>
         <td></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <td>**Total Income Received**</td>
+        <td colspan="2"><b>Total Income Received</b></td>
         <td></td>
-        <td></td>
-        <td>**£45,000**</td>
+        <td>£45,000</td>
         <td></td>
         <td></td>
     </tr>
@@ -59,13 +55,21 @@ In this scenario, consider ‘Steve the Painter’, who is currently living in t
         <td></td>
     </tr>
     <tr>
-        <td colspan="3">**Total Income on which tax is due**</td>
-        <td>**£32,430**</td>
+        <td colspan="3"><b>Total Income on which tax is due</b></td>
+        <td>£32,430</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <td colspan="6">**How I have worked out your income tax**</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="6"><b>How I have worked out your income tax</b></td>
     </tr>
     <tr>
         <td></td>
@@ -80,7 +84,7 @@ In this scenario, consider ‘Steve the Painter’, who is currently living in t
         <td>£6,486.00</td>
     </tr>
     <tr>
-        <td colspan="2">**Total income on which tax has charged**</td>
+        <td colspan="2"><b>Total income on which tax has charged</b></td>
         <td></td>
         <td>£32,430</td>
         <td></td>
@@ -95,12 +99,12 @@ In this scenario, consider ‘Steve the Painter’, who is currently living in t
         <td></td>
     </tr>
     <tr>
-        <td colspan="5">**Income tax charged after allowance and reliefs**</td>
+        <td colspan="5"><b>Income tax charged after allowance and reliefs</b></td>
         <td>£6,486.00</td>
     </tr>
     <tr>
-        <td>**plus**</td>
-        <td>**Class 4 National Insurance contributions**</td>
+        <td><b>plus</b></td>
+        <td><b>Class 4 National Insurance contributions</b></td>
         <td>£17,430</td>
         <td>x 6% =</td>
         <td>£1,045.80</td>
@@ -108,11 +112,11 @@ In this scenario, consider ‘Steve the Painter’, who is currently living in t
     </tr>
     <tr>
         <td></td>
-        <td colspan="4">**Total Class 4 National Insurance contributions due**</td>
+        <td colspan="4"><b>Total Class 4 National Insurance contributions due</b></td>
         <td>£1,045.80</td>
     </tr>
     <tr>
-        <td colspan="5">**Total Income tax and NI due**</td>
+        <td colspan="5"><b>Income tax and Class 4 National Insurance contributions due</b></td>
         <td>£7,531.80</td>
     </tr>
 </table>

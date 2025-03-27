@@ -65,7 +65,7 @@ businessEntertainmentCostsAllowable <font color="#85994b">// API parameter name:
 <font color="#85994b">// Other parameter used for calculations</font>
 totalSelfEmploymentExpenses <font color="#85994b">// Total value can be negative</font>  
 
-<font color="#85994b">// Calculate totalExpenses</font>
+<font color="#85994b">// Calculate totalSelfEmploymentExpenses</font>
 totalSelfEmploymentExpenses = roundUp(consolidatedExpenses + costOfGoodsAllowable + paymentsToSubcontractorsAllowable + wagesAndStaffCostsAllowable + carVanTravelExpensesAllowable + premisesRunningCostsAllowable + maintenanceCostsAllowable + adminCostsAllowable + interestOnBankOtherLoansAllowable + financeChargesAllowable + irrecoverableDebtsAllowable + professionalFeesAllowable + depreciationAllowable + otherExpensesAllowable + advertisingCostsAllowable + businessEntertainmentCostsAllowable, 2) <font color="#85994b">// Round up to 2 decimal places</font>
    </code>
 </pre>
@@ -109,7 +109,7 @@ goodAndServicesOwnUse
 <font color="#85994b">// Other parameter used for calculations</font>
 totalSelfEmploymentAdditions
 
-<font color="#85994b">// Calculate totalAdditions</font>
+<font color="#85994b">// Calculate totalSelfEmploymentAdditions</font>
 totalSelfEmploymentAdditions = roundDown(costOfGoodsDisallowable + paymentsToSubcontractorsDisallowable + wagesAndStaffCostsDisallowable + carVanTravelExpensesDisallowable + premisesRunningCostsDisallowable + maintenanceCostsDisallowable + adminCostsDisallowable + interestOnBankOtherLoansDisallowable + financeChargesDisallowable + irrecoverableDebtsDisallowable + professionalFeesDisallowable + depreciationDisallowable + otherExpensesDisallowable + advertisingCostsDisallowable + businessEntertainmentCostsDisallowable + outstandingBusinessIncome + balancingChargeOther + balancingChargeBpra + goodAndServicesOwnUse, 2) <font color="#85994b">// Round down to 2 decimal places</font>
    </code>
 </pre>
@@ -144,7 +144,7 @@ includedNonTaxableProfits <font color="#85994b">// Parameter name is same as API
 <font color="#85994b">// Other parameter used for calculations  </font>
 totalSelfEmploymentDeductions
 
-<font color="#85994b">// Calculate totalDeductions</font>
+<font color="#85994b">// Calculate totalSelfEmploymentDeductions</font>
 totalSelfEmploymentDeductions = roundUp(tradingAllowance + annualInvestmentAllowance + capitalAllowanceMainPool + capitalAllowanceSpecialRatePool + zeroEmmissionGoods + businessPremisesRennovationAllowance + enhancedCapitalAllowance + allowanceOnSales + capitalAllowanceSingleAssetPool + includedNonTaxableProfits + electricChargePointAllowance + zeroEmissionsCarAllowance + structuredBuildingAllowance + enhancedStructuredBuildingAllowance, 2) <font color="#85994b">// Round up to 2 decimal places</font>
    </code>
 </pre>
@@ -449,7 +449,6 @@ totalIncomeFromAllSources
  
 <font color="#85994b">// Calculate totalProfitFromSelfEmployment</font>
 totalProfitFromSelfEmployment = sum [taxableProfitFromSelfEmployment] <font color="#85994b">// Aggregate of all self-employment income</font>
-
 
 <font color="#85994b">// Calculate totalSavingsIncome</font> 
 totalSavingsIncome = totalUntaxedInterest + totalGrossUkInterest + foreignSavingsInterest + totalGrossSecurities + untaxedUKGainsIncome + untaxedForeignGainsIncome

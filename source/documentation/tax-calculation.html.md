@@ -31,9 +31,6 @@ totalPensionContributionsRelief
 totalDeductionsForAdjustedNetIncome
 adjustedNetIncome
 
-<font color="#85994b">// Calculate totalIncomeFromAllSources (Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a>)</font>
-totalIncomeFromAllSources = totalDividendIncomeForUkOtherAndForeign + totalSavingsIncome + totalProfitFromPayPensionsProfit + totalProfitFromTaxedUkGains + totalProfitFromTaxedForeignGains + totalEmploymentLumpSumsNotLiableForPPP
-
 <font color="#85994b">// Calculate totalDeductionsForAdjustedNetIncome</font>
 totalDeductionsForAdjustedNetIncome = giftOfInvestmentsAndPropertyToCharity + grossGiftAidPayments + lossesAppliedToGeneralIncome + grossAnnuityPayments + qualifyingLoanInterestFromInvestments + postCessationTradeReliefs + totalPensionContributionsAllowance + totalPensionContributionsRelief
 
@@ -77,7 +74,7 @@ personalAllowanceReduction <font color="#85994b">// Reduced amount in Personal A
 <font color="#85994b">// This snippet includes allowances relevant to the example scenario presented. There are other allowances and deductions that will be applicable in an ideal scenario.</font>
 
 <font color="#85994b">// Income Sources</font>
-totalProfitFromPayPensionsProfit<font color="#85994b">// Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a></font>
+totalProfitFromPayPensionsProfit <font color="#85994b">// Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a></font>
 
 <font color="#85994b">// Other parameters used for calculations</font>
 totalPayPensionsProfitTaxableIncome <font color="#85994b">// Taxable income from employment, pensions, self-employment profits, and property rental income after applying any deductions or allowances</font>
@@ -122,7 +119,7 @@ totalTaxPPP <font color="#85994b">// Total tax on pay, pensions, and profits</fo
 
 <font color="#85994b">// Calculate total PPP tax</font>
 totalTaxPPP = pppBasicRateTax + pppHigherRateTax + pppAdditionalRateTax
-totalTaxPPP = roundDown(totalTaxPPP, 2) <font color="#85994b">// Rounding down to 2 decimal places</font>
+totalTaxPPP = roundDown(totalTaxPPP, 2) <font color="#85994b">// Round down to 2 decimal places</font>
    </code>
 </pre>
 

@@ -128,8 +128,8 @@ tradingAllowance <font color="#85994b">// API parameter name: tradingIncomeAllow
 annualInvestmentAllowance <font color="#85994b">// Parameter name is same as API parameter name</font>
 capitalAllowanceMainPool <font color="#85994b">// Parameter name is same as API parameter name</font>
 capitalAllowanceSpecialRatePool <font color="#85994b">// Parameter name is same as API parameter name</font>
-zeroEmmissionGoods <font color="#85994b">// API parameter name: zeroEmissionsGoodsVehicleAllowance</font>
-businessPremisesRennovationAllowance <font color="#85994b">// Parameter name is same as API parameter name</font>
+zeroEmissionGoods <font color="#85994b">// API parameter name: zeroEmissionGoodsVehicleAllowance</font>
+businessPremisesRenovationAllowance <font color="#85994b">// Parameter name is same as API parameter name</font>
 enhancedCapitalAllowance <font color="#85994b">// Parameter name is same as API parameter name</font>
 allowanceOnSales <font color="#85994b">// Parameter name is same as API parameter name</font>
 capitalAllowanceSingleAssetPool <font color="#85994b">// Parameter name is same as API parameter name</font>
@@ -145,7 +145,7 @@ includedNonTaxableProfits <font color="#85994b">// Parameter name is same as API
 totalSelfEmploymentDeductions
 
 <font color="#85994b">// Calculate totalSelfEmploymentDeductions</font>
-totalSelfEmploymentDeductions = roundUp(tradingAllowance + annualInvestmentAllowance + capitalAllowanceMainPool + capitalAllowanceSpecialRatePool + zeroEmmissionGoods + businessPremisesRennovationAllowance + enhancedCapitalAllowance + allowanceOnSales + capitalAllowanceSingleAssetPool + includedNonTaxableProfits + electricChargePointAllowance + zeroEmissionsCarAllowance + structuredBuildingAllowance + enhancedStructuredBuildingAllowance, 2) <font color="#85994b">// Round up to 2 decimal places</font>
+totalSelfEmploymentDeductions = roundUp(tradingAllowance + annualInvestmentAllowance + capitalAllowanceMainPool + capitalAllowanceSpecialRatePool + zeroEmissionGoods + businessPremisesRenovationAllowance + enhancedCapitalAllowance + allowanceOnSales + capitalAllowanceSingleAssetPool + includedNonTaxableProfits + electricChargePointAllowance + zeroEmissionsCarAllowance + structuredBuildingAllowance + enhancedStructuredBuildingAllowance, 2) <font color="#85994b">// Round up to 2 decimal places</font>
    </code>
 </pre>
 
@@ -158,7 +158,7 @@ Below is the calculation pseudocode for self-employment adjustments.
 <pre>
     <code>
 <font color="#85994b">// Input parameters</font> 
-<font color="#85994b">//Parameter names are same as API parameter names)</font>
+<font color="#85994b">// Parameter names are same as API parameter names</font>
 basisAdjustment
 accountingAdjustment
 averagingAdjustment
@@ -202,7 +202,7 @@ taxableLossFromSelfEmployment <font color="#85994b">// Final taxable loss after 
 
 
 <font color="#85994b">// Calculate adjusted profit or loss by applying additions, deductions, and adjustments</font>
-adjustedProfitOrLossFromSelfEmployment = netProfitFromSelfEmployment + netLossFromSelfEmployment + totalSelfEmploymentAdditions - totalSelfEmploymentDeductions + totalSelfEmploymentAccountingAdjustments <font color="#85994b">// Either netProfitFromSe or netLossFromSe would be present</font>
+adjustedProfitOrLossFromSelfEmployment = netProfitFromSelfEmployment + netLossFromSelfEmployment + totalSelfEmploymentAdditions - totalSelfEmploymentDeductions + totalSelfEmploymentAccountingAdjustments <font color="#85994b">// Either netProfitFromSelfEmployment or netLossFromSelfEmployment would be present</font>
 
 
 <font color="#85994b">// Determine if the adjusted amount is a taxable profit or loss</font>
@@ -329,9 +329,9 @@ totalDeductionsFromUkPropertyOther
 
 <font color="#85994b">// Calculate totalDeductionsFromUkPropertyOther</font>
 <font color="#1d70b8">if</font> propertyAllowance > 0 <font color="#1d70b8">then</font>  
-    totalDeductions = propertyAllowance  
+    totalDeductionsFromUkPropertyOther = propertyAllowance  
 <font color="#1d70b8">else</font>  
-    totalDeductions = zeroEmissionsGoodsVehicleAllowance + annualInvestmentAllowance + costOfReplacingDomesticItems + businessPremisesRenovationAllowance + otherCapitalAllowance + electricChargePointAllowance + zeroEmissionsCarAllowance + structuredBuildingAllowance + enhancedStructuredBuildingAllowance + rarReliefClaimed
+    totalDeductionsFromUkPropertyOther = zeroEmissionsGoodsVehicleAllowance + annualInvestmentAllowance + costOfReplacingDomesticItems + businessPremisesRenovationAllowance + otherCapitalAllowance + electricChargePointAllowance + zeroEmissionsCarAllowance + structuredBuildingAllowance + enhancedStructuredBuildingAllowance + rarReliefClaimed
 <font color="#1d70b8">end if</font>  
 
 <font color="#85994b">// Apply rounding</font>
@@ -351,7 +351,6 @@ totalExpensesFromUkPropertyOther
 totalAdditionsFromUkPropertyOther
 totalDeductionsFromUkPropertyOther
 
-
 <font color="#85994b">// Other parameters used for calculations</font>
 netProfitFromUkPropertyOther = 0
 netLossFromUkPropertyOther = 0
@@ -359,14 +358,12 @@ adjustedProfitOrLossFromUkPropertyOther = 0
 taxableProfitFromUkPropertyOther = 0
 taxableLossFromUkPropertyOther = 0
 
-
 <font color="#85994b">// Calculate net profit or loss for UK Property Other</font>
 <font color="#1d70b8">if</font> totalIncomeFromUkPropertyOther >= totalExpensesFromUkPropertyOther <font color="#1d70b8">then</font>
     netProfitFromUkPropertyOther = totalIncomeFromUkPropertyOther – totalExpensesFromUkPropertyOther
 <font color="#1d70b8">else</font>
     netLossFromUkPropertyOther = totalIncomeFromUkPropertyOther –  totalExpensesFromUkPropertyOther
 <font color="#1d70b8">end if</font>
-
 
 <font color="#85994b">// Calculate taxable profit or loss for UK Property Other</font> 
 adjustedProfitOrLossFromUkPropertyOther = netProfitFromUkPropertyOther + netLossFromUkPropertyOther + totalAdditionsFromUkPropertyOther – totalDeductionsFromUkPropertyOther <font color="#85994b">// Either netProfitFromUkPropertyOther or netLossFromUkPropertyOther would be present</font>

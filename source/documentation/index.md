@@ -136,6 +136,12 @@ Each section is further divided into relevant subsections that include:
 - other parameters referenced in the pseudocode
 - pseudocode outlining the step-by-step calculation process
 
+## Document changelog
+
+#### 2nd April 2025 
+
+Initial version published
+
 ## Getting help and support
 
 If you have specific questions about this document or would like to provide feedback, please email [SDSTeam@hmrc.gov.uk](mailto:sdsteam@hmrc.gov.uk)

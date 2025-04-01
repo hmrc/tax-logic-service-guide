@@ -136,7 +136,7 @@ Each section is further divided into relevant subsections that include:
 - other parameters referenced in the pseudocode
 - pseudocode outlining the step-by-step calculation process
 
-## Document change log
+## Document changelog
 
 #### 2nd April 2025 
 

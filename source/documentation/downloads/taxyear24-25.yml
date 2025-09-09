@@ -1,0 +1,1846 @@
+rulesVariables:
+  2025:
+    regimes:
+      UK:
+        incomeTaxBands:
+          - name: "BRT"
+            rate: 20
+            threshold: 37700
+          - name: "HRT"
+            rate: 40
+            threshold: 125140
+          - name: "ART"
+            rate: 45
+            threshold: 99999999
+        additionalNonDivIncomeRate: 45
+      Scotland:
+        incomeTaxBands:
+          - name: "SRT"
+            rate: 19
+            threshold: 2306
+          - name: "BRT"
+            rate: 20
+            threshold: 13991
+          - name: "IRT"
+            rate: 21
+            threshold: 31092
+          - name: "HRT"
+            rate: 42
+            threshold: 62430
+          - name: "AVRT"
+            rate: 45
+            threshold: 125140
+          - name: "ART"
+            rate: 48
+            threshold: 99999999
+        additionalNonDivIncomeRate: 46
+      Wales:
+        incomeTaxBands:
+          - name: "BRT"
+            rate: 20
+            threshold: 37700
+          - name: "HRT"
+            rate: 40
+            threshold: 125140
+          - name: "ART"
+            rate: 45
+            threshold: 99999999
+        additionalNonDivIncomeRate: 45
+    # =======================================
+    # Config values common to all tax regimes
+    rentARoomThreshold: 7500
+    rentARoomJointlyLet: 50
+    allowance: 12570
+    reducedAllowanceLimit: 100000
+    propertyLimitAia: 1000000
+    seisReliefLimit: 200000
+    socialEntertainmentInvIncomeLimit: 1000000
+    seLimitAia: 1000000
+    lossCap: 50000
+    incomeLossCapRate: 25
+    giftAidRate: 25
+    tradingAllowance: 1000
+    propertyIncomeAllowance: 1000
+    simplifiedExpensesThreshold: 90000
+    limitVat: 90000
+    blindPersonAllowance: 3070
+    class1NicsStandardRate: 10
+    class2NicsLimit: 6725
+    class2NicsLimitLPT: 99999999999
+    class2NicsPerWeek: 3.45
+    class4NicLowerExemptionAge: 16
+    giftAidPaymentsWarningThreshold: 150000
+    totalIncomeWarningForGiftAidPayments: 70
+    redundancyLumpsumExemptAmount: 30000
+    deductionsWarningLimit: 100
+    #These values are linked to the 2 ZRT values in savingsBands
+    psaBrtThreshold: 1000
+    psaHrtThreshold: 500
+    savingsBands:
+      - name: "SSR"
+        rate: 0
+        threshold: 5000
+      - name: "ZRTBR"
+        rate: 0
+        threshold: 1000
+      - name: "ZRTHR"
+        rate: 0
+        threshold: 500
+      - name: "BRT"
+        rate: 20
+        threshold: 37700
+      - name: "HRT"
+        rate: 40
+        threshold: 125140
+      - name: "ART"
+        rate: 45
+        threshold: 99999999
+    dividendBands:
+      - name: "ZRTBR"
+        rate: 0
+        threshold: 500
+      - name: "ZRTHR"
+        rate: 0
+        threshold: 500
+      - name: "ZRTAR"
+        rate: 0
+        threshold: 500
+      - name: "BRT"
+        rate: 8.75
+        threshold: 37700
+      - name: "HRT"
+        rate: 33.75
+        threshold: 125140
+      - name: "ART"
+        rate: 39.35
+        threshold: 99999999
+    class4NicBands:
+      - name: "ZRT"
+        rate: 0
+        threshold: 12570
+      - name: "BRT"
+        rate: 6
+        threshold: 50270
+      - name: "HRT"
+        rate: 2
+        threshold: 99999999
+    studentLoansPlanTypes:
+      - planType: "01"
+        incomeThreshold: 24990
+        loanRate: 9
+      - planType: "02"
+        incomeThreshold: 27295
+        loanRate: 9
+      - planType: "03"
+        incomeThreshold: 21000
+        loanRate: 6
+      - planType: "04"
+        incomeThreshold: 31395
+        loanRate: 9
+    studentLoansUnearnedIncomeThreshold: 2000
+    # Reliefs
+    vctRate: 30
+    eisRate: 30
+    citrRate: 5
+    seisRate: 50
+    sitrRate: 30
+    qmpRate: 10
+    qmpLimit: 4010
+    marriageAllowanceTransferInRate: 20
+    marriageAllowanceTransferInAndOutAmount: 1260
+    landlordsReliefBand: 100
+    eisInvestmentShareThreshold: 2000000
+    eisInvShareKnowledgeIntensiveThreshold: 1000000
+    vctInvestmentThreshold: 200000
+    # Allowances
+    capTup: 100
+    # Pension charges
+    pensionSchemeUnauthorisedPaymentsNoSurchargeRates: 40
+    pensionSchemeUnauthorisedPaymentsSurchargeRates: 55
+    pensionSchemeOverseasTransferRates: 25
+    pcrLowerBand: 20
+    ssrLBLimit: 20000
+    pcrUpperBand: 50
+    ssrUBLimit: 99999999999
+    # DTA Rates for foreign property by country
+    dtaRates:
+      - code: "AFG"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ALB"
+        foreignProperty: 100
+        foreignSavings: 6.00
+        foreignDividendsAndDividendsRec: 10.00
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "DZA"
+        foreignProperty: 100
+        foreignSavings: 7
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ASM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "AND"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "AGO"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "AIA"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ATG"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ARG"
+        foreignProperty: 100
+        foreignSavings: 12
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ARM"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ABW"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "AUS"
+        foreignPropertyAU: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "AUT"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "AZE"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BHS"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BHR"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BGD"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BRB"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BLR"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 5
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BEL"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BLZ"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BEN"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BMU"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BTN"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BOL"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BES"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BIH"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BWA"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 12
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BRA"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "VGB"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BRN"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BGR"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 5
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BFA"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MMR"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "BDI"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "KHM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CMR"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CAN"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CPV"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CYM"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CAF"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TCD"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CHL"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CHN"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CXR"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CCK"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "COL"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "COM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "COG"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "COK"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CRI"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CIV"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "HRV"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CUB"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CUW"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CYP"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CZE"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "COD"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "DNK"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "DJI"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "DMA"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "DOM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ECU"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "EGY"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 20
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SLV"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GNQ"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ERI"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "EST"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ETH"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "FLK"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "FRO"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "FJI"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "FIN"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "FRA"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GUF"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "PYF"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GAB"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GMB"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GEO"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "DEU"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GHA"
+        foreignProperty: 100
+        foreignSavings: 12.50
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GIB"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GRC"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GRL"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GRD"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GLP"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GUM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GTM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GGY"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GIN"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GNB"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "GUY"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "HTI"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "HND"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "HKG"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "HUN"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ISL"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "IND"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "IDN"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "IRN"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "IRQ"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "IRL"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "IMN"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ISR"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ITA"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "JAM"
+        foreignProperty: 100
+        foreignSavings: 12.5
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "JPN"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "JEY"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "JOR"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "KAZ"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "KEN"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "KIR"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "XKX"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "KWT"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "KGZ"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "LAO"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "LVA"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "LBN"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "LSO"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "LBR"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "LBY"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "LIE"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "LTU"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "LUX"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MAC"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MKD"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MDG"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MWI"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MYS"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MDV"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MLI"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MLT"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MHL"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MTQ"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MRT"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MUS"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MYT"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MEX"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "FSM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MDA"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MCO"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MNG"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MNE"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MSR"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MAR"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 25
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MOZ"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "NAM"
+        foreignProperty: 100
+        foreignSavings: 20
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "NRU"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "NPL"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "NLD"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "NCL"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "NZL"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "NIC"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "NER"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "NGA"
+        foreignProperty: 100
+        foreignSavings: 12.50
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "NIU"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "NFK"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "PRK"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "MNP"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "NOR"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "OMN"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "PAK"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 20
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "PLW"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "PAN"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "PNG"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 17
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "PRY"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "PER"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "PHL"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 25
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "PCN"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "POL"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "PRT"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "PRI"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "QAT"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "REU"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ROU"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "RUS"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "RWA"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SHN"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "KNA"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "LCA"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SPM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "VCT"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "WSM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SMR"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "STP"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SAU"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 5
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SEN"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SRB"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SYC"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SLE"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SGP"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SXM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SVK"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SVN"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SLB"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SOM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ZAF"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "KOR"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SSD"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ESP"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "LKA"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 14
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SDN"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SUR"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SJM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SWZ"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SWE"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 5
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "CHE"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "SYR"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TWN"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TJK"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TZA"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "THA"
+        foreignProperty: 100
+        foreignSavings: 25
+        foreignDividendsAndDividendsRec: 20
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TLS"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TGO"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TKL"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TON"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TTO"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 20
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TUN"
+        foreignProperty: 100
+        foreignSavings: 12
+        foreignDividendsAndDividendsRec: 20
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TUR"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 20
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TKM"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TCA"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "TUV"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "UGA"
+        foreignProperty: 100
+        foreignSavings: 15
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "UKR"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ARE"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 0
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "USA"
+        foreignProperty: 100
+        foreignSavings: 0
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "VIR"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "URY"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "UZB"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "VUT"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "VAT"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "VEN"
+        foreignProperty: 100
+        foreignSavings: 5
+        foreignDividendsAndDividendsRec: 10
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "VNM"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 15
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "WLF"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "YEM"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ZMB"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 5
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ZWE"
+        foreignProperty: 100
+        foreignSavings: 10
+        foreignDividendsAndDividendsRec: 20
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+      - code: "ZZZ"
+        foreignProperty: 100
+        foreignSavings: 100
+        foreignDividendsAndDividendsRec: 100
+        foreignPension: 100
+        foreignIncomeAndLumpsum: 100
+        foreignOtherIncome: 100
+    cgtRates:
+      - name: "RPCI"
+        lowerRate: 18
+        higherRate: 24
+      - name: "CG"
+        lowerRate: 10
+        higherRate: 20
+    capitalGainsTaxAnnualExemptionAmount: 3000
+    capitalGainsOtherERTax: 10
+    # Metadata
+    variablesVersion: "2.0.3"
+    variablesVersionDate: "2021-03-31"
+    taxYearStart: "2024-04-06"
+

@@ -1,10 +1,19 @@
+# Human read-able name for this site, displayed in the header bar
+service_name: Tax Logic service guide
+
+# The route that will be used to access this site (with tailing slash)
+service_link: /guides/tax-logic-service-guide/
+use_service_link_for_favicon: true
+
+# ================================================
+# You shouldn't need to edit anything below here
+# ================================================
+
 # Host to use for canonical URL generation (without trailing slash)
 host: developer.service.hmrc.gov.uk
 
 # Header-related options
 show_govuk_logo: true
-service_name: Tax Logic service guide
-service_link: /guides/tax-logic-service-guide/
 phase: Alpha
 
 # Links to show on right-hand-side of header

@@ -21,8 +21,8 @@ Below is the calculation pseudocode for Personal Allowance.
 <font color="#85994b">// Earnings £100,001--£125,140: Personal Allowance reduced by £1 for every £2 earned over £100,000</font> 
 <font color="#85994b">// Earnings >= £125,140: Personal Allowance is £0</font> 
 <font color="#85994b">// Input parameters</font> 
-adjustedNetIncome <font color="#85994b">// Total taxable income before any Personal Allowances and less certain tax reliefs. Refer to Adjusted net income</font> 
-reducedAllowanceLimit <font color="#85994b">// £100,000 for tax year 2024-25. Refer to the configfile</font> 
+adjustedNetIncome <font color="#85994b">// Total taxable income before any Personal Allowances and less certain tax reliefs. Refer to <a href="tax-calculation.html#adjusted-net-income">Adjusted net income</a></font> 
+reducedAllowanceLimit <font color="#85994b">// £100,000 for tax year 2024-25. Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font></font> 
 
 <font color="#85994b">// Other parameter used for calculations</font> 
 personalAllowance <font color="#85994b">// Personal allowance for the tax year</font> 
@@ -48,15 +48,15 @@ Marriage Allowance lets you transfer some of your Personal Allowance to your spo
    <code>
 <font color="#85994b">// Input parameters</font>
 isTransferorOfMAT <font color="#85994b">// Indicates if the customer is the transferor of Marriage Allowance Transfer</font>
-basicRateBandThreshold <font color="#85994b">// Threshold for Basic rate band. Refer to "BRT" threshold under UK incomeTaxBands in the config file</font>
+basicRateBandThreshold <font color="#85994b">// Threshold for Basic rate band. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
 grossGiftAidPayments <font color="#85994b">// Total Gift Aid amount that extends the Basic Rate band, If applicable. Refer to Gift Aid</font>
-grossTotalPensionContributionsReliefs <font color="#85994b">// Total pension contributions reliefs, if applicable. Refer to totalPensionContributionsRelief in Pension contributions</font>
-totalIncomeFromAllSources <font color="#85994b">// Total income from all sources. Refer to Income summary totals</font>
-personalAllowance <font color="#85994b">// Personal allowance for the tax year. Refer to Personal Allowance</font>
-matInRate <font color="#85994b">// Refer to marriageAllowanceTransferInRate in the config file</font>
+grossTotalPensionContributionsReliefs <font color="#85994b">// Total pension contributions reliefs, if applicable. Refer to totalPensionContributionsRelief in <a href="allowances-and-reliefs.html#pension-contributions">Pension contributions</a></font>
+totalIncomeFromAllSources <font color="#85994b">// Total income from all sources. Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a></font>
+personalAllowance <font color="#85994b">// Personal allowance for the tax year. Refer to <a href="income-and-benefits.html#personal-allowance">Personal Allowance</a></font>
+matInRate <font color="#85994b">// Refer to marriageAllowanceTransferInRate in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
 isMarriageAllowanceTransferringOrReceivingAllowed <font color="#85994b">// Flag to check if Marriage Allowance transfer/receipt is allowed</font>
 isMarriageAllowanceAllowed <font color="#85994b">// Indicates that marriage allowance transfer is allowed</font>
-marriageAllowanceTransferOutAmount <font color="#85994b">// Amount to be transferred out as Marriage Allowance. Refer to marriageAllowanceTransferInAndOutAmount in the config file</font>
+marriageAllowanceTransferOutAmount <font color="#85994b">// Amount to be transferred out as Marriage Allowance. Refer to marriageAllowanceTransferInAndOutAmount in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
 
 <font color="#85994b">// Other parameters used for calculations\</font>
 totalBasicRateBandThreshold <font color="#85994b">// Total threshold for the basic rate band</font>
@@ -113,11 +113,11 @@ Below is the calculation pseudocode for Gift Aid payments.
 
 <pre>
    <code>
-<font color="#85994b">// Input parameters\</font>
-giftAidCurrentYear <font color="#85994b">// The total amount of Gift Aid payments made for the specified tax year. API parameter name: </giftAidPayments.totalAmount\
+<font color="#85994b">// Input parameters</font>
+giftAidCurrentYear <font color="#85994b">// The total amount of Gift Aid payments made for the specified tax year. API parameter name: giftAidPayments.totalAmount</font>
 giftAidNextYearTreatedAsCurrentYear <font color="#85994b">// The amount of Gift Aid payments brought forward from the following tax year, treated as if made in the specified tax year .API parameter name: giftAidPayments.amountTreatedAsSpecifiedTaxYear\</font>
 giftAidCurrentYearTreatedAsPreviousYear <font color="#85994b">// The amount of Gift Aid payments made within the specified tax year that should be treated as if they were made in the previous tax year .API parameter name: giftAidPayments.amountTreatedAsPreviousTaxYear</font>
-ukbasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the config file\</font>
+ukbasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>\</font>
 
 <font color="#85994b">// Other parameters used for calculations </font>
 giftAidPaymentMade <font color="#85994b">// Total gift aid payments made</font>
@@ -202,7 +202,7 @@ Below is the calculation pseudocode for gross annuity payments.
    <code>
 <font color="#85994b">// Input parameters</font>
 reliefClaimed <font color="#85994b">// Relief claimed for annual payments. API parameter name: annualPaymentsMade.reliefClaimed</font>
-ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the config file</font>
+ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
 
 <font color="#85994b">// Other parameters used for calculations</font>
 grossAnnuityPayments <font color="#85994b">// Gross annuity payments</font>
@@ -222,13 +222,13 @@ Below is the calculation pseudocode for payments to trade unions for death benef
 <pre>
    <code>
 <font color="#85994b">// Input parameters</font>
-capTup <font color="#85994b">// Limit for trade union payments. Refer to the config file</font>
+capTup <font color="#85994b">// Limit for trade union payments. Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
 paymentsToTradeUnionsForDeathBenefitsAmount <font color="#85994b">// Payments made to trade unions. API parameter name: paymentsToTradeUnionsForDeathBenefits.expenseAmount</font>
 
 <font color="#85994b">// Other parameters used for calculations</font>
 paymentsToTradeUnionsForDeathBenefits <font color="#85994b">// Payments to trade unions for death benefits</font>
 paymentsToTradeUnionsForDeathBenefits = roundUp(paymentsToTradeUnionsForDeathBenefitsAmount, 2) <font color="#85994b">// Round up to 2 decimal places</font>
-<font color="#1d70b8">if paymentsToTradeUnionsForDeathBenefitsAmount</font> > capTup <font color="#1d70b8">then</font>
+<font color="#1d70b8">if</font> paymentsToTradeUnionsForDeathBenefitsAmount capTup <font color="#1d70b8">then</font>
 paymentsToTradeUnionsForDeathBenefits = capTup
 <font color="#1d70b8">else</font>
 paymentsToTradeUnionsForDeathBenefits = paymentsToTradeUnionsForDeathBenefitsAmount
@@ -268,16 +268,16 @@ Below is the calculation pseudocode for total allowances and deductions.
 <pre>
    <code>
 <font color="#85994b">// Input parameters</font>
-personalAllowance <font color="#85994b">// Refer to Personal Allowance</font>
-marriageAllowanceTransferOut <font color="#85994b">// Refer to marriageAllowanceTransferOutAmount in Marriage Allowance</font>
-capitalGainsSetAgainstInYearGeneralIncome <font color="#85994b">// Refer to Losses and loss claims</font>
-lossesAppliedToGeneralIncome <font color="#85994b">// Refer to Losses and loss claims</font>
-qualifyingLoanInterestFromInvestments <font color="#85994b">// Refer to Losses and loss claims</font>
-postCessationTradeReliefs <font color="#85994b">// Refer to Losses and loss claims</font>
-pensionContributions <font color="#85994b">// Refer to totalPensionContributions inPension contributions</font>
-grossAnnuityPayments <font color="#85994b">// Refer toAnnuity payments</font>
-paymentsToTradeUnionsForDeathBenefits <font color="#85994b">// Refer to Trade union payments</font>
-giftOfInvestmentsAndPropertyToCharity <font color="#85994b">// Refer to Gifts to charity</font>
+personalAllowance <font color="#85994b">// Refer to <a href="income-and-benefits.html#personal-allowance">Personal Allowance</a></font>
+marriageAllowanceTransferOut <font color="#85994b">// Refer to marriageAllowanceTransferOutAmount in <a href="income-and-benefits.html#marriage-allowance">Marriage Allowance</a></font>
+capitalGainsSetAgainstInYearGeneralIncome <font color="#85994b">// Refer to <a href="income-and-benefits.html#losses-and-loss-claims">Losses and loss claims</a></font>
+lossesAppliedToGeneralIncome <font color="#85994b">// Refer to <a href="income-and-benefits.html#losses-and-loss-claims">Losses and loss claims</a></font>
+qualifyingLoanInterestFromInvestments <font color="#85994b">// Refer to <a href="income-and-benefits.html#losses-and-loss-claims">Losses and loss claims</a></font>
+postCessationTradeReliefs <font color="#85994b">// Refer to <a href="income-and-benefits.html#losses-and-loss-claims">Losses and loss claims</a></font>
+pensionContributions <font color="#85994b">// Refer to totalPensionContributions in <a href="allowances-and-reliefs.html#pension-contributions">Pension contributions</a></font>
+grossAnnuityPayments <font color="#85994b">// Refer to <a href="allowances-and-reliefs.html#annuity-payments">Annuity payments</a></font>
+paymentsToTradeUnionsForDeathBenefits <font color="#85994b">// Refer to <a href="allowances-and-reliefs.html#trade-union-payments">Trade union payments</a></font>
+giftOfInvestmentsAndPropertyToCharity <font color="#85994b">// Refer to <a href="allowances-and-reliefs.html#gifts-to-charity">Gifts to charity</a></font>
 
 <font color="#85994b">// Other parameters used for calculations</font>
 totalAllowancesAndDeductions <font color="#85994b">// Total allowances and deductions</font>
@@ -298,13 +298,13 @@ capitalRedemptionDeficiencyRelief <font color="#85994b">// Capital Redemption de
 lifeInsuranceDeficiencyRelief <font color="#85994b">// Life insurance deficiency relief</font>
 lifeAnnuityDeficiencyRelief <font color="#85994b">// Life annuity deficiency relief</font>
 dividendHigherRateAllocatedIncome <font color="#85994b">// Dividends income allocated to higher rate. Refer to Income Tax Liability</font>
-dividendBasicRate <font color="#85994b">// Refer to "BRT" rate under dividendBands in the config file</font>
-dividendHigherRate <font color="#85994b">// Refer to "HRT" rate under dividendBands in the config file</font>
-savingsBasicRate <font color="#85994b">// Refer to "BRT" rate under dividendBands in the config file</font>
-savingsHigherRate <font color="#85994b">// Refer to "HRT" rate under savingsBands in the config file</font>
+dividendBasicRate <font color="#85994b">// Refer to "BRT" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+dividendHigherRate <font color="#85994b">// Refer to "HRT" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+savingsBasicRate <font color="#85994b">// Refer to "BRT" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+savingsHigherRate <font color="#85994b">// Refer to "HRT" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
 savingsHigherRateAllocatedIncome <font color="#85994b">// Savings income allocated to HRT band. Refer to Income Tax Liability</font>
 pppHigherRateAllocatedIncome <font color="#85994b">// PPP income allocated to HRT band. Refer to Income Tax Liability</font>
-pppScottishHigherRate <font color="#85994b">// Refer to "HRT" rate under Scotland incomeTaxBands in the config file</font>
+pppScottishHigherRate <font color="#85994b">// Refer to "HRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
 pppScottishHigherRateAllocatedIncome <font color="#85994b">// Refer to Income Tax Liability Scotland</font>
 nationalRegime <font color="#85994b">// National Regime</font>
 
@@ -392,8 +392,8 @@ yearsheld, <font color="#85994b">// Number of years the policy has been held</fo
 yearsHeldSinceLastGain <font color="#85994b">// Number of years the policy has been held since the last gain</font>
 }
 ]
-ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the config file</font>
-totalIncomeFromPayPensionsProfit <font color="#85994b">// Refer to totalProfitFromPayPensionsProfit in Income summary totals</font>
+ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+totalIncomeFromPayPensionsProfit <font color="#85994b">// Refer to totalProfitFromPayPensionsProfit in <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a></font>
 
 <font color="#85994b">// Other parameters used for calculation</font>
 totalGainsLiability_TSR_Calc_1 <font color="#85994b">// Calculated amount after running TSR-Calc-1</font>
@@ -479,7 +479,7 @@ tsrReliefAmount = roundDown(remainingTaxOnGain - yearsAdjustment, 2) <font color
 
 ## Other Reliefs
 
-Some parameters used as inputs for other reliefs calculations are in the Individuals Reliefs API.
+Some parameters used as inputs for other reliefs calculations are in the [Individuals Reliefs API](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/individuals-reliefs-api/).
 
 Below is the calculation pseudocode for other reliefs including investment reliefs, maintenance payments and non-deductible loan interest.
 
@@ -493,14 +493,14 @@ amountClaimed <font color="#85994b">// Amount claimed for the relief</font>
 }
 ]
 incomeTaxCharged <font color="#85994b">// Refer to Income tax liability</font>
-qmpLimit <font color="#85994b">// Refer to the config file</font>
-qmpRate <font color="#85994b">// Refer to the config file</font>
-vctRate <font color="#85994b">// Refer to the config file</font>
-eisRate <font color="#85994b">// Refer to the config file</font>
-citrRate <font color="#85994b">// Refer to the config file</font>
-seisRate <font color="#85994b">// Refer to the config file</font>
-sitrRate <font color="#85994b">// Refer to the config file</font>
-pppBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the config file</font>
+qmpLimit <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+qmpRate <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+vctRate <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+eisRate <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+citrRate <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+seisRate <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+sitrRate <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+pppBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
 
 <font color="#85994b">// Specific relief investment types</font>
 reliefType = [
@@ -520,7 +520,7 @@ allowableAmount <font color="#85994b">// Other relief amounts</font>
 amountUsed = 0 <font color="#85994b">// Relief amount that is applied to income tax charged</font>
 otherReliefs = 0 <font color="#85994b">// Other reliefs</font>
 
-<font color="#85994b">// Calculate before relief
+<font color="#85994b">// Calculate before relief</font>
 <font color="#1d70b8">if </font>incomeTaxCharged is null <font color="#1d70b8">then</font>
     remainingTaxCharged = 0
 <font color="#1d70b8">else</font>
@@ -535,7 +535,7 @@ for each relief in reliefs
 <font color="#1d70b8">if</font> relief.reliefType is "maintenancePayments"</font>
 <font color="#1d70b8">if </font>totalClaimAmount[reliefType] + relief.amountClaimed < qmpLimit <font color="#1d70b8">then</font>
             totalClaimAmount[reliefType] = totalClaimAmount[reliefType] + relief.amountClaimed
-<font color="#1d70b8">else
+<font color="#1d70b8">else</font>
             totalClaimAmount[reliefType] = qmpLimit
         end <font color="#1d70b8">if</font>
     end <font color="#1d70b8">if</font>
@@ -611,13 +611,13 @@ Below is the calculation pseudocode for relief of foreign residential finance co
 
 <pre>
    <code>
-<font color="#85994b">// Input parameters</font></font>
+<font color="#85994b">// Input parameters</font>
 RfcForeignProperty = [ 
     country {
-        countryCode, <font color="#85994b">// A three-letter code that represents a country name </font></font>
-residentialFinancialCostAmount, <font color="#85994b">// The residential financial cost deductible from rental income (tax relief). API parameter name: residentialFinancialCost</font></font>
-        broughtFwdResidentialFinancialCostAmount, <font color="#85994b">// Amount of relief brought forward for restricted residential financial costs</font></font>
-taxableProfitFromForeignPropertyOther <font color="#85994b">// Refer to Calculating total taxable property profit</font></font>
+        countryCode, <font color="#85994b">// A three-letter code that represents a country name </font>
+residentialFinancialCostAmount, <font color="#85994b">// The residential financial cost deductible from rental income (tax relief). API parameter name: residentialFinancialCost</font>
+        broughtFwdResidentialFinancialCostAmount, <font color="#85994b">// Amount of relief brought forward for restricted residential financial costs</font>
+taxableProfitFromForeignPropertyOther <font color="#85994b">// Refer to Calculating total taxable property profit</font>
     }
 ]
 
@@ -627,41 +627,45 @@ residentialFinanceCostsAvailableForRelief <font color="#85994b">// Residential f
 totalForeignPropertyAllowableAmount=0 <font color="#85994b">// Total foreign property allowable amount</font>
 
 <font color="#85994b">// Calculate total allowable amount for foreign property</font>
-<font color="#1d70b8">for</font> each country in RfcForeignProperty
+<font color="#1d70b8">for each</font> country in RfcForeignProperty
     residentialFinanceCostsClaimedForRelief = roundUp(country.residentialFinancialCostAmount +
                                               country.broughtFwdResidentialFinancialCostAmount , 0) <font color="#85994b">// Round up to nearest whole pound</font>
 residentialFinanceCostsAvailableForRelief = min(residentialFinanceCostsClaimedForRelief, taxableProfitFromForeignPropertyOther)\
 totalForeignPropertyAllowableAmount = roundUp(totalForeignPropertyAllowableAmount +
-residentialFinanceCostsAvailableForRelief, 2) <font color="#85994b">// Round up to 2 decimal places\</font>
+residentialFinanceCostsAvailableForRelief, 2) <font color="#85994b">// Round up to 2 decimal places</font>
 end <font color="#1d70b8">for</font>
+   </code>
+</pre>
 
 ### All other income received whilst abroad
 
 Below is the calculation pseudocode for relief of foreign residential finance costs.
 
-<font color="#85994b">// Input parameters</font></font></font>
+<pre>
+   <code>
+<font color="#85994b">// Input parameters</font>
 RfcOtherIncomeWhilstAbroadDetail = [ 
     country {
-        countryCode, <font color="#85994b">// A three-letter code that represents a country name </font></font></font>
-        taxableAmount, <font color="#85994b">// The amount of tax to be paid</font></font></font>
-residentialFinancialCostAmount, <font color="#85994b">// The residential financial cost deductible from rental income (tax relief). API parameter name: residentialFinancialCost</font></font></font>
-        broughtFwdResidentialFinancialCostAmount <font color="#85994b">// Amount of relief brought forward for restricted residential financial costs</font></font></font>
+        countryCode, <font color="#85994b">// A three-letter code that represents a country name </font>
+        taxableAmount, <font color="#85994b">// The amount of tax to be paid</font>
+residentialFinancialCostAmount, <font color="#85994b">// The residential financial cost deductible from rental income (tax relief). API parameter name: residentialFinancialCost</font>
+        broughtFwdResidentialFinancialCostAmount <font color="#85994b">// Amount of relief brought forward for restricted residential financial costs</font>
     }
 ]
 
-<font color="#85994b">// Other parameters used for calculations </font></font></font>
-residentialFinanceCostsClaimedForRelief <font color="#85994b">// Residential finance costs claimed for relief</font></font></font>
-residentialFinanceCostsAvailableForRelief <font color="#85994b">// Residential finance costs available for relief</font></font></font>
-totalOtherIncomeAllowableAmount =0 <font color="#85994b">// Total other income allowable amount</font></font></font>
+<font color="#85994b">// Other parameters used for calculations </font>
+residentialFinanceCostsClaimedForRelief <font color="#85994b">// Residential finance costs claimed for relief</font>
+residentialFinanceCostsAvailableForRelief <font color="#85994b">// Residential finance costs available for relief</font>
+totalOtherIncomeAllowableAmount =0 <font color="#85994b">// Total other income allowable amount</font>
 
-<font color="#85994b">// Calculate total allowable amount for Other property</font></font>
-<font color="#1d70b8">for</font></font> each country in RfcOtherIncomeWhilstAbroadDetail
+<font color="#85994b">// Calculate total allowable amount for Other property</font>
+<font color="#1d70b8">for</font>each country in RfcOtherIncomeWhilstAbroadDetail
 residentialFinanceCostsClaimedForRelief = country.residentialFinancialCostAmount +
                                               country.broughtFwdResidentialFinancialCostAmount
 residentialFinanceCostsAvailableForRelief = min(residentialFinanceCostsClaimedForRelief, taxableAmount)
     totalOtherIncomeAllowableAmount = roundUp(totalOtherIncomeAllowableAmount +
-residentialFinanceCostsAvailableForRelief, 2) <font color="#85994b">// Round up to 2 decimal places</font></font>
-end <font color="#1d70b8">for</font></font>
+residentialFinanceCostsAvailableForRelief, 2) <font color="#85994b">// Round up to 2 decimal places</font>
+end <font color="#1d70b8">for</font>
    </code>
 </pre>
 
@@ -672,12 +676,12 @@ Below is the calculation pseudocode for relief of total residential finance cost
 <pre>
    <code>
 <font color="#85994b">// Input parameters</font>
-totalIncomeFromAllSources <font color="#85994b">// Total income from all sources. Refer to Income summary totals</font>
-totalAllowances <font color="#85994b">// Total allowances. Refer to totalAllowancesAndDeductions in Total allowances</font>
-totalUKAllowableAmount <font color="#85994b">// Total UK allowable amount. Refer to Residential finance costs UK</font>
-totalForeignPropertyAllowableAmount <font color="#85994b">// Total foreign property allowable amount. Refer to Residential finance costs Foreign
-totalOtherIncomeAllowableAmount <font color="#85994b">// Total other income allowable amount. Refer to Residential finance costs All other income received whilst abroad</font>
-ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the config file</font>
+totalIncomeFromAllSources <font color="#85994b">// Total income from all sources. Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a></font>
+totalAllowances <font color="#85994b">// Total allowances. Refer to totalAllowancesAndDeductions in <a href="allowances-and-reliefs.html#total-allowances">Total allowances</a></font> 
+totalUKAllowableAmount <font color="#85994b">// Total UK allowable amount. Refer to <a href="allowances-and-reliefs.html#residential-finance-costs">Residential finance costs</a></font>- UK</font>
+totalForeignPropertyAllowableAmount <font color="#85994b">// Total foreign property allowable amount. Refer to <a href="allowances-and-reliefs.html#residential-finance-costs">Residential finance costs</a></font>- Foreign
+totalOtherIncomeAllowableAmount <font color="#85994b">// Total other income allowable amount. Refer to <a href="allowances-and-reliefs.html#residential-finance-costs">Residential finance costs</a></font>- All other income received whilst abroad</font>
+ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
 
 <font color="#85994b">// Other parameters used for calculations</font>
 adjustedTotalIncome <font color="#85994b">// Adjusted total income</font>
@@ -685,17 +689,17 @@ totalAllowableAmount <font color="#85994b">// Total allowable amount</font>
 relievableAmount <font color="#85994b">// Relievable amount</font>
 totalResidentialFinanceCostsRelief <font color="#85994b">// Total residential finance costs relief</font>
 
-<font color="#85994b">// Calculate adjusted total income</font></font>
+<font color="#85994b">// Calculate adjusted total income</font>
 adjustedTotalIncome = totalIncomeFromAllSources -- totalAllowances
 
-<font color="#85994b">// Sum all allowable relief values</font></font>
-totalAllowableAmount = roundUp(totalUKAllowableAmount + totalOtherIncomeAllowableAmount + totalForeignPropertyAllowableAmount, 2) <font color="#85994b">// Round up to 2 decimal places</font></font>
+<font color="#85994b">// Sum all allowable relief values</font>
+totalAllowableAmount = roundUp(totalUKAllowableAmount + totalOtherIncomeAllowableAmount + totalForeignPropertyAllowableAmount, 2) <font color="#85994b">// Round up to 2 decimal places</font>
 
-<font color="#85994b">// Ensure total relief does not exceed adjusted net income</font></font>
-relievableAmount = roundUp(min(adjustedTotalIncome, totalAllowableAmount), 2)<font color="#85994b">// Round up to 2 decimal places</font></font>
+<font color="#85994b">// Ensure total relief does not exceed adjusted net income</font>
+relievableAmount = roundUp(min(adjustedTotalIncome, totalAllowableAmount), 2)<font color="#85994b">// Round up to 2 decimal places</font>
 
 <font color="#85994b">// Calculate the final residential finance cost relief
-totalResidentialFinanceCostsRelief = roundUp(relievableAmount * (ukBasicRate / 100), 2) <font color="#85994b">// Round up to 2 decimal places</font></font>
+totalResidentialFinanceCostsRelief = roundUp(relievableAmount * (ukBasicRate / 100), 2) <font color="#85994b">// Round up to 2 decimal places</font>
    </code>
 </pre>
 
@@ -709,8 +713,8 @@ Below is the calculation pseudocode for Foreign Tax Credit Relief.
 
 <pre>
    <code>
-<font color="#85994b">// Input parameters 
-<font color="#85994b">// Parameter names are same as API parameter names
+<font color="#85994b">// Input parameters </font>
+<font color="#85994b">// Parameter names are same as API parameter names</font>
 foreignIncomeTaxCreditReliefs = [
 ftcr {
     countryCode, <font color="#85994b">// A three-letter code that represents a country name </font>
@@ -734,8 +738,8 @@ foreignIncomes = [  
     sourceId, <font color="#85994b">// Unique identifier of foreign income source  </font>
     countryCode <font color="#85994b">// A three-letter code that represents a country name. Parameter name is same as API parameter name  </font>
   }  
-permutations <font color="#85994b">// Array containing different permutations of multiple foreign incomes
-incomeSourceTypeCode <font color="#85994b">// Indicates type of income source
+permutations <font color="#85994b">// Array containing different permutations of multiple foreign incomes</font>
+incomeSourceTypeCode <font color="#85994b">// Indicates type of income source</font>
 
 <font color="#85994b">// Initialise variables for Foreign Tax Credit (FTC) components  </font>
 <font color="#85994b">// Each component represents a specific type of income  </font>
@@ -839,7 +843,7 @@ bestFTCComponents = [A, B, C, D, E, F] <font color="#85994b">// Store optimal Fo
         D = 0
         E = 0
         F = 0
-        foreignTaxCredit = 0// Initialise Foreign Tax Credit for this permutation  
+        foreignTaxCredit = 0 <font color="#85994b">// Initialise Foreign Tax Credit for this permutation  </font>
         remainingUkTaxLiability = ukTaxLiabilityOnForeignIncome         
 
         <font color="#85994b">// Process foreign incomes in the current permutation order  </font>
@@ -871,21 +875,21 @@ bestFTCComponents = [A, B, C, D, E, F] <font color="#85994b">// Store optimal Fo
             <font color="#85994b">// Stop processing if total liability is covered  </font>
             <font color="#1d70b8">if</font> remainingUkTaxLiability <= 0 <font color="#1d70b8">then</font>
                 break
-            <font color="#1d70b8">end if  </font>
-        <font color="#1d70b8">end for  </font>
+            end <font color="#1d70b8">if  </font>
+        end <font color="#1d70b8">for  </font>
 
         <font color="#85994b">// Keep track of best Foreign Tax Credit configuration  </font>
         <font color="#1d70b8">if</font> foreignTaxCredit > maxForeignTaxCredit <font color="#1d70b8">then </font>
             maxForeignTaxCredit = foreignTaxCredit  
             bestPermutation = permutation  
             bestFTCComponents = [A, B, C, D, E, F]  
-        <font color="#1d70b8">end if  </font>
-    <font color="#1d70b8">end for  </font>
+        end <font color="#1d70b8">if  </font>
+    end <font color="#1d70b8">for  </font>
 
     <font color="#85994b">// Apply best Foreign Tax Credit configuration  </font>
     foreignTaxCredit = maxForeignTaxCredit  
     [A, B, C, D, E, F] = bestFTCComponents  
-<font color="#1d70b8">end if  </font>
+end <font color="#1d70b8">if  </font>
 
 <font color="#85994b">// Calculate total Foreign Tax Credit from all components  </font>
 foreignTaxCredit = A + B + C + D + E + F  
@@ -912,16 +916,16 @@ Below is the calculation pseudocode for Qualifying distribution redemption of sh
    <code>
 <font color="#85994b">// Input parameters</font>
 qualifyingDistributionRedemptionOfSharesAndSecuritiesAmountClaimed <font color="#85994b">// Qualifying distribution amount claimed for shares and securities. API parameter name: qualifyingDistributionRedemptionOfSharesAndSecurities.amount</font>
-ukDividendsIncome <font color="#85994b">// UK dividends income. Refer to ukdividends in UK dividends</font>
-otherUkDividendsIncome <font color="#85994b">// Other UK dividends income. Refer to otherUkdividends in UK dividends</font>
-redeemableShares <font color="#85994b">// Total redeemable shares income. Refer to UK dividends</font>
-bonusIssuesSecurities <font color="#85994b">// Total bonus issues of securities income. Refer to UK dividends</font>
+ukDividendsIncome <font color="#85994b">// UK dividends income. Refer to ukdividends in <a href="income-and-benefits.html#uk-dividends">UK dividends</a></font>
+otherUkDividendsIncome <font color="#85994b">// Other UK dividends income. Refer to otherUkdividends in <a href="income-and-benefits.html#uk-dividends">UK dividends</a></font>
+redeemableShares <font color="#85994b">// Total redeemable shares income. Refer to <a href="income-and-benefits.html#uk-dividends">UK dividends</a></font>
+bonusIssuesSecurities <font color="#85994b">// Total bonus issues of securities income. Refer to <a href="income-and-benefits.html#uk-dividends">UK dividends</a></font>
 dividendAdditionalRateAllocatedIncome <font color="#85994b">// Dividends income allocated to additional rate.Refer to Income Tax Liability</font>
 dividendZeroRateAllocatedIncome <font color="#85994b">// Dividends income allocated to zero rate. Refer to Income Tax Liability</font>
 dividendHigherRateAllocatedIncome <font color="#85994b">// Dividends income allocated to higher rate. Refer to Income Tax Liability</font>
-dividendAdditionalRate <font color="#85994b">// Refer to "ART" rate under dividendBands in the config file</font>
-dividendHigherRate <font color="#85994b">// Refer to "HRT" rate under dividendBands in the config file</font>
-remainingTaxCharged <font color="#85994b">// Remaining tax charged. Refer to Other reliefs</font>
+dividendAdditionalRate <font color="#85994b">// Refer to "ART" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+dividendHigherRate <font color="#85994b">// Refer to "HRT" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+remainingTaxCharged <font color="#85994b">// Remaining tax charged. Refer to <a href="allowances-and-reliefs.html#other-reliefs">Other reliefs</a></font>
 
 <font color="#85994b">// Other parameters used for calculations</font>
 totalDividendIncome <font color="#85994b">// Total dividend income</font>
@@ -948,11 +952,11 @@ totalDividendIncome = ukDividendsIncome + otherUkDividendsIncome + redeemableSha
 allowableIncomeInART = min(totalDividendIncome, incomeInART)
 
 <font color="#85994b">// Step 4: Calculate ART redemption relief</font>
-artRedemption = roundDown(allowableIncomeInART * (dividendAdditionalRate / 100), 2) <font color="#85994b">// Round down to 2 decimal places
+artRedemption = roundDown(allowableIncomeInART * (dividendAdditionalRate / 100), 2) <font color="#85994b">// Round down to 2 decimal places</font>
 
 <font color="#85994b">// Step 5: Calculate remaining qualifying distribution amount after ART</font>
 <font color="#85994b">// Note: Raise CL to charge this as (totalDividendIncome - allowableIncomeInART)</font>
-remainingQDROSAS = max(qualifyingDistributionRedemptionOfSharesAndSecuritiesAmountClaimed - allowableIncomeInART, 0) <font color="#85994b">// Ensure non-negative value
+remainingQDROSAS = max(qualifyingDistributionRedemptionOfSharesAndSecuritiesAmountClaimed - allowableIncomeInART, 0) <font color="#85994b">// Ensure non-negative value</font>
 
 <font color="#85994b">// Step 6:  Calculate taxable dividend income in HRT</font>
 <font color="#85994b">// Note: added to CL to not include dividendZeroRateAllocatedIncome</font>
@@ -962,7 +966,7 @@ incomeInHRT = dividendHigherRateAllocatedIncome - dividendZeroRateAllocatedIncom
 allowableIncomeInHRT = min(remainingQDROSAS, incomeInHRT)
 
 <font color="#85994b">// Step 8:  Calculate HRT redemption relief</font>
-hrtRedemption = roundDown(allowableIncomeInHRT * (dividendHigherRate / 100), 2) <font color="#85994b">// Round down to 2 decimal places
+hrtRedemption = roundDown(allowableIncomeInHRT * (dividendHigherRate / 100), 2) <font color="#85994b">// Round down to 2 decimal places</font>
 
 <font color="#85994b">// Step 9: Calculate total redemption relief</font>
 totalRedemptionRelief = hrtRedemption + artRedemption
@@ -983,12 +987,12 @@ Below is the calculation pseudocode for total allowances and reliefs.
 <pre>
    <code>
 <font color="#85994b">// Input parameters</font>
-deficiencyReliefsAllowable <font color="#85994b">// Deficiency reliefs allowable. Refer to Deficiency relief</font>
-tsrReliefAmount <font color="#85994b">// Top Slicing relief amount. Refer to Top slicing relief</font>
-otherReliefs <font color="#85994b">// Total other reliefs. Refer to Other reliefs</font>
-totalResidentialFinanceCostsRelief <font color="#85994b">// Total residential finance costs reliefs. Refer to Total Residential finance costs</font>
-redemptionAmountUsed <font color="#85994b">// Amount of redemption of shares and securities used. Refer to Shares and securities</font>
-foreignTaxCredit <font color="#85994b">// Total foreign tax credit. Refer to Foreign Tax Credit Relief</font>
+deficiencyReliefsAllowable <font color="#85994b">// Deficiency reliefs allowable. Refer to <a href="allowances-and-reliefs.html#deficiency-relief">Deficiency relief</a></font>
+tsrReliefAmount <font color="#85994b">// Top Slicing relief amount. Refer to <a href="allowances-and-reliefs.html#top-slicing-relief">Top slicing relief</a></font>
+otherReliefs <font color="#85994b">// Total other reliefs. Refer to <a href="allowances-and-reliefs.html#other-reliefs">Other reliefs</a></font></font>
+totalResidentialFinanceCostsRelief <font color="#85994b">// Total residential finance costs reliefs. Refer to <a href="allowances-and-reliefs.html#residential-finance-costs">Residential finance costs</a></font>- Total
+redemptionAmountUsed <font color="#85994b">// Amount of redemption of shares and securities used. Refer to <a href="allowances-and-reliefs.html#shares-and-securities">Shares and securities</a></font>
+foreignTaxCredit <font color="#85994b">// Total foreign tax credit. Refer to <a href="allowances-and-reliefs.html#foreign-tax-credit-relief">Foreign tax credit relief</a></font>
 
 <font color="#85994b">// Other parameters used for calculations</font>
 totalReliefs <font color="#85994b">// Total reliefs</font>

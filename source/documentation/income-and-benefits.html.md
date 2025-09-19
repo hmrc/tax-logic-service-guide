@@ -10,9 +10,9 @@ Income tax calculations cover a range of income sources, including employment ea
 
 ## Self-employment
 
-All parameters used as inputs for self-employment calculations are in the [Self Employment Business API](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/self-employment-business-api/) and [Business Source Adjustable Summary API](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/self-assessment-bsas-api/7.0). However, some parameter names in the pseudocode differ slightly from those in the API and are noted in pseudocode comments.
+All parameters used as inputs for self-employment calculations are in the [Self-employment Business API](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/self-employment-business-api/) and [Business Source Adjustable Summary API](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/self-assessment-bsas-api/7.0). However, some parameter names in the pseudocode differ slightly from those in the API and are noted in pseudocode comments.
 
-**Note:**  For calculation purposes, self-employment data is processed for each income source. Customers with multiple self-employments will have source-level calculations, with totals across all sources calculated in the [Income summary totals](#_Income_summary_totals) section.
+> **Note:**  For calculation purposes, self-employment data is processed for each income source. Customers with multiple self-employments will have source-level calculations, with totals across all sources calculated in the [Income summary totals](#_Income_summary_totals) section.
 
 ### Self-employment income
 
@@ -177,11 +177,11 @@ Below is the calculation pseudocode for total taxable self-employment profit or 
 <pre>
    <code>
 <font color="#85994b">// Input Parameters</font>
-totalSelfEmploymentIncome <font color="#85994b">// Total self-employment income. Refer to [Self-employment income](#_Self-employment_income)</font>
-totalSelfEmploymentExpenses <font color="#85994b">// Total self-employment expenses. Refer to [Self-employment expenses](#_Self-employment_expenses)</font>
-totalSelfEmploymentAdditions <font color="#85994b">// Total self-employment additions. Refer to [Self-employment additions](#_Self-employment_additions)</font>
-totalSelfEmploymentDeductions <font color="#85994b">// Total self-employment deductions. Refer to [Self-employment deductions](#_Self-employment_deductions)</font>
-totalSelfEmploymentAccountingAdjustments <font color="#85994b">// Total self-employment accounting adjustments. Refer to [Self-employment accounting adjustments](#_Self-employment_accounting_adjustme)</font>
+totalSelfEmploymentIncome <font color="#85994b">// Total self-employment income. Refer to <a href="income-and-benefits.html#self-employment-income">Self-employment income</a></font>
+totalSelfEmploymentExpenses <font color="#85994b">// Total self-employment expenses. Refer to <a href="income-and-benefits.html#self-employment-expenses">Self-employment expenses</a></font>
+totalSelfEmploymentAdditions <font color="#85994b">// Total self-employment additions. Refer to <a href="income-and-benefits.html#self-employment-additions">Self-employment additions</a></font>
+totalSelfEmploymentDeductions <font color="#85994b">// Total self-employment deductions. Refer to <a href="income-and-benefits.html#self-employment-deductions">Self-employment deductions</a></font>
+totalSelfEmploymentAccountingAdjustments <font color="#85994b">// Total self-employment accounting adjustments. Refer to <a href="income-and-benefits.html#self-employment-accounting-adjustments">Self-employment accounting adjustments</a></font>
 
 <font color="#85994b">// Other parameters used for calculations (initialise parameters)</font>
 netProfitFromSelfEmployment = 0 <font color="#85994b">// Net profit before additions, deductions and adjustments</font>
@@ -757,35 +757,35 @@ OccupationalPensionIncome <font color="#85994b">// Taxable pay to date for a PAY
 PayPayeEmploymentIncome <font color="#85994b">// Taxable pay to date for a PAYE source that have the occupational pension indicator as false (API parameter name: taxablePayToDate AND occupationalPension: false)</font>
 totalTipsIncome <font color="#85994b">// Total tips received through employment during tax year. API parameter name: tips</font>
 
-<font color="#85994b">// Different types of Benefits in kind Income\
-// Parameter names are same as API parameter names\</font>
-accommodation <font color="#85994b">// The value of accommodation costs provided by the employer\</font>
-assets <font color="#85994b">// The value of any goods provided by the employer not exclusively used for work\</font>
-assetTransfer <font color="#85994b">// The value of any company assets signed over by the employer\</font>
-beneficialLoan <font color="#85994b">// The amount of interest free or low interest loans given by the employer\</font>
-car <font color="#85994b">// The cash equivalent of any cars made available by the employer\</font>
-carFuel <font color="#85994b">// The amount paid for fuel when using company cars\</font>
-educationalServices <font color="#85994b">// Scholarships or school fees paid by the employer\</font>
-entertaining <font color="#85994b">// Entertainment costs paid by the employer either directly or reimbursed to the employee\</font>
-expenses <font color="#85994b">// Expenses reimbursed by the employer to the employee\</font>
-medicalInsurance <font color="#85994b">// The sum of insurance premiums paid by the employer for medical or dental insurance\</font>
-telephone <font color="#85994b">// Telephone costs paid by the employer that are not exempt\</font>
-service <font color="#85994b">// Services used by an employee and paid for by the employer\</font>
-taxableExpenses <font color="#85994b">// Taxable expenses reimbursed by the employer to the employee\</font>
-van <font color="#85994b">// The cash equivalent of any vans made available by the employer\</font>
-vanFuel <font color="#85994b">// The amount paid by the employer for fuel costs when using company vans\</font>
-mileage <font color="#85994b">// The mileage amount paid over HMRC's approved rate by the employer for use of employee's own car for work\</font>
-nonQualifyingRelocationExpenses <font color="#85994b">// Other costs involved in relocation paid for directly by the employer or reimbursed to the employee\</font>
-nurseryPlaces <font color="#85994b">// Childcare costs paid by the employer or voucher or commercial childcare costs above the exempt limit\</font>
-otherItems <font color="#85994b">// The value of any other benefits\</font>
-paymentsOnEmployeesBehalf <font color="#85994b">// Other costs incurred by the employee paid for by the employer\</font>
-personalIncidentalExpenses <font color="#85994b">// Incidental (non-business) expenses incurred by an employee while travelling on business\</font>
-qualifyingRelocationExpenses <font color="#85994b">// Employer paid costs associated with employee relocation including bridging loans\</font>
-employerProvidedProfessionalSubscriptions <font color="#85994b">// Professional fees and subscriptions paid for by the employer\</font>
-employerProvidedServices <font color="#85994b">// The value of services provided by the employer\</font>
-incomeTaxPaidByDirector <font color="#85994b">// Non PAYE Income Tax for directors deducted from the employer by HMRC\</font>
-travelAndSubsistence <font color="#85994b">// The cost of any travel and subsistence (accommodation, meals and so on) paid for by the employer, that is not exempt\</font>
-vouchersAndCreditCards <font color="#85994b">// The value of vouchers given by the employer and the expenditure of any employer provided credit cards\</font>
+<font color="#85994b">// Different types of Benefits in kind Income
+// Parameter names are same as API parameter names</font>
+accommodation <font color="#85994b">// The value of accommodation costs provided by the employer</font>
+assets <font color="#85994b">// The value of any goods provided by the employer not exclusively used for work</font>
+assetTransfer <font color="#85994b">// The value of any company assets signed over by the employer</font>
+beneficialLoan <font color="#85994b">// The amount of interest free or low interest loans given by the employer</font>
+car <font color="#85994b">// The cash equivalent of any cars made available by the employer</font>
+carFuel <font color="#85994b">// The amount paid for fuel when using company cars</font>
+educationalServices <font color="#85994b">// Scholarships or school fees paid by the employer</font>
+entertaining <font color="#85994b">// Entertainment costs paid by the employer either directly or reimbursed to the employee</font>
+expenses <font color="#85994b">// Expenses reimbursed by the employer to the employee</font>
+medicalInsurance <font color="#85994b">// The sum of insurance premiums paid by the employer for medical or dental insurance</font>
+telephone <font color="#85994b">// Telephone costs paid by the employer that are not exempt</font>
+service <font color="#85994b">// Services used by an employee and paid for by the employer</font>
+taxableExpenses <font color="#85994b">// Taxable expenses reimbursed by the employer to the employee</font>
+van <font color="#85994b">// The cash equivalent of any vans made available by the employer</font>
+vanFuel <font color="#85994b">// The amount paid by the employer for fuel costs when using company vans</font>
+mileage <font color="#85994b">// The mileage amount paid over HMRC's approved rate by the employer for use of employee's own car for work</font>
+nonQualifyingRelocationExpenses <font color="#85994b">// Other costs involved in relocation paid for directly by the employer or reimbursed to the employee</font>
+nurseryPlaces <font color="#85994b">// Childcare costs paid by the employer or voucher or commercial childcare costs above the exempt limit</font>
+otherItems <font color="#85994b">// The value of any other benefits</font>
+paymentsOnEmployeesBehalf <font color="#85994b">// Other costs incurred by the employee paid for by the employer</font>
+personalIncidentalExpenses <font color="#85994b">// Incidental (non-business) expenses incurred by an employee while travelling on business</font>
+qualifyingRelocationExpenses <font color="#85994b">// Employer paid costs associated with employee relocation including bridging loans</font>
+employerProvidedProfessionalSubscriptions <font color="#85994b">// Professional fees and subscriptions paid for by the employer</font>
+employerProvidedServices <font color="#85994b">// The value of services provided by the employer</font>
+incomeTaxPaidByDirector <font color="#85994b">// Non PAYE Income Tax for directors deducted from the employer by HMRC</font>
+travelAndSubsistence <font color="#85994b">// The cost of any travel and subsistence (accommodation, meals and so on) paid for by the employer, that is not exempt</font>
+vouchersAndCreditCards <font color="#85994b">// The value of vouchers given by the employer and the expenditure of any employer provided credit cards</font>
 noncash <font color="#85994b">// The value of any other non-cash benefits paid to the employee</font>
 taxableLumpSumsAndCertainIncome <font color="#85994b">// The amount of the taxable lump sum. API parameter name: taxableLumpSumsAndCertainIncome.amount</font>
 benefitFromEmployerFinancedRetirementScheme <font color="#85994b">// The amount of the benefit received. API parameter name: benefitFromEmployerFinancedRetirementScheme.amount</font>
@@ -875,7 +875,7 @@ toDate <font color="#85994b">// The date work ended in format YYYY-MM-DD</font>
 totalEmploymentDeductions = 0<font color="#85994b">// Total amount of deductions from seafarer's earnings</font>
 
 <font color="#85994b">// Add up the amounts deducted from seafarer's earnings</font>
-foreach seafarers in otherDeductions:
+for each seafarers in otherDeductions:
 totalEmploymentDeductions = totalEmploymentDeductions + seafarers.amountDeducted
 
 <font color="#85994b">// Apply rounding</font>
@@ -890,10 +890,10 @@ Below is the calculation pseudocode for total taxable property profit or loss.
 <pre>
    <code>
 <font color="#85994b">// Input Parameters\</font>
-totalEmploymentIncome <font color="#85994b">// Refer to [Employment income](#_Employment_income)\</font>
-totalOccupationalPensionIncome <font color="#85994b">// Refer to [Employment income](#_Employment_income)\</font>
-totalEmploymentExpenses <font color="#85994b">// Refer to [Employment expenses](#_Employment_expenses)\</font>
-totalEmploymentDeductions <font color="#85994b">// Refer to [Employment deductions](#_Employment_deductions)</font>
+totalEmploymentIncome <font color="#85994b">// Refer to <a href="income-and-benefits.html#employment-income">Employment income</a></font>
+totalOccupationalPensionIncome <font color="#85994b">// Refer to <a href="income-and-benefits.html#employment-income">Employment income</a></font>
+totalEmploymentExpenses <font color="#85994b">// Refer to <a href="income-and-benefits.html#employment-expense">Employment expenses</a></font>
+totalEmploymentDeductions <font color="#85994b">// Refer to <a href="income-and-benefits.html#employment-deductions">Employment deductions</a></font>
 
 <font color="#85994b">// Other parameters used for calculations\</font>
 netEmploymentIncome <font color="#85994b">// Net employment income\</font>
@@ -932,7 +932,7 @@ incomeSourceId <font color="#85994b">// Unique identifier for savings income so
 }
 ]
 grossSecurities <font color="#85994b">// Gross amount of Gilt Edge interest, securities, and accrued income profits including tax deducted. API parameter name: grossAmount</font>
-ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the config file</font>
+ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
 
 <font color="#85994b">// Other parameters used for calculations (initialise parameters)</font>
 totalTaxedUkSavings =0<font color="#85994b">// Total taxed UK savings</font>
@@ -941,7 +941,7 @@ totalGrossUkTaxedSavings =0 <font color="#85994b">// Total gross UK taxed saving
 totalUkSavingsAndGains =0 <font color="#85994b">// Total UK savings and gains</font>
 
 <font color="#85994b">// Process all UK interest income summaries</font>
-<font color="#1d70b8">foreach</font> ukSavingsInterestAnnual in ukSavings
+<font color="#1d70b8">for each</font> ukSavingsInterestAnnual in ukSavings
 
 <font color="#85994b">// Check and process taxed UK interest</font>
 <font color="#1d70b8">if</font> ukSavingsInterestAnnual.taxedUkInterest isnotnull <font color="#1d70b8">then</font>
@@ -1148,7 +1148,7 @@ totalPostCessationReceipts = 0 <font color="#85994b">// Total post cessation rec
 totalForeignPensionIncome =0 <font color="#85994b">// Total foreign pension income</font>
 
 <font color="#85994b">// Calculate chargeable all other income received whilst abroad</font>
-<font color="#1d70b8">foreach</font> income inallOtherIncomeReceivedWhilstAbroad:
+<font color="#1d70b8">for each</font> income inallOtherIncomeReceivedWhilstAbroad:
     chargeableAllOtherIncomeReceivedWhilstAbroad = roundDown((chargeableAllOtherIncomeReceivedWhilstAbroad + income.taxableAmount), 2)<font color="#85994b">// Round down to 2 decimal places</font>
 end <font color="#1d70b8">for</font>
 
@@ -1159,12 +1159,12 @@ overseasIncomeAndGains = gainAmount
 totalForeignBenefitsAndGifts = roundDown((transactionBenefit + protectedForeignIncomeSourceBenefit + protectedForeignIncomeOnwardGift + benefitReceivedAsASettler + onwardGiftReceivedAsASettler), 2)<font color="#85994b">// Round down to 2 decimal places</font>
 
 <font color="#85994b">// Calculate post-cessation receipts</font>
-<font color="#1d70b8">foreach</font> income in postCessationReceipts:
+<font color="#1d70b8">for each</font> income in postCessationReceipts:
 totalPostCessationReceipts = totalPostCessationReceipts + income.amount
 end <font color="#1d70b8">for</font>
 
 <font color="#85994b">// Calculate total foreign pension income</font>
-<font color="#1d70b8">foreach</font> foreignIncome in foreignPensions:
+<font color="#1d70b8">for each</font> foreignIncome in foreignPensions:
 totalForeignPensionIncome = roundDown((totalForeignPensionIncome + foreignPensions.taxableAmount), 2)<font color="#85994b">// Round down to 2 decimal places</font>
 end <font color="#1d70b8">for</font>
    </code>
@@ -1215,7 +1215,7 @@ amountClaimed, <font color="#85994b">// Amount claimed for the relief</font>
 }
 ]
 
-lossesSetAgainstInYearGeneralIncome <font color="#85994b">// Losses set against in year general income. Refer to setAgainstInYearGeneralIncome in Capital gains</font>
+lossesSetAgainstInYearGeneralIncome <font color="#85994b">// Losses set against in year general income. Refer to setAgainstInYearGeneralIncome in <a href="tax-calculation.html#capital-gains">Capital gains</a></font>
 payrollGivingRelief <font color="#85994b">// Payroll giving relief. API parameter name: payrollGiving.reliefClaimed</font>
 qualifyingLoanInterestList <font color="#85994b</font>">// List of qualifying loan interest payments. API parameter name: qualifyingLoanInterestPayments</font>
 postCessationTradeReliefList <font color="#85994b">// List of Post cessation trade reliefs. API parameter name: postCessationTradeReliefAndCertainOtherLosses</font>
@@ -1224,7 +1224,7 @@ totalIncomeFromAllSources <font color="#85994b">// Total income from all sources
 <font color="#85994b">// Methods</font>
 getLossAndClaims <font color="#85994b">// Gets losses and claims for specific income</font>
 sortByPriority <font color="#85994b">// Sorts losses by priority</font>
-
+<a href="allowances-and-reliefs.html#annuity-payments">
 <font color="#85994b">// Other parameters used for calculations (initialise parameters)</font>
 taxableAmount <font color="#85994b">// Taxable amount from income</font>
 incomeSourceId <font color="#85994b">// Unique identifier of income source</font>
@@ -1240,7 +1240,7 @@ csgiLossAndClaims <font color="#85994b">// CSGI losses and claims</font>
 lossesAvailableToGeneralIncomeBeforeRestriction = 0 <font color="#85994b">// Losses available to general income before restrictions</font>
 reliefAmount <font color="#85994b">// Relief amount</font>
 csgiAllowanceUsed <font color="#85994b">// Csgi allowance used</font>
-allowanceCap <font color="#85994b">// Allowance cap. Refer to lossCap in the config file</font>
+allowanceCap <font color="#85994b">// Allowance cap. Refer to lossCap in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
 incomeIncludingPayrollGiving<font color="#85994b">// Income including payroll giving</font>
 quarterOfTaxableProfit <font color="#85994b">// Quarter of taxable profit</font>
 restrictedAllowance <font color="#85994b">// Restricted allowance</font>
@@ -1301,21 +1301,21 @@ for each incomeSummary in incomeSummaries
     applicableLossAndClaims = getLossAndClaims(incomeSourceId, incomeSourceType)
 
     <font color="#85994b">// Make any special adjustments based on income source type</font>
-<font color="#1d70b8">if incomeSourceType = '02' <font color="#1d70b8">then</font>
+<font color="#1d70b8">if</font> incomeSourceType = '02' <font color="#1d70b8">then</font>
     <font color="#85994b">// UK Other: Exclude CSFHL claims</font>
       applicableLossAndClaims.exclude(claimType('CSFHL'))
     <font color="#1d70b8">else if</font> incomeSourceType = '04'
       <font color="#85994b">// UK FHL: Include CSFHL losses from UK Other</font>
       ukOtherList = lossAndClaimList.filter(incomeSourceType = '02')
       csFhlLosses = ukOtherList.filter(claimType('CSFHL'))
-    <font color="#1d70b8">foreach</font> loss in csFhlLosses
+    <font color="#1d70b8">for each</font> loss in csFhlLosses
 applicableLossAndClaims.add(loss)
       end <font color="#1d70b8">for</font>
     end <font color="#1d70b8">if</font>
 
     <font color="#85994b">// Filter to income-type losses of type CF and CSFHL</font>
     filteredLossAndClaims = []
-    <font color="#1d70b8">foreach</font> lossAndClaim in applicableLossAndClaims
+    <font color="#1d70b8">for each</font> lossAndClaim in applicableLossAndClaims
     <font color="#1d70b8">if</font> lossAndClaim.lossType = "INCOME"and lossAndClaim.incomeSourceId = incomeSummary.incomeSourceId <font color="#1d70b8">and</font> lossAndClaim.incomeSourceType = incomeSummary.incomeSourceType and lossAndClaim.claimType is not "CSGI"
 filteredLossAndClaims.add(lossAndClaim)
 end <font color="#1d70b8">if</font>
@@ -1325,7 +1325,7 @@ end <font color="#1d70b8">for</font>
     filteredLossAndClaims = sortByPriority(filteredLossAndClaims)
 
     <font color="#85994b">// Apply filtered losses to the remaining profit</font>
-foreach lossAndClaim in filteredLossAndClaims
+for each lossAndClaim in filteredLossAndClaims
     maxAmountToUse = taxableAmount
     <font color="#1d70b8">if</font> maxAmountToUse > lossAndClaim.currentLossValue
     amountUsed = lossAndClaim.currentLossValue
@@ -1345,7 +1345,7 @@ end <font color="#1d70b8">for</font>
 
 ---------------------- Apply Non CSGI Claims to "CLASS_4_NICS" type losses --------------------
 <font color="#85994b">// Applying non-CSGI, carry forward claim to any SELF_EMPLOYMENT Income Summaries</font>
-<font color="#1d70b8">foreach</font> incomesummary in incomeSummaries.findIncomeSummaries(SELF_EMPLOYMENT)
+<font color="#1d70b8">for each</font> incomesummary in incomeSummaries.findIncomeSummaries(SELF_EMPLOYMENT)
 
 <font color="#85994b">// Get the taxable amount for the self-employment income</font>
     taxableAmount = incomesummary.taxableAmount
@@ -1355,7 +1355,7 @@ end <font color="#1d70b8">for</font>
     applicableLossAndClaims = getLossAndClaims(incomeSourceId, incomeSourceType)
     <font color="#85994b">// Filter to Class 4 NICS losses of type CF</font>
     filteredLossAndClaims = []
-<font color="#1d70b8">foreach</font> lossAndClaim in applicableLossAndClaims
+<font color="#1d70b8">for each</font> lossAndClaim in applicableLossAndClaims
     <font color="#1d70b8">if</font> lossAndClaim.lossType = "CLASS_4_NICS"and lossAndClaim.incomeSourceId = incomeSummary.incomeSourceId and lossAndClaim.incomeSourceType = incomeSummary.incomeSourceType and lossAndClaim.claimType is not "CSGI"
 filteredLossAndClaims.add(lossAndClaim)
 end <font color="#1d70b8">for</font>
@@ -1364,7 +1364,7 @@ end <font color="#1d70b8">for</font>
     filteredLossAndClaims = sortByPriority(filteredLossAndClaims)
 
     <font color="#85994b">// Apply filtered losses to the remaining profit</font>
-    <font color="#1d70b8">foreach lossAndClaim in filteredLossAndClaims
+    <font color="#1d70b8">for each lossAndClaim in filteredLossAndClaims</font>
 
 <font color="#85994b">// [Transitional Profits (TP)]
 // If transitional profits exist (standard and/or accelerated), refer to the TP section
@@ -1389,7 +1389,7 @@ end <font color="#1d70b8">for</font>
 
 ------------------------- Apply CSGI Claims to "INCOME" Type Losses -------------------------
 <font color="#85994b">// Add relevant loss and claims to the list</font>
-<font color="#1d70b8">foreach</font> lossAndClaim in lossAndClaimList
+<font color="#1d70b8">for each</font> lossAndClaim in lossAndClaimList
 <font color="#1d70b8">if</font> lossAndClaim.claimType = "CSGI"and taxYear = 2025and lossAndClaim.lossType = "INCOME"
       csgiLossAndClaims.add(lossAndClaim)
    end <font color="#1d70b8">if</font>
@@ -1400,14 +1400,14 @@ csgiLossAndClaims = sortByPriority(csgiLossAndClaims)
 
 <font color="#85994b">// Calculate Losses available before restriction</font>
 <font color="#1d70b8">if</font> totalIncomeFromAllSources is not null
-<font color="#1d70b8">foreach</font> lossAndClaim in csgiLossAndClaims
+<font color="#1d70b8">for each</font> lossAndClaim in csgiLossAndClaims
     lossesAvailableToGeneralIncomeBeforeRestriction = lossesAvailableToGeneralIncomeBeforeRestriction + lossAndClaim.currentLossValue
-    <font color="#1d70b8">end for
+    <font color="#1d70b8">end for</font>
 <font color="#1d70b8">if</font> lossType = "INCOME"then
     <font color="#85994b">// Add Capital Gains Losses, if applicable</font>
       lossesAvailableToGeneralIncomeBeforeRestriction = lossesAvailableToGeneralIncomeBeforeRestriction + lossesSetAgainstInYearGeneralIncome
       <font color="#85994b">// Add Relief Amount, if applicable</font>
-    <font color="#1d70b8">foreach relief in reliefs
+    <font color="#1d70b8">for each</font> relief in reliefs
 <font color="#1d70b8">if relief.reliefType = "POST_CESSATION_TRADE_RELIEF"or relief.reliefType = "QUALIFYING_LOAN_INTEREST"
         reliefAmount = relief.amountClaimed + reliefAmount
 end <font color="#1d70b8">if</font>
@@ -1441,7 +1441,7 @@ end <font color="#1d70b8">if</font>
 
 <font color="#85994b">// Apply qualifying loan interest from investments losses</font>
 <font color="#1d70b8">if </font>lossType = "INCOME"then
-<font color="#1d70b8">foreach relief in qualifyingLoanInterestList
+<font color="#1d70b8">for each</font> relief in qualifyingLoanInterestList
     reliefUsed = min(reliefClaimed, remainingReduction)
         qualifyingLoanInterestFromInvestments = qualifyingLoanInterestFromInvestments + reliefUsed
 remainingReduction = max((remainingReduction - reliefUsed), 0) = 0
@@ -1453,7 +1453,7 @@ break
 end <font color="#1d70b8">if</font>
 
 <font color="#85994b">// Apply general income losses</font>
-<font color="#1d70b8">foreach</font> claim in csgiLossAndClaims:
+<font color="#1d70b8">for each</font> claim in csgiLossAndClaims:
 <font color="#1d70b8">if</font> remainingReduction > claim.currentLossValue <font color="#1d70b8">then</font>
 remainingReduction = remainingReduction - claim.currentLossValue
 lossesAppliedToGeneralIncome = lossesAppliedToGeneralIncome + claim.currentLossValue
@@ -1469,12 +1469,12 @@ end <font color="#1d70b8">for</font>
 
 <font color="#85994b">// Apply post Cessation Trade Relief losses</font>
 <font color="#1d70b8">if</font> lossType = "INCOME" <font color="#1d70b8">then</font>
-<font color="#1d70b8">foreach</font> relief in postCessationTradeReliefList
+<font color="#1d70b8">for each</font> relief in postCessationTradeReliefList
     reliefUsed = min(relief.amount, remainingReduction)
         postCessationTradeReliefs = postCessationTradeReliefs + reliefUsed
         remainingReduction = max((remainingReduction - reliefUsed), 0) <font color="#85994b">// Ensure non-negative value
 // Exit the loop if no remaining reduction</font>
-    <font color="#1d70b8">if</font> remainingReduction = 0 <font color="#1d70b8">then
+    <font color="#1d70b8">if</font> remainingReduction = 0 <font color="#1d70b8">then</font>
     break
 end <font color="#1d70b8">for</font>
 end <font color="#1d70b8">if</font>
@@ -1483,7 +1483,7 @@ postCessationTradeReliefs = roundUp(postCessationTradeReliefs, 2) <font color="#
 
 <font color="#85994b">// Carry Forward CFCSGI Claims</font>
 <font color="#85994b">// Note: A CFCSGI can only be used once. After that they just become CF</font>
-<font color="#1d70b8">foreach</font> claim in csgiLossAndClaims
+<font color="#1d70b8">for each</font> claim in csgiLossAndClaims
 <font color="#1d70b8">if</font> claim.claimType = "CFCSGI"and claim.currentLossValue >= 0 <font color="#1d70b8">and</font> claim.lossMadeThisYear = false
     claim.canBringForward = false
       <font color="#85994b">// Create a CF claim if we find any CFCSGI claims with losses to carry forward from last year</font>
@@ -1493,14 +1493,14 @@ end <font color="#1d70b8">for</font>
 
 ----------------------- Apply CSGI Claims to "CLASS_4_NICS" Type Losses-------------------------
 <font color="#85994b">// Calculate total from all self employments before loss applied</font>
-<font color="#1d70b8">foreach</font> incomesummary in incomeSummaries.findIncomeSummaries("SELF_EMPLOYMENT")
+<font color="#1d70b8">for each</font> incomesummary in incomeSummaries.findIncomeSummaries("SELF_EMPLOYMENT")
 
 <font color="#85994b">// Get the taxable amount for the self-employment income</font>
 totalFromAllSelfEmploymentsBeforeLossApplied = totalFromAllSelfEmploymentsBeforeLossApplied + incomesummary.taxableAmount
 end <font color="#1d70b8">for</font>
 
 <font color="#85994b">// Add relevant loss and claims to the list</font>
-<font color="#1d70b8">foreach</font> lossAndClaim in lossAndClaimList
+<font color="#1d70b8">for each</font> lossAndClaim in lossAndClaimList
 <font color="#1d70b8">if</font></font> lossAndClaim.claimType = "CSGI"and taxYear = 2025and lossAndClaim.lossType = "CLASS_4_NICS"
 csgiLossAndClaims.add(lossAndClaim)
     end <font color="#1d70b8">if</font>
@@ -1511,7 +1511,7 @@ csgiLossAndClaims = sortByPriority(csgiLossAndClaims)
 
 <font color="#85994b">// Calculate Losses available before restriction</font>
 <font color="#1d70b8">if</font> totalIncomeFromAllSources is not null
-<font color="#1d70b8">foreach</font> loss in csgiLossAndClaims
+<font color="#1d70b8">for each</font> loss in csgiLossAndClaims
     lossesAvailableToGeneralIncomeBeforeRestriction = lossesAvailableToGeneralIncomeBeforeRestriction + loss.csgiLossAndClaimsAmount
     end <font color="#1d70b8">for</font>
     <font color="#85994b">// Apply CSGI allowance cap</font>
@@ -1530,8 +1530,8 @@ end <font color="#1d70b8">if</font>
 remainingReduction = amountToReduceLossesBy
 
 <font color="#85994b">// Apply general income losses</font>
-<font color="#1d70b8">foreach</font> claim in csgiLossAndClaims
-<font color="#1d70b8">if</font> remainingReduction > claim.currentLossValue <font color="#1d70b8">then
+<font color="#1d70b8">for each</font> claim in csgiLossAndClaims
+<font color="#1d70b8">if</font> remainingReduction > claim.currentLossValue <font color="#1d70b8">then</font>
 remainingReduction = remainingReduction - claim.currentLossValue
 nics4LossesAppliedToGeneralIncome = nics4LossesAppliedToGeneralIncome + claim.currentLossValue
 <font color="#1d70b8">else</font>
@@ -1544,52 +1544,51 @@ end <font color="#1d70b8">if</font>
 end <font color="#1d70b8">for</font>
 
 ------------------------------- Update Business Profit and Loss --------------------------------
-foreach lossAndClaim in lossesAndClaims
+for each lossAndClaim in lossesAndClaims
 incomeSourceId = lossAndClaim.incomeSourceId
     incomeSourceType = lossAndClaim.incomeSourceType
     lossType = lossAndClaim.lossType
     currentLossValue = lossAndClaim.currentLossValue
     <font color="#85994b">// Set Brought Forward Losses</font>
-<font color="#1d70b8">if lossAndClaim has losses and lossMadeThisYear = false
-    <font color="#1d70b8">if lossAndClaim.currentLossValue is not null and lossAndClaim.lossType = "INCOME"
+<font color="#1d70b8">if</font> lossAndClaim has losses and lossMadeThisYear = false
+    <font color="#1d70b8">if</font> lossAndClaim.currentLossValue is not null and lossAndClaim.lossType = "INCOME"
         totalBroughtForwardIncomeTaxLosses = roundUp(lossAndClaim.currentLossValue, 0) <font color="#85994b">// Round down to nearest whole pound</font>
          broughtForwardIncomeTaxLossesUsed = roundUp(lossAndClaim.lossUsed, 0) <font color="#85994b">// Round up to nearest whole pound</font>
-      <font color="#1d70b8">end if
+      end <font color="#1d70b8">if</font>
 <font color="#1d70b8">if lossAndClaim.currentLossValue is not null and lossAndClaim.lossType = "CLASS_4_NICS"
         totalBroughtForwardClass4Losses = roundUp(lossAndClaim.currentLossValue, 0) <font color="#85994b">// Round up to nearest whole pound</font>
           broughtForwardClass4LossesUsed = roundUp(lossAndClaim.lossUsed, 0) <font color="#85994b">// Round up to nearest whole pound</font>
-    <font color="#1d70b8">end if
-<font color="#1d70b8">end if
-
+    end <font color="#1d70b8">if</font>
+end <font color="#1d70b8">if</font>
     <font color="#85994b">// Set Losses Carry Forward</font>
-   <font color="#1d70b8">if</font></font> lossesAndClaim has losses and lossMadeThisYear = trueand lossAndClaim.claimType = "CF"
-<font color="#1d70b8">if</font></font> lossAndClaim.currentLossValue is not null and lossAndClaim.lossType = "INCOME"
+   <font color="#1d70b8">if</font> lossesAndClaim has losses and lossMadeThisYear = trueand lossAndClaim.claimType = "CF"
+<font color="#1d70b8">if</font> lossAndClaim.currentLossValue is not null and lossAndClaim.lossType = "INCOME"
         totalIncomeTaxLossesCarriedForward = roundUp(lossAndClaim.currentLossValue, 0) <font color="#85994b">// Round up to nearest whole pound</font>
-      end <font color="#1d70b8">if</font></font>
-      <font color="#1d70b8">if</font></font> lossAndClaim.currentLossValue is not null and lossAndClaim.lossType = "CLASS_4_NICS"
+      end <font color="#1d70b8">if</font>
+      <font color="#1d70b8">if</font> lossAndClaim.currentLossValue is not null and lossAndClaim.lossType = "CLASS_4_NICS"
         totalClass4LossesCarriedForward = roundUp(lossAndClaim.currentLossValue, 0) <font color="#85994b">// Round up to nearest whole pound</font>
-end <font color="#1d70b8">if</font></font>
-end <font color="#1d70b8">if</font></font>
+end <font color="#1d70b8">if</font>
+end <font color="#1d70b8">if</font>
 
 </font>    <font color="#85994b">// Set Carry Sideways Losses</font>
-    <font color="#1d70b8">if </font></font>lossesAndClaim has losses and lossAndClaim.claimType = "CSGI"
+    <font color="#1d70b8">if </font>lossesAndClaim has losses and lossAndClaim.claimType = "CSGI"
 <font color="#1d70b8">if</font></font> lossAndClaim.currentLossValue is not null and lossAndClaim.lossType = "INCOME"
         carrySidewaysIncomeTaxLossesUsed = roundUp(lossAndClaim.currentLossValue, 0) <font color="#85994b">// Round up to nearest whole pound</font>
-      end <font color="#1d70b8">if</font></font>
-      <font color="#1d70b8">if</font></font> lossAndClaim.currentLossValue is not null and lossAndClaim.lossType = "CLASS_4_NICS"
+      end <font color="#1d70b8">if</font>
+      <font color="#1d70b8">if</font> lossAndClaim.currentLossValue is not null and lossAndClaim.lossType = "CLASS_4_NICS"
         carrySidewaysClass4LossesUsed = roundUp(lossAndClaim.currentLossValue, 0) <font color="#85994b">// Round up to nearest whole pound</font>
-      end <font color="#1d70b8">if</font></font>
-end <font color="#1d70b8">if</font></font>
+      end <font color="#1d70b8">if</font>
+end <font color="#1d70b8">if</font>
 
     <font color="#85994b">// Special Adjustment</font>
-    <font color="#1d70b8">if</font></font> lossAndClaim.incomeSourceType = 02 and isBroughtForwardCarrySideways = true
+    <font color="#1d70b8">if</font> lossAndClaim.incomeSourceType = 02 and isBroughtForwardCarrySideways = true
     broughtForwardCarrySidewaysLosses = roundUp(lossAndClaim.currentLossValue, 0) <font color="#85994b">// Round up to nearest whole pound</font>
       broughtForwardCarrySidewaysLossesUsed = roundUp(lossAndClaim.lossUsed, 0) <font color="#85994b">// Round up to nearest whole pound</font>
-    end <font color="#1d70b8">if</font></font>
-    <font color="#1d70b8">if</font></font> lossAndClaim.incomeSourceType = 04and lossAndClaim.claimType = "CSFHL"
+    end <font color="#1d70b8">if</font>
+    <font color="#1d70b8">if</font> lossAndClaim.incomeSourceType = 04and lossAndClaim.claimType = "CSFHL"
     totalLossForCSFHL = roundUp(lossAndClaim.currentLossValue, 0) <font color="#85994b">// Round up to nearest whole pound</font>
-    end <font color="#1d70b8">if</font></font>
-end <font color="#1d70b8">for</font></font>
+    end <font color="#1d70b8">if</font>
+end <font color="#1d70b8">for</font>
    </code>
 </pre>
 
@@ -1649,24 +1648,24 @@ totalIncomeLiableToClass4Charge <font color="#85994b">// Total income liable to 
 // The second iteration reapplies losses and claims to TP, using any remaining losses from the first iteration
 
 // Process loss and claims</font>>
-foreach incomeSummary in incomeSummaries.findIncomeSummaries(SELF_EMPLOYMENT)
+for each incomeSummary in incomeSummaries.findIncomeSummaries(SELF_EMPLOYMENT)
 
 <font color="#85994b">// Get total transition profit</font>
-    taxableAmount = roundDown((incomeSummary.transitionProfitAmount + incomeSummary.transitionProfitAccelerationAmount), 0) <font color="#85994b">// Round down to nearest whole pound
+    taxableAmount = roundDown((incomeSummary.transitionProfitAmount + incomeSummary.transitionProfitAccelerationAmount), 0) <font color="#85994b">// Round down to nearest whole pound</font>
     incomeSourceId = incomeSummary.sourceId
     incomeSourceType = incomeSummary.incomeSourceType
     <font color="#85994b">// fetch loss and claims based on income source and type</font>
     applicableLossAndClaims = getLossAndClaims(incomeSourceId, incomeSourceType)
     <font color="#85994b">// filter list to LossTypes.INCOME and getClaimType() = CF</font>
     filteredLossAndClaims = []
-    <font color="#1d70b8">foreach</font> lossAndClaim in applicableLossAndClaims
+    <font color="#1d70b8">for each</font> lossAndClaim in applicableLossAndClaims
         <font color="#1d70b8">if</font> lossAndClaim.lossType = "INCOME" and lossAndClaim.claimType = "CF"
             add lossAndClaim to filteredLossAndClaims
         end <font color="#1d70b8">if</font>
     end <font color="#1d70b8">for</font>
     remainingProfit = taxableAmount
     <font color="#85994b">// Apply filtered losses to the remaining profit</font>
-    <font color="#1d70b8">foreach</font> lossAndClaim in filteredLossAndClaims
+    <font color="#1d70b8">for each</font> lossAndClaim in filteredLossAndClaims
     <font color="#85994b">// Set remaining brought forward income tax losses in transition profits</font>
         remainingBroughtForwardIncomeTaxLosses = roundDown((remainingBroughtForwardIncomeTaxLosses + currentLossValue), 0) <font color="#85994b">// Round down to nearest whole pound</font>
 maxAmountToUse = remainingProfit
@@ -1689,7 +1688,7 @@ end <font color="#1d70b8">for</font>
 --------------------------------- loss type: CLASS_4_NICS -------------------------------------
 <font color="#85994b">// This section integrates transition profit into the loss and claims logic and should only be executed when TP exist
 // Calculate total TP (standard + accelerated)</font>
-totalTransitionProfit = roundDown(transitionProfitAmount + transitionProfitAccelerationAmount, 0) // Round down to nearest whole pound</font>
+totalTransitionProfit = roundDown(transitionProfitAmount + transitionProfitAccelerationAmount, 0) <font color="#85994b">// Round down to nearest whole pound</font>
 
 <font color="#85994b">// Set taxable amount including TP</font>
 <font color="#1d70b8">if</font> taxableAmount <= 0
@@ -1725,24 +1724,24 @@ taxableProfitFromUkPropertyOther <font color="#85994b">// Refer to Calculate tot
 taxableProfitFromUkPropertyFhl <font color="#85994b">// Refer to Calculate total taxable property profit</font>
 taxableProfitFromForeignPropertyOther <font color="#85994b">// Refer to Calculate total taxable property profit</font>
 taxableProfitFromEeaPropertyFhl <font color="#85994b">// Refer to Calculate total taxable property profit</font>
-totalTaxableEmploymentIncome <font color="#85994b">// Refer to [Employment income](#_Employment_income)</font>
-employmentLumpSumsNotLiableForPPP <font color="#85994b">// Refer to redundancyCompensationPaymentsOverExemption in Employment income</font>
-totalUntaxedInterest <font color="#85994b">// Refer to totalUntaxedUkSavings in [UK savings](#_UK_savings)</font>
-totalGrossUkInterest <font color="#85994b">// Refer to totalGrossUkTaxedSavings in [UK savings](#_UK_savings)</font>
-totalGrossSecurities <font color="#85994b">// Refer to grossSecurities in [UK savings](#_UK_savings)</font>
-foreignSavingsInterest <font color="#85994b">// Refer to chargeableForeignSavingsAndGains in [Foreign savings](#_Foreign_savings)</font>
-totalUkDividends <font color="#85994b">// Refer to UK dividends</font>
-totalChargeableForeignDividends <font color="#85994b">// Refer to Foreign dividends</font>
-totalOverseasIncomeAndGains <font color="#85994b">// Refer to overseasIncomeAndGains in [Foreign and other income](#_State_benefits)</font>
-otherIncomesWhileAbroad <font color="#85994b">// Refer chargeableAllOtherIncomeReceivedWhilstAbroad to [Foreign and other income](#_State_benefits)</font>
-foreignPensionIncome <font color="#85994b">// Refer to totalForeignPensionIncome in [Foreign and other income](#_State_benefits)</font>
-chargeableForeignBenefitsAndGifts <font color="#85994b">// Refer to totalForeignBenefitsAndGifts [Foreign and other income](#_State_benefits)</font>
-postCessationTradeReceipts <font color="#85994b">// Refer to totalPostCessationReceipts in [Foreign and other income](#_State_benefits)</font>
-totalStateBenefitsIncomeExcludingStatePensionLumpSumBenefit <font color="#85994b">// Refer to [State Benefits](#_State_benefits)</font>
+totalTaxableEmploymentIncome <font color="#85994b">// Refer to <a href="income-and-benefits.html#employment-income">Employment income</a></font>
+employmentLumpSumsNotLiableForPPP <font color="#85994b">// Refer to redundancyCompensationPaymentsOverExemption in <a href="income-and-benefits.html#employment-income">Employment income</a></font>
+totalUntaxedInterest <font color="#85994b">// Refer to totalUntaxedUkSavings in <a href="income-and-benefits.html#uk-savings">UK savings</a></font>
+totalGrossUkInterest <font color="#85994b">// Refer to totalGrossUkTaxedSavings in <a href="income-and-benefits.html#uk-savings">UK savings</a></font>
+totalGrossSecurities <font color="#85994b">// Refer to grossSecurities in <a href="income-and-benefits.html#uk-savings">UK savings</a></font>
+foreignSavingsInterest <font color="#85994b">// Refer to chargeableForeignSavingsAndGains in <a href="income-and-benefits.html#foreign-savings">Foreign savings</a></font>
+totalUkDividends <font color="#85994b">// Refer to <a href="income-and-benefits.html#uk-dividends">UK dividends</a></font>
+totalChargeableForeignDividends <font color="#85994b">// Refer to <a href="income-and-benefits.html#foreign-dividends">Foreign dividends</a></font>
+totalOverseasIncomeAndGains <font color="#85994b">// Refer to overseasIncomeAndGains in <a href="income-and-benefits.html#foreign-and-other-income">Foreign and other income</a></font>
+otherIncomesWhileAbroad <font color="#85994b">// Refer chargeableAllOtherIncomeReceivedWhilstAbroad to <a href="income-and-benefits.html#foreign-and-other-income">Foreign and other income</a></font>
+foreignPensionIncome <font color="#85994b">// Refer to totalForeignPensionIncome in <a href="income-and-benefits.html#foreign-and-other-income">Foreign and other income</a></font>
+chargeableForeignBenefitsAndGifts <font color="#85994b">// Refer to totalForeignBenefitsAndGifts <a href="income-and-benefits.html#foreign-and-other-income">Foreign and other income</a></font>
+postCessationTradeReceipts <font color="#85994b">// Refer to totalPostCessationReceipts in <a href="income-and-benefits.html#foreign-and-other-income">Foreign and other income</a></font>
+totalStateBenefitsIncomeExcludingStatePensionLumpSumBenefit <font color="#85994b">// Refer to <a href="income-and-benefits.html#state-benefits">State Benefits</a></font>
 taxableProfitFromShareOptions <font color="#85994b">// Taxable profit from share options. API parameter name: shareOption.taxableamount</font>
-taxableProfitFromSharesAwardedOrReceived <font color="#85994b">// Taxable profit from shares awarded or received. API parameter name: </font>SharesAwardedOrReceived.taxableAmount
-gains = [ <font color="#85994b">// Gains including Life Insurance, Life Annuity, Capital Redemption, Voided ISAs and Foreign
-gains</font> {
+taxableProfitFromSharesAwardedOrReceived <font color="#85994b">// Taxable profit from shares awarded or received. API parameter name: SharesAwardedOrReceived.taxableAmount</font>
+gains = [ <font color="#85994b">// Gains including Life Insurance, Life Annuity, Capital Redemption, Voided ISAs and Foreign gains</font>
+{
 gainType, <font color="#85994b">// Type of gain</font>
 gainAmount, <font color="#85994b">// Amount of the gain</font>
 taxpaid, <font color="#85994b">// Indicator for tax paid (True or False)</font>
@@ -1781,7 +1780,7 @@ totalSavingsIncome = totalUntaxedInterest + totalGrossUkInterest + foreignSaving
 totalDividendIncomeForUkOtherAndForeign = totalUkDividends + totalChargeableForeignDividends
 
 <font color="#85994b">// Calculate totalProfitFromUntaxedUkGains and totalProfituntaxedForeignGains</font>
-<font color="#1d70b8">foreach</font> gain in gains
+<font color="#1d70b8">for each</font> gain in gains
 <font color="#1d70b8">if</font> taxpaid is false and gainType is foreign <font color="#1d70b8">then</font>
 totalProfitUntaxedForeignGains = totalProfitUntaxedForeignGains + gainAmount
 <font color="#1d70b8">else</font>

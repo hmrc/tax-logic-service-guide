@@ -23,7 +23,11 @@ Each section is further divided into relevant subsections that include:
 
 #### 2nd April 2025 
 
-Initial version published
+Initial draft version published
+
+#### September 2025
+
+Full version published, along with downloadable <a href="downloads/taxyear24-25.yml" download>config file</a>
 
 ## Getting help and support
 

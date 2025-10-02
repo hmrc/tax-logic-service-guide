@@ -9,6 +9,6 @@ source 'https://artefacts.tax.service.gov.uk/artifactory/api/gems/gems/'
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
 # Include the tech docs gem
-gem 'govuk_tech_docs', '~> 4.2.0'
+gem 'govuk_tech_docs', '~> 5.1.1'
 
 gem 'thin', '~> 1.8.2'

@@ -27,7 +27,7 @@ Initial draft version published
 
 #### September 2025
 
-Full version published, along with downloadable <a href="downloads/taxyear24-25.yml" download>config file</a>
+Full version published, along with downloadable <a href="/guides/tax-logic-service-guide/documentation/downloads/taxyear24-25.yml" download>config file</a>
 
 ## Getting help and support
 

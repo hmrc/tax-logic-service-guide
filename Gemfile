@@ -12,7 +12,3 @@ gem 'tzinfo-data', platforms: [:windows, :jruby]
 gem 'govuk_tech_docs', '~> 5.1.1'
 
 gem 'thin', '~> 2.0', '>= 2.0.1'
-
-gem 'ostruct', '~> 0.6.3'
-
-gem 'rdoc', '~> 7.0', '>= 7.0.3'

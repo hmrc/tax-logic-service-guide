@@ -37,5 +37,5 @@ else
   fi
 
   echo "Starting Play server and launching the service guide locally..."
-  sbt run -Dhttp.port=9100
+  sbt run
 fi

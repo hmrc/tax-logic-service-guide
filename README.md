@@ -55,48 +55,48 @@ For example, `source/about.html.md` will be accessible on <http://localhost:4567
 
 ## Preview
 
-Whilst writing documentation you can run a middleman server to preview how the
-published version will look in the browser. After saving a change the preview in
-the browser will automatically refresh.
+While writing documentation, you have two options for previewing how the published version will look in the browser:
 
-Make sure to preview your changes locally before you commit them.
+1. Middleman Server: A live preview that shows changes instantly in the browser as changes are saved.
+2. Play Framework Server: A preview that requires rebuilding the static files for each change but gives a more accurate
+   representation of the service guide as it is used in higher environments (such as production).
 
-The preview is only available on your own computer. Others won't be able to
-access it if they are given the link.
+It is important to preview changes locally before committing them.
+The preview is only available on the local machine, and others won’t be able to access it if they are given the link.
 
-Type the following to start the server:
+### Option 1: Using the Middleman Server
 
-```
-bundle exec middleman server
-```
+This option provides a live preview of the static files.
+Whenever a change is saved, the preview will automatically update in the browser, reflecting edits instantly.
 
-If all goes well something like the following output will be displayed:
+To start the Middleman Server, run:
 
-```
-== The Middleman is loading
-== LiveReload accepting connections from ws://192.168.0.8:35729
-== View your site at "http://Laptop.local:4567", "http://192.168.0.8:4567"
-== Inspect your site configuration at "http://Laptop.local:4567/__middleman", "http://192.168.0.8:4567/__middleman"
+```bash
+./preview_service_guide.sh middleman
 ```
 
-You should now be able to view a live preview at http://localhost:4567.
+Once the Middleman server is running, the live preview can be viewed at http://localhost:4567.
 
-## Build
+With this option, the preview is updated immediately whenever changes are made to the documentation,
+making it ideal for quick iterations.
 
-If you want to publish the website without using a build script you may need to
-build the static HTML files.
+### Option 2: Using the Play Framework Server
 
-Type the following to build the HTML:
+This option provides a preview of the documentation that mirrors how it will be used in higher environments (such as production).
+However, any changes made to the documentation will require rebuilding the static files before they appear in the preview.
 
+To start the Play Framework Server, run:
+
+```bash
+./preview_service_guide.sh play
 ```
-bundle exec middleman build
-```
+Once the Play server is running, the service guide can be viewed at http://localhost:9000/guides/tax-logic-service-guide/.
 
-This will create a `build` subfolder in the application folder which contains
-the HTML and asset files ready to be published.
+This option provides a preview more reflective of the deployed service guide, but it does not offer live previewing.
+Rebuilding static HTML files is necessary each time changes are made.
 
-[rvm]: https://www.ruby-lang.org/en/documentation/installation/#managers
-[bundler]: http://bundler.io/
+**Note:** If no argument is provided when running the script, it will automatically use the Play Framework server. To specify an option,
+simply use `middleman` or `play` as an argument when running the script.
 
 ### License
 

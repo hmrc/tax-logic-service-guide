@@ -4,8 +4,6 @@ weight: 4
 description: Further details of the calculations used for income tax.
 ---
 
-<%= partial 'documentation/partials/google_tag_manager_js' %>
-
 # Tax calculation
 
 Income Tax is calculated by applying progressive rates to income after deducting the Personal Allowance, taking into account income bands, allowances, reliefs, and National Insurance contributions.
@@ -143,7 +141,7 @@ lumpSumAdditionalRateLimit = 99999999 <font color="#85994b">// Upper limit for a
 lumpSumAdditionalRateAllocatedIncome <font color="#85994b">// Income allocated to this band. Refer to "ART" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
 lumpSumAdditionalRateTax <font color="#85994b">// Tax calculated for this band</font>
 
-<font color="#85994b">// Initialise Gains Bands
+<font color="#85994b">// Initialise Gains Bands</font>
 gainsStartingRateName = "SSR" <font color="#85994b">// Starting rate for gains. Refer to savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
 gainsStartingRate = 0% <font color="#85994b">// Tax rate for the starting rate band. Refer to "SSR" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
 gainsStartingRateLimit = 5000 <font color="#85994b">// Maximum income for the starting rate band. Refer to "SSR" threshold under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
@@ -171,7 +169,7 @@ bandCategories <font color="#85994b">// Band categories for each type of income<
 exclusions <font color="#85994b">// Band exclusions for each type of income</font>
 rateExtensionList <font color="#85994b">// List containing rate exyensions</font>
 
-<font color="#85994b">// Income Sources
+<font color="#85994b">// Income Sources</font>
 totalProfitFromPayPensionsProfit <font color="#85994b">// Total profit from PayPensionsProfit. Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a></font>
 totalAllowancesAndDeductions <font color="#85994b">// Total allowances are used to reduce the amount of taxable income before tax is calculated. Refer to <a href="allowances-and-reliefs.html#total-allowances">Total allowances</a></font>
 totalSavingsIncome <font color="#85994b">// Total savings interest income before applying the Personal Savings Allowance or the starting rate for savings. Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a></font>
@@ -609,7 +607,7 @@ lumpSumHigherRateLimit = 62430 <font color="#85994b">// Higher rate threshold. R
 lumpSumHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 lumpSumHigherRateTax <font color="#85994b">// Tax calculated for this band</font>
 lumpSumAdvancedRateName = "AVRT" <font color="#85994b">// Advanced rate band for lump sums. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumAdvancedRate = 45% Refer to "AVRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumAdvancedRate = 45% <font color="#85994b">// Refer to "AVRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
 lumpSumAdvancedRateLimit = 125140<font color="#85994b">// Advanced rate threshold. Refer to "AVRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
 lumpSumAdvancedRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 lumpSumAdvancedRateTax <font color="#85994b">// Tax calculated for this band</font> 

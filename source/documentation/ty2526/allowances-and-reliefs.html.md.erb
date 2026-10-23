@@ -1,5 +1,5 @@
 ---
-title: Allowances and reliefs | Tax Logic service guide
+title: Allowances and reliefs (2025 to 2026) | Tax Logic service guide
 weight: 3
 description: Details of the calculations used for allowances and reliefs.
 ---
@@ -24,7 +24,7 @@ Below is the calculation pseudocode for Personal Allowance.
 <font color="#85994b">// Earnings >= £125,140: Personal Allowance is £0</font> 
 <font color="#85994b">// Input parameters</font> 
 adjustedNetIncome <font color="#85994b">// Total taxable income before any Personal Allowances and less certain tax reliefs. Refer to <a href="tax-calculation.html#adjusted-net-income">Adjusted net income</a></font> 
-reducedAllowanceLimit <font color="#85994b">// £100,000 for tax year 2024-25. Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font></font> 
+reducedAllowanceLimit <font color="#85994b">// £100,000 for tax year 2024-25. Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a></font></font> 
 
 <font color="#85994b">// Other parameter used for calculations</font> 
 personalAllowance <font color="#85994b">// Personal allowance for the tax year</font> 
@@ -50,15 +50,15 @@ Marriage Allowance lets you transfer some of your Personal Allowance to your spo
    <code>
 <font color="#85994b">// Input parameters</font>
 isTransferorOfMAT <font color="#85994b">// Indicates if the customer is the transferor of Marriage Allowance Transfer</font>
-basicRateBandThreshold <font color="#85994b">// Threshold for Basic rate band. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+basicRateBandThreshold <font color="#85994b">// Threshold for Basic rate band. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 grossGiftAidPayments <font color="#85994b">// Total Gift Aid amount that extends the Basic Rate band, If applicable. Refer to Gift Aid</font>
 grossTotalPensionContributionsReliefs <font color="#85994b">// Total pension contributions reliefs, if applicable. Refer to totalPensionContributionsRelief in <a href="allowances-and-reliefs.html#pension-contributions">Pension contributions</a></font>
 totalIncomeFromAllSources <font color="#85994b">// Total income from all sources. Refer to <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a></font>
-personalAllowance <font color="#85994b">// Personal allowance for the tax year. Refer to <a href="income-and-benefits.html#personal-allowance">Personal Allowance</a></font>
-matInRate <font color="#85994b">// Refer to marriageAllowanceTransferInRate in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+personalAllowance <font color="#85994b">// Personal allowance for the tax year. Refer to <a href="allowances-and-reliefs.html#personal-allowance">Personal Allowance</a></font>
+matInRate <font color="#85994b">// Refer to marriageAllowanceTransferInRate in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 isMarriageAllowanceTransferringOrReceivingAllowed <font color="#85994b">// Flag to check if Marriage Allowance transfer/receipt is allowed</font>
 isMarriageAllowanceAllowed <font color="#85994b">// Indicates that marriage allowance transfer is allowed</font>
-marriageAllowanceTransferOutAmount <font color="#85994b">// Amount to be transferred out as Marriage Allowance. Refer to marriageAllowanceTransferInAndOutAmount in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+marriageAllowanceTransferOutAmount <font color="#85994b">// Amount to be transferred out as Marriage Allowance. Refer to marriageAllowanceTransferInAndOutAmount in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 
 <font color="#85994b">// Other parameters used for calculations\</font>
 totalBasicRateBandThreshold <font color="#85994b">// Total threshold for the basic rate band</font>
@@ -119,7 +119,7 @@ Below is the calculation pseudocode for Gift Aid payments.
 giftAidCurrentYear <font color="#85994b">// The total amount of Gift Aid payments made for the specified tax year. API parameter name: giftAidPayments.totalAmount</font>
 giftAidNextYearTreatedAsCurrentYear <font color="#85994b">// The amount of Gift Aid payments brought forward from the following tax year, treated as if made in the specified tax year .API parameter name: giftAidPayments.amountTreatedAsSpecifiedTaxYear\</font>
 giftAidCurrentYearTreatedAsPreviousYear <font color="#85994b">// The amount of Gift Aid payments made within the specified tax year that should be treated as if they were made in the previous tax year .API parameter name: giftAidPayments.amountTreatedAsPreviousTaxYear</font>
-ukbasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>\</font>
+ukbasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>\</font>
 
 <font color="#85994b">// Other parameters used for calculations </font>
 giftAidPaymentMade <font color="#85994b">// Total gift aid payments made</font>
@@ -204,7 +204,7 @@ Below is the calculation pseudocode for gross annuity payments.
    <code>
 <font color="#85994b">// Input parameters</font>
 reliefClaimed <font color="#85994b">// Relief claimed for annual payments. API parameter name: annualPaymentsMade.reliefClaimed</font>
-ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 
 <font color="#85994b">// Other parameters used for calculations</font>
 grossAnnuityPayments <font color="#85994b">// Gross annuity payments</font>
@@ -224,7 +224,7 @@ Below is the calculation pseudocode for payments to trade unions for death benef
 <pre>
    <code>
 <font color="#85994b">// Input parameters</font>
-capTup <font color="#85994b">// Limit for trade union payments. Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+capTup <font color="#85994b">// Limit for trade union payments. Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 paymentsToTradeUnionsForDeathBenefitsAmount <font color="#85994b">// Payments made to trade unions. API parameter name: paymentsToTradeUnionsForDeathBenefits.expenseAmount</font>
 
 <font color="#85994b">// Other parameters used for calculations</font>
@@ -270,8 +270,8 @@ Below is the calculation pseudocode for total allowances and deductions.
 <pre>
    <code>
 <font color="#85994b">// Input parameters</font>
-personalAllowance <font color="#85994b">// Refer to <a href="income-and-benefits.html#personal-allowance">Personal Allowance</a></font>
-marriageAllowanceTransferOut <font color="#85994b">// Refer to marriageAllowanceTransferOutAmount in <a href="income-and-benefits.html#marriage-allowance">Marriage Allowance</a></font>
+personalAllowance <font color="#85994b">// Refer to <a href="allowances-and-reliefs.html#personal-allowance">Personal Allowance</a></font>
+marriageAllowanceTransferOut <font color="#85994b">// Refer to marriageAllowanceTransferOutAmount in <a href="allowances-and-reliefs.html#marriage-allowance">Marriage Allowance</a></font>
 capitalGainsSetAgainstInYearGeneralIncome <font color="#85994b">// Refer to <a href="income-and-benefits.html#losses-and-loss-claims">Losses and loss claims</a></font>
 lossesAppliedToGeneralIncome <font color="#85994b">// Refer to <a href="income-and-benefits.html#losses-and-loss-claims">Losses and loss claims</a></font>
 qualifyingLoanInterestFromInvestments <font color="#85994b">// Refer to <a href="income-and-benefits.html#losses-and-loss-claims">Losses and loss claims</a></font>
@@ -300,13 +300,13 @@ capitalRedemptionDeficiencyRelief <font color="#85994b">// Capital Redemption de
 lifeInsuranceDeficiencyRelief <font color="#85994b">// Life insurance deficiency relief</font>
 lifeAnnuityDeficiencyRelief <font color="#85994b">// Life annuity deficiency relief</font>
 dividendHigherRateAllocatedIncome <font color="#85994b">// Dividends income allocated to higher rate. Refer to Income Tax Liability</font>
-dividendBasicRate <font color="#85994b">// Refer to "BRT" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
-dividendHigherRate <font color="#85994b">// Refer to "HRT" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
-savingsBasicRate <font color="#85994b">// Refer to "BRT" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
-savingsHigherRate <font color="#85994b">// Refer to "HRT" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+dividendBasicRate <font color="#85994b">// Refer to "BRT" rate under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
+dividendHigherRate <font color="#85994b">// Refer to "HRT" rate under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
+savingsBasicRate <font color="#85994b">// Refer to "BRT" rate under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
+savingsHigherRate <font color="#85994b">// Refer to "HRT" rate under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 savingsHigherRateAllocatedIncome <font color="#85994b">// Savings income allocated to HRT band. Refer to Income Tax Liability</font>
 pppHigherRateAllocatedIncome <font color="#85994b">// PPP income allocated to HRT band. Refer to Income Tax Liability</font>
-pppScottishHigherRate <font color="#85994b">// Refer to "HRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+pppScottishHigherRate <font color="#85994b">// Refer to "HRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 pppScottishHigherRateAllocatedIncome <font color="#85994b">// Refer to Income Tax Liability Scotland</font>
 nationalRegime <font color="#85994b">// National Regime</font>
 
@@ -394,7 +394,7 @@ yearsheld, <font color="#85994b">// Number of years the policy has been held</fo
 yearsHeldSinceLastGain <font color="#85994b">// Number of years the policy has been held since the last gain</font>
 }
 ]
-ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 totalIncomeFromPayPensionsProfit <font color="#85994b">// Refer to totalProfitFromPayPensionsProfit in <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a></font>
 
 <font color="#85994b">// Other parameters used for calculation</font>
@@ -495,14 +495,14 @@ amountClaimed <font color="#85994b">// Amount claimed for the relief</font>
 }
 ]
 incomeTaxCharged <font color="#85994b">// Refer to Income tax liability</font>
-qmpLimit <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
-qmpRate <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
-vctRate <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
-eisRate <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
-citrRate <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
-seisRate <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
-sitrRate <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
-pppBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+qmpLimit <font color="#85994b">// Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
+qmpRate <font color="#85994b">// Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
+vctRate <font color="#85994b">// Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
+eisRate <font color="#85994b">// Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
+citrRate <font color="#85994b">// Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
+seisRate <font color="#85994b">// Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
+sitrRate <font color="#85994b">// Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
+pppBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 
 <font color="#85994b">// Specific relief investment types</font>
 reliefType = [
@@ -683,7 +683,7 @@ totalAllowances <font color="#85994b">// Total allowances. Refer to totalAllowan
 totalUKAllowableAmount <font color="#85994b">// Total UK allowable amount. Refer to <a href="allowances-and-reliefs.html#residential-finance-costs">Residential finance costs</a></font>- UK</font>
 totalForeignPropertyAllowableAmount <font color="#85994b">// Total foreign property allowable amount. Refer to <a href="allowances-and-reliefs.html#residential-finance-costs">Residential finance costs</a></font>- Foreign
 totalOtherIncomeAllowableAmount <font color="#85994b">// Total other income allowable amount. Refer to <a href="allowances-and-reliefs.html#residential-finance-costs">Residential finance costs</a></font>- All other income received whilst abroad</font>
-ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 
 <font color="#85994b">// Other parameters used for calculations</font>
 adjustedTotalIncome <font color="#85994b">// Adjusted total income</font>
@@ -925,8 +925,8 @@ bonusIssuesSecurities <font color="#85994b">// Total bonus issues of securities 
 dividendAdditionalRateAllocatedIncome <font color="#85994b">// Dividends income allocated to additional rate.Refer to Income Tax Liability</font>
 dividendZeroRateAllocatedIncome <font color="#85994b">// Dividends income allocated to zero rate. Refer to Income Tax Liability</font>
 dividendHigherRateAllocatedIncome <font color="#85994b">// Dividends income allocated to higher rate. Refer to Income Tax Liability</font>
-dividendAdditionalRate <font color="#85994b">// Refer to "ART" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
-dividendHigherRate <font color="#85994b">// Refer to "HRT" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+dividendAdditionalRate <font color="#85994b">// Refer to "ART" rate under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
+dividendHigherRate <font color="#85994b">// Refer to "HRT" rate under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 remainingTaxCharged <font color="#85994b">// Remaining tax charged. Refer to <a href="allowances-and-reliefs.html#other-reliefs">Other reliefs</a></font>
 
 <font color="#85994b">// Other parameters used for calculations</font>

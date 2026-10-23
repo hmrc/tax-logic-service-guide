@@ -1,8 +1,10 @@
 ---
-title: Tax calculation | Tax Logic service guide
+title: Tax calculation (2025 to 2026) | Tax Logic service guide
 weight: 4
 description: Further details of the calculations used for income tax.
 ---
+
+<%= partial 'documentation/partials/google_tag_manager_js' %>
 
 # Tax calculation
 
@@ -52,55 +54,55 @@ Below is the calculation pseudocode for Income Tax Liability (UK).
 <pre>
    <code>
 <font color="#85994b">// Initialise Pay Pensions Profit (PPP) Bands</font>
-pppBasicRateName ="BRT" <font color="#85994b">// Basic rate for PPP income. Refer to UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppBasicRate =20% <font color="#85994b">// Basic rate band for PPP income. Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppBasicRateLimit =37700 <font color="#85994b">// Basic rate threshold. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppBasicRateName ="BRT" <font color="#85994b">// Basic rate for PPP income. Refer to UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppBasicRate =20% <font color="#85994b">// Basic rate band for PPP income. Refer to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppBasicRateLimit =37700 <font color="#85994b">// Basic rate threshold. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 pppBasicRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 pppBasicRateTax <font color="#85994b">// Tax calculated for this band</font>
-pppHigherRateName ="HRT" <font color="#85994b">// Higher rate band for PPP income. Refer to UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppHigherRate =40% <font color="#85994b">// Tax rate for the higher rate band. Refer to "HRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppHigherRateLimit =125140 <font color="#85994b">// Upper limit of the higher rate band. Refer to "HRT" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppHigherRateName ="HRT" <font color="#85994b">// Higher rate band for PPP income. Refer to UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppHigherRate =40% <font color="#85994b">// Tax rate for the higher rate band. Refer to "HRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppHigherRateLimit =125140 <font color="#85994b">// Upper limit of the higher rate band. Refer to "HRT" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 pppHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 pppHigherRateTax <font color="#85994b">// Tax calculated for this band</font>
-pppAdditionalRateName ="ART" <font color="#85994b">// Additional rate band for PPP income. Refer to UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppAdditionalRate =45% <font color="#85994b">// Tax rate for the additional rate band. Refer to "ART" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppAdditionalRateLimit = 99999999 <font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdditionalRateName ="ART" <font color="#85994b">// Additional rate band for PPP income. Refer to UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdditionalRate =45% <font color="#85994b">// Tax rate for the additional rate band. Refer to "ART" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdditionalRateLimit = 99999999 <font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 pppAdditionalRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 pppAdditionalRateTax <font color="#85994b">// Tax calculated for this band</font>
 
 <font color="#85994b">// Initialise Savings Bands</font>
-savingsStartingRateName ="SSR" <font color="#85994b">// Starting rate for savings. Refer to savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsStartingRate =0% <font color="#85994b">// Tax rate for the starting rate band. Refer to "SSR" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsStartingRateLimit =5000 <font color="#85994b">// Maximum income for the starting rate band. Refer to "SSR" threshold under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsStartingRateName ="SSR" <font color="#85994b">// Starting rate for savings. Refer to savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsStartingRate =0% <font color="#85994b">// Tax rate for the starting rate band. Refer to "SSR" rate under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsStartingRateLimit =5000 <font color="#85994b">// Maximum income for the starting rate band. Refer to "SSR" threshold under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 savingsStartingRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 savingsStartingRateTax <font color="#85994b">// Tax calculated for this band</font>
 savingsPSAName ="PSA" <font color="#85994b">// Personal Savings Allowance band</font>
 savingsPSARate =0% <font color="#85994b">// Tax rate for PSA band</font>
 savingsPSALimit <font color="#85994b">// Maximum income covered by PSA (adjusts dynamically)</font>
-psaBrtThreshold = 1000 <font color="#85994b">// PSA threshold for basic rate taxpayer. Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-psaHrtThreshold = 500 <font color="#85994b">// PSA threshold for higher rate taxpayer. Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+psaBrtThreshold = 1000 <font color="#85994b">// PSA threshold for basic rate taxpayer. Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+psaHrtThreshold = 500 <font color="#85994b">// PSA threshold for higher rate taxpayer. Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 savingsPSA <font color="#85994b">// Income allocated to this band</font>
 savingsPSATax <font color="#85994b">// Tax calculated for this band</font>
-savingsBasicRateName ="BRT" <font color="#85994b">// Basic rate band for savings income. Refer to savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsBasicRate =20% <font color="#85994b">// Tax rate for the basic rate band. Refer to "BRT" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsBasicRateLimit =37700 <font color="#85994b">// Upper limit of the basic rate band. Refer to "BRT" threshold under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsBasicRateName ="BRT" <font color="#85994b">// Basic rate band for savings income. Refer to savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsBasicRate =20% <font color="#85994b">// Tax rate for the basic rate band. Refer to "BRT" rate under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsBasicRateLimit =37700 <font color="#85994b">// Upper limit of the basic rate band. Refer to "BRT" threshold under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 savingsBasicRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 savingsBasicRateTax <font color="#85994b">// Tax calculated for this band</font>
-savingsHigherRateName = "HRT" <font color="#85994b">// Higher rate band for savings income. Refer to savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsHigherRate = 40% <font color="#85994b">// Tax rate for the higher rate band. Refer to "HRT" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsHigherRateLimit = 125140 <font color="#85994b">// Upper limit of the higher rate band. Refer to "HRT" threshold under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsHigherRateName = "HRT" <font color="#85994b">// Higher rate band for savings income. Refer to savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsHigherRate = 40% <font color="#85994b">// Tax rate for the higher rate band. Refer to "HRT" rate under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsHigherRateLimit = 125140 <font color="#85994b">// Upper limit of the higher rate band. Refer to "HRT" threshold under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 savingsHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 savingsHigherRateTax <font color="#85994b">// Tax calculated for this band</font>
-savingsAdditionalRateName = "ART" <font color="#85994b">// Additional rate band for savings income. Refer to savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsAdditionalRate = 45% <font color="#85994b">// Tax rate for the additional rate band. Refer to "ART" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsAdditionalRateLimit = 99999999 <font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsAdditionalRateName = "ART" <font color="#85994b">// Additional rate band for savings income. Refer to savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsAdditionalRate = 45% <font color="#85994b">// Tax rate for the additional rate band. Refer to "ART" rate under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsAdditionalRateLimit = 99999999 <font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 savingsAdditionalRateAllocatedIncome<font color="#85994b">// Income allocated to this band</font>
 savingsAdditionalRateTax <font color="#85994b">// Tax calculated for this band</font>
 
 <font color="#85994b">// Initialise Dividend Bands</font>
-dividendZeroRateName = "ZRTBR" OR "ZRTHR" OR "ZRTAR" <font color="#85994b">// Zero-rate band for dividend. Refer to dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendZeroRate =0% <font color="#85994b">// Tax rate for the zero-rate band. Refer to dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendZeroRateLimit =500 <font color="#85994b">// Dividend allowance for tax year. Refer to dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendZeroRateName = "ZRTBR" OR "ZRTHR" OR "ZRTAR" <font color="#85994b">// Zero-rate band for dividend. Refer to dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendZeroRate =0% <font color="#85994b">// Tax rate for the zero-rate band. Refer to dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendZeroRateLimit =500 <font color="#85994b">// Dividend allowance for tax year. Refer to dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 dividendZeroRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 ZRTBRLimit <font color="#85994b">// ZRTBR limit</font>
 ZRTHRLimit <font color="#85994b">// ZRTHR limit</font>
@@ -108,61 +110,61 @@ ZRTARLimit <font color="#85994b">// ZRTAR limit</font>
 dividendZRTBRTax <font color="#85994b">// Tax calculated for this band</font>
 dividendZRTHRTax <font color="#85994b">// Tax calculated for this band</font>
 dividendZRTARTax <font color="#85994b">// Tax calculated for this band</font>
-dividendBasicRateName ="BRT" <font color="#85994b">// Basic rate band for dividends. Refer to dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendBasicRate =8.75% <font color="#85994b">// Tax rate for the basic rate band. Refer to "BRT" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendBasicRateLimit =37700 <font color="#85994b">// Upper limit of the basic rate. Refer to "BRT" threshold under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendBasicRateName ="BRT" <font color="#85994b">// Basic rate band for dividends. Refer to dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendBasicRate =8.75% <font color="#85994b">// Tax rate for the basic rate band. Refer to "BRT" rate under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendBasicRateLimit =37700 <font color="#85994b">// Upper limit of the basic rate. Refer to "BRT" threshold under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 dividendBasicRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 dividendBasicRateTax <font color="#85994b">// Tax calculated for this band</font>
-dividendHigherRateName ="HRT" <font color="#85994b">// Higher rate band for dividends. Refer to dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendHigherRate =33.75% <font color="#85994b">// Tax rate for the higher rate band. Refer to "HRT" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendHigherRateLimit =125140 <font color="#85994b">// Upper limit of the higher rate band. Refer to "HRT" threshold under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendHigherRateName ="HRT" <font color="#85994b">// Higher rate band for dividends. Refer to dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendHigherRate =33.75% <font color="#85994b">// Tax rate for the higher rate band. Refer to "HRT" rate under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendHigherRateLimit =125140 <font color="#85994b">// Upper limit of the higher rate band. Refer to "HRT" threshold under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 dividendHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 dividendHigherRateTax <font color="#85994b">// Tax calculated for this band</font>
-dividendAdditionalRateName ="ART" <font color="#85994b">// Additional rate band for dividends. Refer to dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendAdditionalRate =39.35% <font color="#85994b">// Tax rate for the additional rate band. Refer to "ART" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendAdditionalRateLimit = 99999999 <font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendAdditionalRateName ="ART" <font color="#85994b">// Additional rate band for dividends. Refer to dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendAdditionalRate =39.35% <font color="#85994b">// Tax rate for the additional rate band. Refer to "ART" rate under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendAdditionalRateLimit = 99999999 <font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 dividendAdditionalRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 dividendAdditionalRateTax <font color="#85994b">// Tax calculated for this band</font>
 
 <font color="#85994b">// Initialise Lump Sums Bands</font>
-lumpSumBasicRateName ="BRT" <font color="#85994b">// Basic rate for lump sums. Refer to UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumBasicRate =20% <font color="#85994b">// Tax rate. Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumBasicRateLimit =37700 <font color="#85994b">// Upper limit for basic rate. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumBasicRateName ="BRT" <font color="#85994b">// Basic rate for lump sums. Refer to UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumBasicRate =20% <font color="#85994b">// Tax rate. Refer to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumBasicRateLimit =37700 <font color="#85994b">// Upper limit for basic rate. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 lumpSumBasicRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 lumpSumBasicRateTax <font color="#85994b">// Tax calculated for this band</font>
-lumpSumHigherRateName ="HRT" <font color="#85994b">// Higher rate for lump sums. Refer to UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumHigherRate =40% <font color="#85994b">// Tax rate. Refer to "HRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumHigherRateLimit =125140 <font color="#85994b">// Upper limit for higher rate. Refer to "HRT" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumHigherRateName ="HRT" <font color="#85994b">// Higher rate for lump sums. Refer to UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumHigherRate =40% <font color="#85994b">// Tax rate. Refer to "HRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumHigherRateLimit =125140 <font color="#85994b">// Upper limit for higher rate. Refer to "HRT" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 lumpSumHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 lumpSumHigherRateTax <font color="#85994b">// Tax calculated for this band</font>
-lumpSumAdditionalRateName ="ART" <font color="#85994b">// Additional rate for lump sums. Refer to UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumAdditionalRate =45% <font color="#85994b">// Tax rate. Refer to "ART" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumAdditionalRateLimit = 99999999 <font color="#85994b">// Upper limit for additional rate. Refer to "ART" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumAdditionalRateAllocatedIncome <font color="#85994b">// Income allocated to this band. Refer to "ART" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumAdditionalRateName ="ART" <font color="#85994b">// Additional rate for lump sums. Refer to UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumAdditionalRate =45% <font color="#85994b">// Tax rate. Refer to "ART" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumAdditionalRateLimit = 99999999 <font color="#85994b">// Upper limit for additional rate. Refer to "ART" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumAdditionalRateAllocatedIncome <font color="#85994b">// Income allocated to this band. Refer to "ART" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 lumpSumAdditionalRateTax <font color="#85994b">// Tax calculated for this band</font>
 
 <font color="#85994b">// Initialise Gains Bands</font>
-gainsStartingRateName = "SSR" <font color="#85994b">// Starting rate for gains. Refer to savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsStartingRate = 0% <font color="#85994b">// Tax rate for the starting rate band. Refer to "SSR" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsStartingRateLimit = 5000 <font color="#85994b">// Maximum income for the starting rate band. Refer to "SSR" threshold under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsStartingRateName = "SSR" <font color="#85994b">// Starting rate for gains. Refer to savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsStartingRate = 0% <font color="#85994b">// Tax rate for the starting rate band. Refer to "SSR" rate under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsStartingRateLimit = 5000 <font color="#85994b">// Maximum income for the starting rate band. Refer to "SSR" threshold under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 gainsStartingRateAllocatedIncome <font color="#85994b">// Income allocated to this  band</font>
 gainsStartingRateTax <font color="#85994b">// Tax calculated for this band</font>
 gainsPSAName = "PSA" <font color="#85994b">// Personal Savings Allowance band</font>
 gainsPSARate = 0% <font color="#85994b">// Tax rate for PSA band</font>
 gainsPSATax <font color="#85994b">// Tax calculated for this band</font>
-gainsBasicRateName = "BRT" <font color="#85994b">// Basic rate for gains. Refer to UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsBasicRate = 20% <font color="#85994b">// Tax rate. Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsBasicRateLimit = 37700 <font color="#85994b">// Upper limit for basic rate. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	
+gainsBasicRateName = "BRT" <font color="#85994b">// Basic rate for gains. Refer to UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsBasicRate = 20% <font color="#85994b">// Tax rate. Refer to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsBasicRateLimit = 37700 <font color="#85994b">// Upper limit for basic rate. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	
 gainsBasicRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 gainsBasicRateTax <font color="#85994b">// Tax calculated for this band</font>
-gainsHigherRateName ="HRT" <font color="#85994b">// Higher rate for gains. Refer to UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsHigherRate =40% <font color="#85994b">// Tax rate. Refer to "HRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsHigherRateLimit =125140 <font color="#85994b">// Upper limit for higher rate. Refer to "HRT" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsHigherRateName ="HRT" <font color="#85994b">// Higher rate for gains. Refer to UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsHigherRate =40% <font color="#85994b">// Tax rate. Refer to "HRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsHigherRateLimit =125140 <font color="#85994b">// Upper limit for higher rate. Refer to "HRT" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 gainsHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 gainsHigherRateTax <font color="#85994b">// Tax calculated for this band</font>
-gainsAdditionalRateName ="ART" <font color="#85994b">// Additional rate for gains. Refer to UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsAdditionalRate =45% <font color="#85994b">// Tax rate. Refer to "ART" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsAdditionalRateLimit = 99999999 <font color="#85994b">// Upper limit for additional rate. Refer to "ART" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsAdditionalRateName ="ART" <font color="#85994b">// Additional rate for gains. Refer to UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsAdditionalRate =45% <font color="#85994b">// Tax rate. Refer to "ART" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsAdditionalRateLimit = 99999999 <font color="#85994b">// Upper limit for additional rate. Refer to "ART" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 gainsAdditionalRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 gainsAdditionalRateTax <font color="#85994b">// Tax calculated for this band</font>
 bandCategories <font color="#85994b">// Band categories for each type of income</font>
@@ -177,7 +179,7 @@ totalDividendIncome <font color="#85994b">// Total dividend income received befo
 totalLumpSumsIncome <font color="#85994b">// Total lumpsums income received before applying the allowance. Refer to <a href="income-and-benefits.html#employment-income">Employment income</a></font>
 totalGainsIncome <font color="#85994b">// Total gains income received before applying the allowance. Refer to <a href="allowances-and-reliefs.html#top-slicing-relief">Top slicing relief</a></font>
 adjustedNetIncome <font color="#85994b">// Adjusted net income. Refer to <a href="tax-calculation.html#adjusted-net-income">Adjusted net income</a></font> 
-personalAllowance <font color="#85994b">// Personal allowance. Refer to <a href="income-and-benefits.html#personal-allowance">Personal Allowance</a></font>
+personalAllowance <font color="#85994b">// Personal allowance. Refer to <a href="allowances-and-reliefs.html#personal-allowance">Personal Allowance</a></font>
 
 <font color="#85994b">// Other parameters used for calculations</font>
 remainingAllowance <font color="#85994b">// Remaining allowance</font>
@@ -498,70 +500,70 @@ incomeTaxCharged = totalTaxPPP + totalSavingsTax + totalDividendTax + totalLumpS
 <pre>
    <code>
 <font color="#85994b">// Initialise Pay Pensions Profit (PPP) Bands</font>
-pppStarterRateName = "SRT" <font color="#85994b">// Starter rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppStarterRate = 19% <font color="#85994b">// Starter rate for PPP income. Refer to "SRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppStarterRateLimit = 2306 <font color="#85994b">// Starter rate threshold. Refer to "SRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppStarterRateName = "SRT" <font color="#85994b">// Starter rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppStarterRate = 19% <font color="#85994b">// Starter rate for PPP income. Refer to "SRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppStarterRateLimit = 2306 <font color="#85994b">// Starter rate threshold. Refer to "SRT" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 pppStarterRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 pppStarterRateTax <font color="#85994b">// Tax calculated for this band</font>
-pppBasicRateName = "BRT" <font color="#85994b">// Basic rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppBasicRate = 20% <font color="#85994b">// Basic rate for PPP income. Refer to "BRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppBasicRateLimit = 13991 <font color="#85994b">// Basic rate threshold. Refer to "BRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppBasicRateName = "BRT" <font color="#85994b">// Basic rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppBasicRate = 20% <font color="#85994b">// Basic rate for PPP income. Refer to "BRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppBasicRateLimit = 13991 <font color="#85994b">// Basic rate threshold. Refer to "BRT" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 pppBasicRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 pppBasicRateTax <font color="#85994b">// Tax calculated for this band</font>
-pppIntermediateRateName = "IRT" <font color="#85994b">// Intermediate rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppIntermediateRate = 21% <font color="#85994b">// Intermediate rate for PPP income. Refer to "IRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppIntermediateRateLimit = 31092 <font color="#85994b">// Intermediate rate threshold. Refer to "IRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppIntermediateRateName = "IRT" <font color="#85994b">// Intermediate rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppIntermediateRate = 21% <font color="#85994b">// Intermediate rate for PPP income. Refer to "IRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppIntermediateRateLimit = 31092 <font color="#85994b">// Intermediate rate threshold. Refer to "IRT" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 pppIntermediateRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 pppIntermediateRateTax <font color="#85994b">// Tax calculated for this band</font>
-pppHigherRateName = "HRT" <font color="#85994b">// Higher rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppHigherRate = 42% <font color="#85994b">// Higher rate for PPP income. Refer to "HRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppHigherRateLimit = 62430 <font color="#85994b">// Higher rate threshold. Refer to "HRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppHigherRateName = "HRT" <font color="#85994b">// Higher rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppHigherRate = 42% <font color="#85994b">// Higher rate for PPP income. Refer to "HRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppHigherRateLimit = 62430 <font color="#85994b">// Higher rate threshold. Refer to "HRT" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 pppHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 pppHigherRateTax <font color="#85994b">// Tax calculated for this band</font>
-pppAdvancedRateName = "AVRT" <font color="#85994b">// Advanced rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppAdvancedRate = 45% <font color="#85994b">// Advanced rate for PPP income. Refer to "AVRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppAdvancedRateLimit = 125140 <font color="#85994b">// Advanced rate threshold. Refer to "AVRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdvancedRateName = "AVRT" <font color="#85994b">// Advanced rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdvancedRate = 45% <font color="#85994b">// Advanced rate for PPP income. Refer to "AVRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdvancedRateLimit = 125140 <font color="#85994b">// Advanced rate threshold. Refer to "AVRT" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 pppAdvancedRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 pppAdvancedRateTax <font color="#85994b">// Tax calculated for this band</font>
-pppAdditionalRateName = "ART" <font color="#85994b">// Additional rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppAdditionalRate = 48% <font color="#85994b">// Additional rate for PPP income. Refer to "ART" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppAdditionalRateLimit = 99999999 <font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdditionalRateName = "ART" <font color="#85994b">// Additional rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdditionalRate = 48% <font color="#85994b">// Additional rate for PPP income. Refer to "ART" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdditionalRateLimit = 99999999 <font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 pppAdditionalRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 pppAdditionalRateTax <font color="#85994b">// Tax calculated for this band</font>
 
 <font color="#85994b">// Initialise Savings Bands</font>
-savingsStartingRateName ="SSR" <font color="#85994b">// Starting rate for savings. Refer to savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsStartingRate =0% <font color="#85994b">// Tax rate for the starting rate band. Refer to "SSR" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsStartingRateLimit =5000 <font color="#85994b">// Maximum income for the starting rate band. Refer to "SSR" threshold under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsStartingRateName ="SSR" <font color="#85994b">// Starting rate for savings. Refer to savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsStartingRate =0% <font color="#85994b">// Tax rate for the starting rate band. Refer to "SSR" rate under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsStartingRateLimit =5000 <font color="#85994b">// Maximum income for the starting rate band. Refer to "SSR" threshold under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 savingsStartingRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 savingsStartingRateTax <font color="#85994b">// Tax calculated for this band</font>
 savingsPSAName ="PSA"<font color="#85994b">// Personal Savings Allowance band</font>   
 savingsPSARate =0% <font color="#85994b">// Tax rate for PSA band</font>    
 savingsPSALimit <font color="#85994b">// Maximum income covered by PSA (adjusts dynamically)</font>
-psaBrtThreshold = 1000 <font color="#85994b">// PSA threshold for basic rate taxpayer. Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-psaHrtThreshold = 500<font color="#85994b">// PSA threshold for higher rate taxpayer. Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+psaBrtThreshold = 1000 <font color="#85994b">// PSA threshold for basic rate taxpayer. Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+psaHrtThreshold = 500<font color="#85994b">// PSA threshold for higher rate taxpayer. Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 savingsPSA <font color="#85994b">// Income allocated to this band</font>    
 savingsPSATax <font color="#85994b">// Tax calculated for this band</font>
-savingsBasicRateName = "BRT" <font color="#85994b">// Basic rate band for savings income. Refer to savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsBasicRate = 20% <font color="#85994b">// Tax rate for the basic rate band. Refer to "BRT" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsBasicRateLimit = 37700 <font color="#85994b">// Upper limit of the basic rate band. Refer to "BRT" threshold under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsBasicRateName = "BRT" <font color="#85994b">// Basic rate band for savings income. Refer to savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsBasicRate = 20% <font color="#85994b">// Tax rate for the basic rate band. Refer to "BRT" rate under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsBasicRateLimit = 37700 <font color="#85994b">// Upper limit of the basic rate band. Refer to "BRT" threshold under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 savingsBasicRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 savingsBasicRateTax <font color="#85994b">// Tax calculated for this band</font>
-savingsHigherRateName = "HRT" <font color="#85994b">// Higher rate band for savings income. Refer to savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsHigherRate = 40% <font color="#85994b">// Tax rate for the higher rate band. Refer to "HRT" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsHigherRateLimit = 125140 <font color="#85994b">// Upper limit of the higher rate band. Refer to "HRT" threshold under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsHigherRateName = "HRT" <font color="#85994b">// Higher rate band for savings income. Refer to savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsHigherRate = 40% <font color="#85994b">// Tax rate for the higher rate band. Refer to "HRT" rate under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsHigherRateLimit = 125140 <font color="#85994b">// Upper limit of the higher rate band. Refer to "HRT" threshold under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 savingsHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 savingsHigherRateTax <font color="#85994b">// Tax calculated for this band</font>
-savingsAdditionalRateName = "ART" <font color="#85994b">// Additional rate band for savings income. Refer to savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsAdditionalRate = 45% <font color="#85994b">// Tax rate for the additional rate band. Refer to "ART" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-savingsAdditionalRateLimit = 99999999<font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsAdditionalRateName = "ART" <font color="#85994b">// Additional rate band for savings income. Refer to savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsAdditionalRate = 45% <font color="#85994b">// Tax rate for the additional rate band. Refer to "ART" rate under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+savingsAdditionalRateLimit = 99999999<font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 savingsAdditionalRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 savingsAdditionalRateTax <font color="#85994b">// Tax calculated for this band</font>
 
 <font color="#85994b">// Initialise Dividend Bands</font>
-dividendZeroRateName = "ZRTBR" OR "ZRTHR" OR "ZRTAR" <font color="#85994b">// Zero-rate band for dividend. Refer to dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendZeroRate =0% <font color="#85994b">// Tax rate for the zero-rate band. Refer to dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendZeroRateLimit =500 <font color="#85994b">// Dividend allowance for tax year. Refer to dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendZeroRateName = "ZRTBR" OR "ZRTHR" OR "ZRTAR" <font color="#85994b">// Zero-rate band for dividend. Refer to dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendZeroRate =0% <font color="#85994b">// Tax rate for the zero-rate band. Refer to dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendZeroRateLimit =500 <font color="#85994b">// Dividend allowance for tax year. Refer to dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 dividendZeroRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 ZRTBRLimit <font color="#85994b">// ZRTBR limit</font>
 ZRTHRLimit <font color="#85994b">// ZRTHR limit</font>
@@ -569,76 +571,76 @@ ZRTARLimit <font color="#85994b">// ZRTAR limit</font>
 dividendZRTBRTax <font color="#85994b">// Tax calculated for this band</font>
 dividendZRTHRTax <font color="#85994b">// Tax calculated for this band</font>
 dividendZRTARTax <font color="#85994b">// Tax calculated for this band</font>
-dividendBasicRateName = "BRT" <font color="#85994b">// Basic rate band for dividends. Refer to dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendBasicRate = 8.75% <font color="#85994b">// Tax rate for the basic rate band. Refer to "BRT" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendBasicRateLimit = 37700 <font color="#85994b">// Upper limit of the basic rate. Refer to "BRT" threshold under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendBasicRateName = "BRT" <font color="#85994b">// Basic rate band for dividends. Refer to dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendBasicRate = 8.75% <font color="#85994b">// Tax rate for the basic rate band. Refer to "BRT" rate under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendBasicRateLimit = 37700 <font color="#85994b">// Upper limit of the basic rate. Refer to "BRT" threshold under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 dividendBasicRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 dividendBasicRateTax <font color="#85994b">// Tax calculated for this band</font>
-dividendHigherRateName = "HRT" <font color="#85994b">// Higher rate band for dividends. Refer to dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendHigherRate = 33.75% <font color="#85994b">// Tax rate for the higher rate band. Refer to "HRT" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendHigherRateLimit = 125140 <font color="#85994b">// Upper limit of the higher rate band. Refer to "HRT" threshold under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendHigherRateName = "HRT" <font color="#85994b">// Higher rate band for dividends. Refer to dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendHigherRate = 33.75% <font color="#85994b">// Tax rate for the higher rate band. Refer to "HRT" rate under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendHigherRateLimit = 125140 <font color="#85994b">// Upper limit of the higher rate band. Refer to "HRT" threshold under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 dividendHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 dividendHigherRateTax <font color="#85994b">// Tax calculated for this band</font>
-dividendAdditionalRateName = "ART" <font color="#85994b">// Additional rate band for dividends. Refer to dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendAdditionalRate = 39.35% <font color="#85994b">// Tax rate for the additional rate band. Refer to "ART" rate under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-dividendAdditionalRateLimit = 99999999<font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under dividendBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendAdditionalRateName = "ART" <font color="#85994b">// Additional rate band for dividends. Refer to dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendAdditionalRate = 39.35% <font color="#85994b">// Tax rate for the additional rate band. Refer to "ART" rate under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+dividendAdditionalRateLimit = 99999999<font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under dividendBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 dividendAdditionalRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 dividendAdditionalRateTax <font color="#85994b">// Tax calculated for this band</font>
 
 <font color="#85994b">// Initialise Lumpsums Bands</font>
-lumpSumStarterRateName = "SRT" <font color="#85994b">// Starter rate band for lump sums. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumStarterRate = 19% <font color="#85994b">// Starter rate for lump sums. Refer to "SRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumStarterRateLimit = 2306<font color="#85994b">// Starter rate threshold. Refer to "SRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumStarterRateName = "SRT" <font color="#85994b">// Starter rate band for lump sums. Refer to Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumStarterRate = 19% <font color="#85994b">// Starter rate for lump sums. Refer to "SRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumStarterRateLimit = 2306<font color="#85994b">// Starter rate threshold. Refer to "SRT" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 lumpSumStarterRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 lumpSumStarterRateTax <font color="#85994b">// Tax calculated for this band</font>
-lumpSumBasicRateName = "BRT" <font color="#85994b">// Basic rate band for lump sums. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumBasicRate = 20% <font color="#85994b">// Basic rate for lump sums. Refer to "BRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumBasicRateLimit = 13991 <font color="#85994b">// Basic rate threshold. Refer to "BRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumBasicRateName = "BRT" <font color="#85994b">// Basic rate band for lump sums. Refer to Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumBasicRate = 20% <font color="#85994b">// Basic rate for lump sums. Refer to "BRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumBasicRateLimit = 13991 <font color="#85994b">// Basic rate threshold. Refer to "BRT" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 lumpSumBasicRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 lumpSumBasicRateTax <font color="#85994b">// Tax calculated for this band</font>
-lumpSumIntermediateRateName = "IRT" <font color="#85994b">// Intermediate rate band for lump sums. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumIntermediateRate = 21% <font color="#85994b">// Intermediate rate for lump sums. Refer to "IRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumIntermediateRateLimit = 31092 <font color="#85994b">//Intermediate rate threshold. Refer to "IRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumIntermediateRateName = "IRT" <font color="#85994b">// Intermediate rate band for lump sums. Refer to Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumIntermediateRate = 21% <font color="#85994b">// Intermediate rate for lump sums. Refer to "IRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumIntermediateRateLimit = 31092 <font color="#85994b">//Intermediate rate threshold. Refer to "IRT" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 lumpSumIntermediateRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 lumpSumIntermediateRateTax <font color="#85994b">// Tax calculated for this band</font>
-lumpSumHigherRateName = "HRT" <font color="#85994b">// Higher rate band for lump sums. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumHigherRate = 42% <font color="#85994b">// Higher rate for lump sums. Refer to "HRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumHigherRateLimit = 62430 <font color="#85994b">// Higher rate threshold. Refer to "HRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumHigherRateName = "HRT" <font color="#85994b">// Higher rate band for lump sums. Refer to Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumHigherRate = 42% <font color="#85994b">// Higher rate for lump sums. Refer to "HRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumHigherRateLimit = 62430 <font color="#85994b">// Higher rate threshold. Refer to "HRT" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 lumpSumHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 lumpSumHigherRateTax <font color="#85994b">// Tax calculated for this band</font>
-lumpSumAdvancedRateName = "AVRT" <font color="#85994b">// Advanced rate band for lump sums. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumAdvancedRate = 45% <font color="#85994b">// Refer to "AVRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumAdvancedRateLimit = 125140<font color="#85994b">// Advanced rate threshold. Refer to "AVRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumAdvancedRateName = "AVRT" <font color="#85994b">// Advanced rate band for lump sums. Refer to Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumAdvancedRate = 45% <font color="#85994b">// Refer to "AVRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumAdvancedRateLimit = 125140<font color="#85994b">// Advanced rate threshold. Refer to "AVRT" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 lumpSumAdvancedRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 lumpSumAdvancedRateTax <font color="#85994b">// Tax calculated for this band</font> 
-lumpSumAdditionalRateName = "ART" <font color="#85994b">// Additional rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumAdditionalRate = 48% <font color="#85994b">// Additional rate for PPP income. Refer to "ART" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lumpSumAdditionalRateLimit = 99999999 <font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumAdditionalRateName = "ART" <font color="#85994b">// Additional rate band for PPP income. Refer to Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumAdditionalRate = 48% <font color="#85994b">// Additional rate for PPP income. Refer to "ART" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lumpSumAdditionalRateLimit = 99999999 <font color="#85994b">// No upper limit for the additional rate band. Refer to "ART" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 lumpSumAdditionalRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 lumpSumAdditionalRateTax <font color="#85994b">// Tax calculated for this band</font>
 
 <font color="#85994b">// Initialise Gains Bands</font>
-gainsStartingRateName = "SSR"<font color="#85994b">// Starting rate for gains. Refer to savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsStartingRate = 0% <font color="#85994b">// Tax rate for the starting rate band. Refer to "SSR" rate under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsStartingRateLimit = 5000 <font color="#85994b">// Maximum income for the starting rate band. Refer to "SSR" threshold under savingsBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsStartingRateName = "SSR"<font color="#85994b">// Starting rate for gains. Refer to savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsStartingRate = 0% <font color="#85994b">// Tax rate for the starting rate band. Refer to "SSR" rate under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsStartingRateLimit = 5000 <font color="#85994b">// Maximum income for the starting rate band. Refer to "SSR" threshold under savingsBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 gainsStartingRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font>
 gainsStartingRateTax <font color="#85994b">// Tax calculated for this band</font>
 gainsPSAName = "PSA" <font color="#85994b">// Personal Savings Allowance band</font>
 gainsPSARate = 0% <font color="#85994b">// Tax rate for PSA band</font>
 gainsPSATax <font color="#85994b">// Tax calculated for this band</font>
-gainsBasicRateName = "BRT" <font color="#85994b">// Basic rate for gains. Refer to UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsBasicRate = 20% <font color="#85994b">// Tax rate. Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsBasicRateLimit = 37700<font color="#85994b">// Upper limit for basic rate. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsBasicRateName = "BRT" <font color="#85994b">// Basic rate for gains. Refer to UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsBasicRate = 20% <font color="#85994b">// Tax rate. Refer to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsBasicRateLimit = 37700<font color="#85994b">// Upper limit for basic rate. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 gainsBasicRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 gainsBasicRateTax <font color="#85994b">// Tax calculated for this band</font>
-gainsHigherRateName = "HRT" <font color="#85994b">// Higher rate for gains. Refer to UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsHigherRate = 40% <font color="#85994b">// Tax rate. Refer to "HRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsHigherRateLimit = 125140<font color="#85994b">// Upper limit for higher rate. Refer to "HRT" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsHigherRateName = "HRT" <font color="#85994b">// Higher rate for gains. Refer to UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsHigherRate = 40% <font color="#85994b">// Tax rate. Refer to "HRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsHigherRateLimit = 125140<font color="#85994b">// Upper limit for higher rate. Refer to "HRT" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 gainsHigherRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 gainsHigherRateTax <font color="#85994b">// Tax calculated for this band</font>
-gainsAdditionalRateName = "ART" <font color="#85994b">// Additional rate for gains. Refer to UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsAdditionalRate = 45% <font color="#85994b">// Tax rate. Refer to "ART" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-gainsAdditionalRateLimit = 99999999 <font color="#85994b">// Upper limit for additional rate. Refer to "ART" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsAdditionalRateName = "ART" <font color="#85994b">// Additional rate for gains. Refer to UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsAdditionalRate = 45% <font color="#85994b">// Tax rate. Refer to "ART" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+gainsAdditionalRateLimit = 99999999 <font color="#85994b">// Upper limit for additional rate. Refer to "ART" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 gainsAdditionalRateAllocatedIncome <font color="#85994b">// Income allocated to this band</font> 
 gainsAdditionalRateTax <font color="#85994b">// Tax calculated for this band</font>
 bandCategories<font color="#85994b">// Band categories for each type of income</font>
@@ -653,7 +655,7 @@ totalDividendIncome <font color="#85994b">// Total dividend income received befo
 totalLumpSumsIncome <font color="#85994b">// Total lumpsums income received before applying the allowance.Refer to <a href="income-and-benefits.html#employment-income">Employment income</a></font>
 totalGainsIncome <font color="#85994b">// Total gains income received before applying the allowance. Refer to <a href="allowances-and-reliefs.html#top-slicing-relief">Top slicing relief</a></font>
 adjustedNetIncome <font color="#85994b">// Adjusted net income. Refer to <a href="tax-calculation.html#adjusted-net-income">Adjusted net income</a></font> 
-personalAllowance <font color="#85994b">// Personal allowance. Refer to <a href="income-and-benefits.html#personal-allowance">Personal Allowance</a></font>
+personalAllowance <font color="#85994b">// Personal allowance. Refer to <a href="allowances-and-reliefs.html#personal-allowance">Personal Allowance</a></font>
 
 <font color="#85994b">// Other parameters used for calculations</font>
 remainingAllowance <font color="#85994b">// Remaining allowance</font>
@@ -1102,8 +1104,8 @@ Below is the calculation pseudocode for total reductions.
 <font color="#85994b">// Input parameters</font>
 incomeTaxCharged <font color="#85994b">// Sum of all tax liabilities before reliefs. Refer to Income tax liability</font>
 notionalTax <font color="#85994b">// Tax on income or benefits considered taxable but not received in cash</font>
-totalReliefs <font color="#85994b">// Refer to <a href="tax-calculation.html#total-reliefs">Total reliefs</a></font>
-marriageAllowanceRelief <font color="#85994b">// Refer to <a href="income-and-benefits.html#marriage-allowance">Marriage Allowance</a></font>
+totalReliefs <font color="#85994b">// Refer to <a href="allowances-and-reliefs.html#total-reliefs">Total reliefs</a></font>
+marriageAllowanceRelief <font color="#85994b">// Refer to <a href="allowances-and-reliefs.html#marriage-allowance">Marriage Allowance</a></font>
 
 <font color="#85994b">// Other parameters used for calculations (initialise parameters)</font>
 incomeTaxDueAfterTaxReductions = 0 <font color="#85994b">// Income tax due after tax reductions</font>
@@ -1171,7 +1173,7 @@ deficiencyReliefsAllowable <font color="#85994b">// Refer to <a href="allowances
 tsrReliefAmount <font color="#85994b">// Refer to <a href="allowances-and-reliefs.html#top-slicing-relief">Top slicing relief</a></font>
 totalResidentialFinanceCostsRelief <font color="#85994b">// Refer to <a href="allowances-and-reliefs.html#residential-finance-costs">Residential finance costs</a></font>
 redemptionAmountUsed <font color="#85994b">// Refer to <a href="allowances-and-reliefs.html#shares-and-securities">Shares and securities</a></font>
-marriageAllowanceRelief<font color="#85994b">// Refer to <a href="income-and-benefits.html#marriage-allowance">Marriage Allowance</a></font>
+marriageAllowanceRelief<font color="#85994b">// Refer to <a href="allowances-and-reliefs.html#marriage-allowance">Marriage Allowance</a></font>
 giftAidTaxableAmount <font color="#85994b">// Taxable amount from Gift Aid payments. Refer to <a href="allowances-and-reliefs.html#gift-aid">Gift Aid</a></font> payments</font>
 notionalTax <font color="#85994b">// Tax on income or benefits considered taxable but not received in cash</font>
 incomeTaxDueAfterTaxReductions <font color="#85994b">// Income tax due after tax reductions. Refer to <a href="tax-calculation.html#tax-reductions">Tax reductions</a></font>
@@ -1224,26 +1226,26 @@ Some of the parameters used as inputs for Pension scheme charges calculations ar
    <code>
 <font color="#85994b">// Input parameters</font>
 noSurchargeAmount <font color="#85994b">// Unauthorised payment for pension scheme with no surcharge. API parameter name: pensionSchemeUnauthorisedPayments.noSurcharge.amount</font>
-pensionSchemeUnauthorisedPaymentsNoSurchargesRates <font color="#85994b">// Refer to pensionSchemeUnauthorisedPaymentsNoSurchargeRates in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+pensionSchemeUnauthorisedPaymentsNoSurchargesRates <font color="#85994b">// Refer to pensionSchemeUnauthorisedPaymentsNoSurchargeRates in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 surchargeAmount <font color="#85994b">// Unauthorised payment for pension scheme with surcharge. API parameter name: pensionSchemeUnauthorisedPayments.surcharge.amount</font>
-pensionSchemeUnauthorisedPaymentsSurchargesRates <font color="#85994b">// Refer to pensionSchemeUnauthorisedPaymentsSurchargeRates in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pensionSchemeOverseasTransfersRates <font color="#85994b">// Refer to pensionSchemeOverseasTransferRates in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+pensionSchemeUnauthorisedPaymentsSurchargesRates <font color="#85994b">// Refer to pensionSchemeUnauthorisedPaymentsSurchargeRates in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pensionSchemeOverseasTransfersRates <font color="#85994b">// Refer to pensionSchemeOverseasTransferRates in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 surchargeforeignTaxPaid <font color="#85994b">// Foreign tax paid for unauthorised payments of type surcharge. API parameter name: surcharge.foreignTaxPaid</font>
 noSurchargeForeignTaxPaid <font color="#85994b">// Foreign tax paid for unauthorised payments of type no surcharge. API parameter name: noSurcharge.foreignTaxPaid</font>
-ssrLBLimit <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pcrLowerBand <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pcrUpperBand <font color="#85994b">// Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppBasicRateThreshold <font color="#85994b">// Threshold for Basic rate band. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+ssrLBLimit <font color="#85994b">// Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pcrLowerBand <font color="#85994b">// Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pcrUpperBand <font color="#85994b">// Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppBasicRateThreshold <font color="#85994b">// Threshold for Basic rate band. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 totalTaxableIncome <font color="#85994b">// Refer to incometaxcharged in Income Tax Liability</font>
-pppBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppIntermediateRateThreshold <font color="#85994b">// Threshold for Intermediate rate band. Refer to "IRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppIntermediateRate <font color="#85994b">// Refer to "IRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppHigherRateLimit <font color="#85994b">// Threshold for Higher rate band. Refer to "HRT" threshold under corresponding regimes incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppHigherRate <font color="#85994b">// Refer to "HRT" rate under corresponding regimes incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppAdvancedRateLimit <font color="#85994b">// Threshold for Advanced rate band. Refer to "AVRT" threshold under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppAdvancedRate <font color="#85994b">// Refer to "AVRT" rate under Scotland incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppAdditionalRateLimit <font color="#85994b">// Threshold for Additional rate band. Refer to "ART" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-pppAdditionalRate <font color="#85994b">// Refer to "ART" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppIntermediateRateThreshold <font color="#85994b">// Threshold for Intermediate rate band. Refer to "IRT" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppIntermediateRate <font color="#85994b">// Refer to "IRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppHigherRateLimit <font color="#85994b">// Threshold for Higher rate band. Refer to "HRT" threshold under corresponding regimes incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppHigherRate <font color="#85994b">// Refer to "HRT" rate under corresponding regimes incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdvancedRateLimit <font color="#85994b">// Threshold for Advanced rate band. Refer to "AVRT" threshold under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdvancedRate <font color="#85994b">// Refer to "AVRT" rate under Scotland incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdditionalRateLimit <font color="#85994b">// Threshold for Additional rate band. Refer to "ART" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+pppAdditionalRate <font color="#85994b">// Refer to "ART" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 
 <font color="#85994b">// Parameter name same as API parameter name</font>
 transferCharge <font color="#85994b">// Overseas transfer charge</font>
@@ -1439,16 +1441,16 @@ Below is the calculation pseudocode for National Insurance.
 totalSelfEmploymentTaxableProfit <font color="#85994b">// NICs are calculated on the combined total of profits from all of a customer's self-employment income sources</font>
 
 <font color="#85994b">// Class 2 National Insurance threshold for tax year 2024-25 (self-employed)</font>
-smallProfitsThreshold <font color="#85994b">// Small profits threshold amount per year (SPT). Refer to class2NicsLimit in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+smallProfitsThreshold <font color="#85994b">// Small profits threshold amount per year (SPT). Refer to class2NicsLimit in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 class2NicAmount <font color="#85994b">// Class 2 NICs amount provided by external HMRC system</font>
 class2NicLiable <font color="#85994b">// Indicates if the customer is liable for Class 2 NICs</font>
 chosenToPayClass2Nic <font color="#85994b">// Indicates if customer has voluntarily opted to pay for state benefits or State Pension reasons</font>
 
 <font color="#85994b">// Class 4 National Insurance thresholds and rates for tax year 2024-25 (self-employed)</font>
-lowerProfitsLimit <font color="#85994b">// Lower Profits Limit (LPL). Refer to "ZRT" threshold under class4NicBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-upperProfitsLimit <font color="#85994b">// Upper Profits Limit (UPL). Refer to "BRT" threshold under class4NicBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lplToUpl <font color="#85994b">// Rate between LPL and UPL. Refer to "BRT" rate under class4NicBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-aboveUpl <font color="#85994b">// Rate above UPL. Refer to "HRT" rate under class4NicBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+lowerProfitsLimit <font color="#85994b">// Lower Profits Limit (LPL). Refer to "ZRT" threshold under class4NicBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+upperProfitsLimit <font color="#85994b">// Upper Profits Limit (UPL). Refer to "BRT" threshold under class4NicBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lplToUpl <font color="#85994b">// Rate between LPL and UPL. Refer to "BRT" rate under class4NicBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+aboveUpl <font color="#85994b">// Rate above UPL. Refer to "HRT" rate under class4NicBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 
 <font color="#85994b">// Class 4 NICs exemption data</font>
 class4NicsExemptionReason <font color="#85994b">// Self Employment Business API parameter to indicate a reason why a customer is exempt from paying Class 4 NICs, such as age (parameter name is same as API parameter name)</font>
@@ -1558,7 +1560,7 @@ Below is the calculation pseudocode for student and postgraduate loan deductions
 <pre>
    <code>
 <font color="#85994b">// Student loan deductions - plan types, thresholds, and loan rates for the tax year 2024-25</font>
-<font color="#85994b">// All plan thresholds and rates are dynamically sourced from the <a href="downloads/taxyear24-25.yml" download>config file</a>	 (xx)</font>
+<font color="#85994b">// All plan thresholds and rates are dynamically sourced from the <a href="../downloads/taxyear24-25.yml" download>config file</a>	 (xx)</font>
 <font color="#85994b">// Input Parameters</font>
 taxableUkInterest <font color="#85994b">// Refer to totalUntaxedUkSavings in <a href="income-and-benefits.html#uk-savings">UK savings</a></font>
 taxableSecuritiesIncome <font color="#85994b">// Refer to grossSecurities in <a href="income-and-benefits.html#uk-savings">UK savings</a></font>
@@ -1584,7 +1586,7 @@ taxableOtherUkIncome <font color="#85994b">// Refer to taxableProfitFromUkProper
 taxableProfitFromForeignPropertyOther <font color="#85994b">// Refer to <a href="income-and-benefits.html#calculating-total-taxable-property-profit">Calculating total taxable property profit</a></font>
 taxableProfitFromUkPropertyFhl <font color="#85994b">// Refer to <a href="income-and-benefits.html#calculating-total-taxable-property-profit">Calculating total taxable property profit</a></font>
 taxableProfitFromEeaPropertyFhl <font color="#85994b">// Refer to <a href="income-and-benefits.html#calculating-total-taxable-property-profit">Calculating total taxable property profit</a></font>
-unearnedIncomeThreshold <font color="#85994b">// Refer to studentLoansUnearnedIncomeThreshold in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+unearnedIncomeThreshold <font color="#85994b">// Refer to studentLoansUnearnedIncomeThreshold in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 totalIncomeFromShareSchemes <font color="#85994b">// Refer to totalProfitFromShareSchemes in <a href="income-and-benefits.html#income-summary-totals">Income summary totals</a></font>
 employmentIncome <font color="#85994b">// Refer to totalPayPayeEmploymentIncome in <a href="income-and-benefits.html#employment-income">Employment income</a></font>
 occupationalPensionIncome <font color="#85994b">// Refer to totalOccupationalPensionIncome in <a href="income-and-benefits.html#employment-income">Employment income</a></font>
@@ -1596,10 +1598,10 @@ foreignTaxForFTCRNotClaimed <font color="#85994b">// Foreign tax paid but not cl
 csgiLosses <font color="#85994b">// Refer to <a href="income-and-benefits.html#losses-and-loss-claims">Losses and loss claims</a></font>
 pensionContributions <font color="#85994b">// Refer to totalPensionCOntributions in <a href="allowances-and-reliefs.html#pension-contributions">Pension contributions</a></font>
 postCessationTradeReliefs <font color="#85994b">// Post-cessation trade reliefs. API parameter name: postCessationTradeReliefAndCertainOtherLosses</font>
-unearnedIncomeThreshold = 2000<font color="#85994b">// Threshold for including unearned income in repayment. Refer to studentLoansUnearnedIncomeThreshold in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-planType <font color="#85994b">// Type of student loan plan (Plan 1, 2, 3, or 4). Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-incomeThreshold <font color="#85994b">// Income threshold for student loan repayment (depends on plan type). Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-loanRate <font color="#85994b">// Repayment rate as a percentage (6% or 9%, depending on plan type). Refer to the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+unearnedIncomeThreshold = 2000<font color="#85994b">// Threshold for including unearned income in repayment. Refer to studentLoansUnearnedIncomeThreshold in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+planType <font color="#85994b">// Type of student loan plan (Plan 1, 2, 3, or 4). Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+incomeThreshold <font color="#85994b">// Income threshold for student loan repayment (depends on plan type). Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+loanRate <font color="#85994b">// Repayment rate as a percentage (6% or 9%, depending on plan type). Refer to the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 uglDeductionAmount <font color="#85994b">// Undergraguate student loan deduction amount. Parameter name same as API parameter name</font>
 pglDeductionAmount <font color="#85994b">// Postgraguate student loan deduction amount. Parameter name same as API parameter name</font>
 
@@ -1801,17 +1803,17 @@ totalIncomeFromAllSources <font color="#85994b">// Refer to <a href="income-and-
 <font color="#85994b">// Most of the Input Parameters are not available in the APIs but are taken from Other HMRC Sources</font>
 nonBusinessAssetDisposals <font color="#85994b">// List of filtered disposals excluding BAD and INV from disposals</font>
 businessAssetDisposals <font color="#85994b">// List of filtered disposals including BAD and INV from disposals</font>
-cgtAnnualExemptionAmount <font color="#85994b">// Tax-free capital gains allowance. Refer to capitalGainsTaxAnnualExemptionAmount in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+cgtAnnualExemptionAmount <font color="#85994b">// Tax-free capital gains allowance. Refer to capitalGainsTaxAnnualExemptionAmount in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 currentTotalAnnualExemptionAmountUsed <font color="#85994b">// Portion of exemption used in the current year</font>
-OtherGainsERtaxrate <font color="#85994b">// OtherGainsErtaxrate. Refer to <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+OtherGainsERtaxrate <font color="#85994b">// OtherGainsErtaxrate. Refer to <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 incomeTaxCharged <font color="#85994b">// Refer to <a href="tax-calculation.html#tax-reductions">Tax reductions</a></font>
 gains <font color="#85994b">// List of calculated gains like insurance, life annuity, capital redemption and voidedIsa</font>
 gainsNotAnnualised <font color="#85994b">// Gains that are not spread over multiple years for tax calculation</font>
-basicRateBandThreshold <font color="#85994b">// Threshold for Basic rate band. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lowerRateOfCGTForRPCI <font color="#85994b">// Lower rate for Residential Property and Carried Interest (RPCI). Refer to "RPCI" lowerRate under cgtRates in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-higherRateOfCGTForRPCI <font color="#85994b">// Higher rate for Residential Property and Carried Interest (RPCI). Refer to "RPCI" higherRate under cgtRates in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-lowerRateOfCGTForOthers <font color="#85994b">// Lower rate for other gains. Refer to "CG" lowerRate under cgtRates in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-higherRateOfCGTForOthers <font color="#85994b">// Higher rate for other gains. Refer to "CG" higherRate under cgtRates in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+basicRateBandThreshold <font color="#85994b">// Threshold for Basic rate band. Refer to "BRT" threshold under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lowerRateOfCGTForRPCI <font color="#85994b">// Lower rate for Residential Property and Carried Interest (RPCI). Refer to "RPCI" lowerRate under cgtRates in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+higherRateOfCGTForRPCI <font color="#85994b">// Higher rate for Residential Property and Carried Interest (RPCI). Refer to "RPCI" higherRate under cgtRates in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+lowerRateOfCGTForOthers <font color="#85994b">// Lower rate for other gains. Refer to "CG" lowerRate under cgtRates in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+higherRateOfCGTForOthers <font color="#85994b">// Higher rate for other gains. Refer to "CG" higherRate under cgtRates in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 IncomeSummaries <font color="#85994b">// Income summaries</font>
 foreignTaxCreditRelief <font color="#85994b">// Foreign Tax Credit Relief</font>
 otherGainsDisposals <font color="#85994b">// Other Gains disposals</font>
@@ -2261,8 +2263,8 @@ Below is the calculation pseudocode for final tax calculation.
    <code>
 <font color="#85994b">// Input parameters</font>
 grossAnnuityPayments <font color="#85994b">// Full amount of income paid out by an annuity before any deductions or taxes. Refer to <a href="allowances-and-reliefs.html#annuity-payments">Annuity payments</a></font>
-annuityPercentage <font color="#85994b">// Calculated using annuityRate aligned to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
-ukBasicRate<font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a>	</font>
+annuityPercentage <font color="#85994b">// Calculated using annuityRate aligned to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
+ukBasicRate<font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a>	</font>
 netRoyaltiesPayments <font color="#85994b">// Net royalty payments. API parameter name: royaltyPayments.royaltyPaymentsAmount</font>
 studentLoanRepaymentAmount <font color="#85994b">// Student loan repayment amount. Refer to <a href="tax-calculation.html#student-loans">Student loans</a></font>
 taxDeducted <font color="#85994b">// Total tax deducted. Refer to totalTaxDeducted in <a href="tax-calculation.html#tax-deductions">Tax deductions</a></font>

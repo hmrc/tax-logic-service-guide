@@ -1,8 +1,10 @@
 ---
-title: Income and benefits | Tax Logic service guide
+title: Income and benefits (2026 to 2027) | Tax Logic service guide
 weight: 2
 description: Details of the calculations used for income and benefits.
 ---
+
+<%= partial 'documentation/partials/google_tag_manager_js' %>
 
 # Income and benefits
 
@@ -12,7 +14,7 @@ Income tax calculations cover a range of income sources, including employment ea
 
 All parameters used as inputs for self-employment calculations are in the [Self-employment Business API](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/self-employment-business-api/) and [Business Source Adjustable Summary API](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/self-assessment-bsas-api/7.0). However, some parameter names in the pseudocode differ slightly from those in the API and are noted in pseudocode comments.
 
-> **Note:**  For calculation purposes, self-employment data is processed for each income source. Customers with multiple self-employments will have source-level calculations, with totals across all sources calculated in the [Income summary totals](#_Income_summary_totals) section.
+> **Note:**  For calculation purposes, self-employment data is processed for each income source. Customers with multiple self-employments will have source-level calculations, with totals across all sources calculated in the [Income summary totals](#income-summary-totals) section.
 
 ### Self-employment income
 
@@ -213,7 +215,7 @@ end if
 
 All parameters used as inputs for property calculations are in the [Property Business API](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/property-business-api/). However, some parameter names in the pseudocode differ slightly from those in the API and are noted in pseudocode comments.
 
-**Note:** For calculation purposes, all foreign property data is handled at country level, with totals across all countries calculated in the [Income summary totals](#_Income_summary_totals) section.
+**Note:** For calculation purposes, all foreign property data is handled at country level, with totals across all countries calculated in the [Income summary totals](#income-summary-totals) section.
 
 ### Property income
 
@@ -892,7 +894,7 @@ Below is the calculation pseudocode for total taxable property profit or loss.
 <font color="#85994b">// Input Parameters\</font>
 totalEmploymentIncome <font color="#85994b">// Refer to <a href="income-and-benefits.html#employment-income">Employment income</a></font>
 totalOccupationalPensionIncome <font color="#85994b">// Refer to <a href="income-and-benefits.html#employment-income">Employment income</a></font>
-totalEmploymentExpenses <font color="#85994b">// Refer to <a href="income-and-benefits.html#employment-expense">Employment expenses</a></font>
+totalEmploymentExpenses <font color="#85994b">// Refer to <a href="income-and-benefits.html#employment-expenses">Employment expenses</a></font>
 totalEmploymentDeductions <font color="#85994b">// Refer to <a href="income-and-benefits.html#employment-deductions">Employment deductions</a></font>
 
 <font color="#85994b">// Other parameters used for calculations\</font>
@@ -932,7 +934,7 @@ incomeSourceId <font color="#85994b">// Unique identifier for savings income so
 }
 ]
 grossSecurities <font color="#85994b">// Gross amount of Gilt Edge interest, securities, and accrued income profits including tax deducted. API parameter name: grossAmount</font>
-ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+ukBasicRate <font color="#85994b">// Refer to "BRT" rate under UK incomeTaxBands in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 
 <font color="#85994b">// Other parameters used for calculations (initialise parameters)</font>
 totalTaxedUkSavings =0<font color="#85994b">// Total taxed UK savings</font>
@@ -1240,7 +1242,7 @@ csgiLossAndClaims <font color="#85994b">// CSGI losses and claims</font>
 lossesAvailableToGeneralIncomeBeforeRestriction = 0 <font color="#85994b">// Losses available to general income before restrictions</font>
 reliefAmount <font color="#85994b">// Relief amount</font>
 csgiAllowanceUsed <font color="#85994b">// Csgi allowance used</font>
-allowanceCap <font color="#85994b">// Allowance cap. Refer to lossCap in the <a href="downloads/taxyear24-25.yml" download>config file</a></font>
+allowanceCap <font color="#85994b">// Allowance cap. Refer to lossCap in the <a href="../downloads/taxyear24-25.yml" download>config file</a></font>
 incomeIncludingPayrollGiving<font color="#85994b">// Income including payroll giving</font>
 quarterOfTaxableProfit <font color="#85994b">// Quarter of taxable profit</font>
 restrictedAllowance <font color="#85994b">// Restricted allowance</font>

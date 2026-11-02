@@ -1,5 +1,13 @@
 @import "govuk_tech_docs";
 
+.app-toc-separator {
+    @include govuk-font($size: 16, $weight: bold);
+    color: $govuk-secondary-text-colour;
+    margin-top: govuk-spacing(4);
+    padding-top: govuk-spacing(3);
+    border-top: 1px solid $govuk-border-colour;
+}
+
 .video {
     border: 1px solid #0b0c0c;
     width: 560px;

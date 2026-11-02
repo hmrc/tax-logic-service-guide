@@ -25,6 +25,8 @@ configure :build do
       resources = resources.sort_by { |r| [r.data.weight ? 0 : 1, r.data.weight || 0] }
       output = '';
       resources.each do |resource|
+        # Pages share headings across tax years, so each one needs the heading ids it gets when rendered on its own
+        GovukTechDocs::UniqueIdentifierGenerator.instance.reset
         content =
           if current_page.url == resource.url && current_page_html
             current_page_html
@@ -35,16 +37,20 @@ configure :build do
         next if content.include? "http-equiv=refresh"
 
         if resource.children.any? && resource.url != config[:http_prefix]
-          output += %{<ul><li><a href="#{resource.url}">#{resource.data.title}</a>\n}
+          output += %{<ul><li class="app-toc-separator">#{resource.data.title}</li></ul>\n}
           output += render_page_tree(resource.children, current_page, config, current_page_html)
-          output += '</li></ul>'
         else
-          output +=
+          toc =
             single_page_table_of_contents(
               content,
               url: resource.url,
               max_level: config[:tech_docs][:max_toc_heading_level]
             )
+          # Screen readers context for duplicated headings
+          if resource.parent
+            toc = toc.sub('</span></a>', %{</span><span class="govuk-visually-hidden"> for the #{resource.parent.data.title}</span></a>})
+          end
+          output += toc
         end
       end
       output
